@@ -27,16 +27,17 @@ const Scene = ({ ready }) => {
       />
       <fog attach="fog" args={["#111111", 10, 10]} />
       <Environment preset="night" />
-      <Robot />
+      <group position={[0,-1,0]}>
+        <Robot />
+      </group>
       <Stars />
 
-      
       <EffectComposer>
         <Bloom
           blendFunction={BlendFunction.ADD}
           intensity={1}
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           kernelSize={4}
           luminanceThreshold={0.15}
           luminanceSmoothing={0.8}
@@ -46,15 +47,7 @@ const Scene = ({ ready }) => {
           offset={[0.0005, 0.0012]}
         />
       </EffectComposer>
-      {/* <spotLight
-          position={[10, 10, 10]}
-          angle={0.15}
-          penumbra={1}
-          intensity={5}
-          castShadow
-          shadow-mapSize={[2048, 2048]}
-        /> */}
-      <PerspectiveCamera makeDefault fov={65} position={[0, 0, 4]}/>
+      <PerspectiveCamera makeDefault fov={65} position={[0, 0, 4]} />
     </>
   );
 };
@@ -71,7 +64,7 @@ const Stars = (props) => {
     ref.current.rotation.y -= delta / 15;
   });
   return (
-    <group rotation={[0, 0, Math.PI / 3]} scale={[7,7,7]}>
+    <group rotation={[0, 0, Math.PI / 3]} scale={[7, 7, 7]}>
       <Points
         ref={ref}
         positions={sphere}
@@ -104,6 +97,5 @@ const Stars = (props) => {
         />
       </EffectComposer>
     </group>
-    
   );
 };

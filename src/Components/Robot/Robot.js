@@ -5,7 +5,6 @@ const Robot = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./models/Robot/scene.gltf')
   const { actions, names } = useAnimations(animations, group);
-  console.log(names);
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, [names, actions]);
