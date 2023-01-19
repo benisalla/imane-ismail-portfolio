@@ -1,5 +1,4 @@
 import { Route, Routes, useLocation } from "react-router";
-import Sidebar from "./Sidebar";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
@@ -7,11 +6,11 @@ import Documents from "./Pages/Documents";
 import Projects from "./Pages/Projects";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
+import Sidebar from './Sidebar'
+
 import { Suspense } from "react";
 import { Canvas } from "react-three-fiber";
 import Scene from "./Components/Robot/Scene";
-import Sidebar from "./Components/Sidebar/Sidebar";
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 
 const Pages = styled.div`
   width: 10vw;
