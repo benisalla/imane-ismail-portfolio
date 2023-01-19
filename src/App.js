@@ -10,6 +10,8 @@ import { AnimatePresence } from "framer-motion";
 import { Suspense } from "react";
 import { Canvas } from "react-three-fiber";
 import Scene from "./Components/Robot/Scene";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 
 const Pages = styled.div`
   width: 10vw;
