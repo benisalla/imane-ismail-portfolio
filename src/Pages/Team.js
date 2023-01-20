@@ -1,7 +1,8 @@
 import MotionHoc from "./MotionHoc";
+import ISMAIL from "../Components/Logos/ISMAIL";
 
 const TeamComponent = () => {
-  return <h1>Team</h1>;
+  return <ISMAIL/>;
 };
 
 const Team = MotionHoc(TeamComponent);

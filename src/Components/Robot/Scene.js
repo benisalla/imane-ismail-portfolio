@@ -27,7 +27,7 @@ const Scene = ({ ready }) => {
       />
       <fog attach="fog" args={["#111111", 10, 10]} />
       <Environment preset="night" />
-      <group position={[0,-1,0]}>
+      <group position={[0, -1, 0]}>
         <Robot />
       </group>
       <Stars />
@@ -63,6 +63,7 @@ const Stars = (props) => {
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
   });
+
   return (
     <group rotation={[0, 0, Math.PI / 3]} scale={[7, 7, 7]}>
       <Points

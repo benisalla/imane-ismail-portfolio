@@ -237,8 +237,7 @@ const Sidebar = () => {
         <SlickBar clicked={click}>
           <Item
             onClick={() => setClick(false)}
-            exact
-            activeClassName="active"
+            activeclassname="active"
             to="/"
           >
             <img src={Home} alt="Home" />
@@ -246,7 +245,7 @@ const Sidebar = () => {
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
+            activeclassname="active"
             to="/team"
           >
             <img src={Team} alt="Team" />
@@ -254,7 +253,7 @@ const Sidebar = () => {
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
+            activeclassname="active"
             to="/calender"
           >
             <img src={Calender} alt="Calender" />
@@ -262,7 +261,7 @@ const Sidebar = () => {
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
+            activeclassname="active"
             to="/documents"
           >
             <img src={Documents} alt="Documents" />
@@ -270,7 +269,7 @@ const Sidebar = () => {
           </Item>
           <Item
             onClick={() => setClick(false)}
-            activeClassName="active"
+            activeclassname="active"
             to="/projects"
           >
             <img src={Projects} alt="Projects" />

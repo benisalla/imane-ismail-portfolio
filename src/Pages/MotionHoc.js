@@ -1,5 +1,3 @@
-//higher order component to add same functionality to each page
-
 import { motion } from "framer-motion";
 
 const MotionHoc = (Component) => {
@@ -15,9 +13,28 @@ const MotionHoc = (Component) => {
           y: -500,
           transition: { duration: 0.5, type: "spring", ease: "easeInOut" },
         }}
+        style={{
+          width: "90vw",
+          height: "84vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "fixed",
+          top: "5vh",
+          left: "8vw",
+          zIndex: 101,
+
+          aspectRatio: 1.75,
+          padding: "2em",
+          borderRadius: "1em",
+          background: "linearGradient(155deg, rgba(255, 255, 255, 0.15), transparent)",
+          backdropFilter: "blur(3px)",
+          boxShadow: "2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.1)",
+        }
+        }
       >
         <Component />
-      </motion.div>
+      </motion.div >
     );
   };
 };
