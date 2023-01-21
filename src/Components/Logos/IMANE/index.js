@@ -6,8 +6,9 @@ import AIimage from "../../../assets/AnimSrc/imane.png";
 
 const AI = () => {
     return (
-        <div className={style.main} style={{ backgroundColor: "#000" }}>
+        <div className={style.main} >
             <ParticleImage
+            className="imane"
                 scale={4}
                 maxParticles={5000}
                 backgroundColor="#000"

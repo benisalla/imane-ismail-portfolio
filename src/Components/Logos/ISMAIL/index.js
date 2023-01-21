@@ -8,6 +8,7 @@ const AI = () => {
     return (
         <div className={style.main} style={{ backgroundColor: "#000" }}>
             <ParticleImage
+                className="ismail"
                 scale={4}
                 maxParticles={5000}
                 backgroundColor="#000"

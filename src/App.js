@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
 import Documents from "./Pages/Documents";
@@ -26,11 +26,11 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={"Loading ..."}>
+       <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
           <Scene />
         </Canvas>
-      </Suspense>
+      </Suspense> 
       <Sidebar />
       <Pages>
         <AnimatePresence>

@@ -1,0 +1,70 @@
+.home{
+    display: grid;
+}
+
+.imanePart{
+    position: relative;
+}
+.imane{
+    position: absolute;
+    left: 250px;
+    top: -100px;
+    height: 500px;
+    width:500px
+}
+.imanePart .right{
+    position: absolute;
+    border-radius:  30% 70% 64% 36% / 33% 56% 44% 67% ;
+    background-color: #4B3869;
+    width: 444px;
+    height: 400px;
+    margin-left: 275px;
+    margin-top: 250px;
+}
+
+.ismailPart{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+.ismail{
+    position: absolute;
+    left: 70px;
+    top:-50px;
+    height: 300px;
+    width:300px
+}
+
+.left{
+    position: relative;
+    border-radius:  30% 70% 64% 36% / 33% 56% 44% 67% ;
+    background-color: #4B3869;
+    width: 444px;
+    height: 400px;
+    margin-top:275px;
+    margin-left: -700px;
+}
+
+
+.desc h3{
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+.iconsRight{
+    position: absolute;
+  top: 550px;
+  margin-left: 370px;
+}
+
+.iconsLeft{
+position: absolute;
+
+left: 0px;
+bottom: 50px;
+margin-left: 120px;
+}
+
