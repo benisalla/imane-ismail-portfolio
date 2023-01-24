@@ -23,7 +23,7 @@ const MotionHoc = (Component) => {
           top: "5vh",
           left: "8vw",
           zIndex: 101,
-
+          overflow: 'hidden',
           aspectRatio: 1.75,
           padding: "2em",
           borderRadius: "1em",

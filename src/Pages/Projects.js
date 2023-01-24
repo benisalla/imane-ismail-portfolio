@@ -1,7 +1,8 @@
+import About from "./about/About";
 import MotionHoc from "./MotionHoc";
 
 const ProjectsComponent = () => {
-  return <h1>Projects</h1>;
+  return <About />;
 };
 
 const Projects = MotionHoc(ProjectsComponent);
