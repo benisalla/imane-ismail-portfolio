@@ -80,12 +80,13 @@ const Stars = (props) => {
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
+          Bloom
         />
       </Points>
       <EffectComposer>
         <Bloom
           blendFunction={BlendFunction.ADD}
-          intensity={1.3}
+          intensity={3}
           width={300}
           height={300}
           kernelSize={3}
@@ -94,7 +95,7 @@ const Stars = (props) => {
         />
         <ChromaticAberration
           blendFunction={BlendFunction.COLOR}
-          offset={[0.0005, 0.0012]}
+          offset={[0.005, 0.012]}
         />
       </EffectComposer>
     </group>

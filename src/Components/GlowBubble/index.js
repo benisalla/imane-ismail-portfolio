@@ -6,7 +6,7 @@ const fast = { tension: 1200, friction: 40 }
 const slow = { mass: 10, tension: 200, friction: 50 }
 const trans = (x, y) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`
 
-const About = () => {
+const GlowBubble = ({ children }) => {
     const [{ pos1 }, set] = useSpring(() => ({ pos1: [0, 0], config: fast }))
     const [{ pos2 }] = useSpring(() => ({ pos2: pos1, config: slow }))
     const [{ pos3 }] = useSpring(() => ({ pos3: pos2, config: slow }))
@@ -23,6 +23,7 @@ const About = () => {
 
     return (
         <div className={Aboutstyle.aboutBackground}>
+            {children}
             <svg style={{ position: 'absolute', width: 0, height: 0 }}>
                 <filter id="About">
                     <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />
@@ -41,4 +42,4 @@ const About = () => {
 };
 
 
-export default About;
+export default GlowBubble;
