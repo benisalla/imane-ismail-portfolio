@@ -262,18 +262,18 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeclassname="active"
-            to="/documents"
+            to="/projects"
           >
-            <img src={Documents} alt="Documents" />
-            <Text clicked={click}>Documents</Text>
+            <img src={Documents} alt="projects" />
+            <Text clicked={click}>Projects</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
             activeclassname="active"
-            to="/projects"
+            to="/about"
           >
-            <img src={Projects} alt="Projects" />
-            <Text clicked={click}>Projects</Text>
+            <img src={Projects} alt="about" />
+            <Text clicked={click}>About</Text>
           </Item>
         </SlickBar>
 

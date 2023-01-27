@@ -1,8 +1,8 @@
+import Ismail from "../Components/Logos/Ismail";
 import MotionHoc from "./MotionHoc";
-import ISMAIL from "../Components/Logos/ISMAIL";
 
 const TeamComponent = () => {
-  return <ISMAIL/>;
+  return <Ismail/>;
 };
 
 const Team = MotionHoc(TeamComponent);

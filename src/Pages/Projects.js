@@ -1,8 +1,8 @@
-import { Ismail } from "./about/Ismail";
 import MotionHoc from "./MotionHoc";
+import { ProjectsContent } from "./ProjectsContent";
 
 const ProjectsComponent = () => {
-  return <Ismail />;
+  return <ProjectsContent />;
 };
 
 const Projects = MotionHoc(ProjectsComponent);

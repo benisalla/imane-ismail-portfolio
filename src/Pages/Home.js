@@ -1,9 +1,9 @@
-import IMANE from "../Components/Logos/IMANE";
+import Imane from "../Components/Logos/Imane";
 import MotionHoc from "./MotionHoc";
 
 const HomeComponent = () => {
   return (
-    <IMANE/>
+    <Imane />
   );
 };
 

@@ -11,10 +11,6 @@ const GlowBubble = ({ children }) => {
     const [{ pos2 }] = useSpring(() => ({ pos2: pos1, config: slow }))
     const [{ pos3 }] = useSpring(() => ({ pos3: pos2, config: slow }))
 
-    console.log(pos1)
-    console.log(pos2)
-    console.log(pos3)
-
     useEffect(() => {
         const handler = ({ clientX, clientY }) => set({ pos1: [clientX, clientY] })
         window.addEventListener('mousemove', handler)

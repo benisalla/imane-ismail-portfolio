@@ -2,8 +2,7 @@ import { Route, Routes, useLocation } from "react-router";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
-import Documents from "./Pages/Documents";
-import Projects from "./Pages/Projects";
+import Documents from "./Pages/Projects";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import Sidebar from './Sidebar'
@@ -11,6 +10,8 @@ import Sidebar from './Sidebar'
 import { Suspense } from "react";
 import { Canvas } from "react-three-fiber";
 import Scene from "./Components/Robot/Scene";
+import About from "./Pages/About";
+import Projects from "./Pages/Projects";
 
 const Pages = styled.div`
   // width: 80vw;
@@ -38,8 +39,8 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/team" element={<Team/>} />
             <Route path="/calender" element={<Calender/>} />
-            <Route path="/documents" element={<Documents/>} />
             <Route path="/projects" element={<Projects/>} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </AnimatePresence>
       </Pages>
