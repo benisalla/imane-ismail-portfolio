@@ -4,7 +4,7 @@ import ParticleImage, { forces, Vector } from "react-particle-image";
 import ImgTarget from "../../../assets/AnimSrc/about-us.png";
 
 
-const AboutUs = () => {
+const AboutUsLogo = () => {
     return (
         <div className={style.main}>
             <ParticleImage
@@ -35,4 +35,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default AboutUsLogo;

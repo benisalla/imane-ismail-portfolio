@@ -3,13 +3,17 @@ import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import Typography from '@mui/joy/Typography';
 import { CardMedia, IconButton, Tooltip } from '@mui/material';
-import IsmailProfile from "../../../assets/ProfileImages/ismail-ben-alla-1.jpg";
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import LoadingButton from '@mui/lab/LoadingButton';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import VoiceOverOffIcon from '@mui/icons-material/VoiceOverOff';
 import music from "../../../assets/audio/u-said-it-v13-1167.mp3"
 import { useRef } from 'react';
+
+import IsmailProfile from "../../../assets/ProfileImages/ismail-ben-alla-1.jpg";
+import ImaneProfile from "../../../assets/ProfileImages/imane-moutassem-1.jpg";
+
+
 
 export default function TeamCard({ data }) {
     const [loadingCV, setLoadingCV] = useState(false);
@@ -51,7 +55,7 @@ export default function TeamCard({ data }) {
                     width="200px"
                     height="300px"
                     alt="Ismail ben alla"
-                    src={IsmailProfile}
+                    src={data.isIsmail ? IsmailProfile : ImaneProfile}
                     sx={{
                         borderRadius: 0.6,
                         width: { xs: '100%', sm: 240 },
@@ -68,8 +72,8 @@ export default function TeamCard({ data }) {
                     sx={{
                         color: '#000',
                         position: 'absolute',
-                        top: '1rem',
-                        left: '1rem',
+                        top: '0.8rem',
+                        left: '0.8rem',
                         padding: '4px',
                     }}>
                     {speak ? <RecordVoiceOverIcon /> : <VoiceOverOffIcon />}

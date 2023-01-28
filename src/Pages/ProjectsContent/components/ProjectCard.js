@@ -10,8 +10,11 @@ import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import ismailImg from "../../../assets/ProfileImages/ismail-ben-alla-1.jpg";
+import imaneImg from "../../../assets/ProfileImages/imane-moutassem-1.jpg";
 
-export default function ProjectCard() {
+export default function ProjectCard({ data }) {
+
     return (
         <Card
             sx={{
@@ -27,10 +30,9 @@ export default function ProjectCard() {
                 <AspectRatio ratio="4/3">
                     <figure>
                         <img
-                            src="https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&w=300"
-                            srcSet="https://images.unsplash.com/photo-1515825838458-f2a94b20105a?auto=format&fit=crop&w=300&dpr=2 2x"
+                            src={data.project_img}
                             loading="lazy"
-                            alt="Yosemite by Casey Horner"
+                            alt="project image"
                         />
                     </figure>
                 </AspectRatio>
@@ -75,9 +77,10 @@ export default function ProjectCard() {
                                 <Link
                                     color="neutral"
                                     sx={{
-                                        ml: 'auto',
+                                        ml: '4px',
                                         '&:hover': {
                                             color: '#eee',
+                                            backgroundColor: "#111"
                                         },
                                         width: "fit-content",
                                         height: "fit-content",
@@ -86,16 +89,17 @@ export default function ProjectCard() {
                                         border: '1px solid #000',
                                         marginLeft: '0.1rem',
                                     }}
-                                    href="#linkToRepoHere"
+                                    href={data.see_link}
                                     underline="none">
                                     <VisibilityIcon />
                                 </Link>
                                 <Link
                                     color="neutral"
                                     sx={{
-                                        ml: 'auto',
+                                        mr: '4px',
                                         '&:hover': {
                                             color: '#eee',
+                                            backgroundColor: "#111"
                                         },
                                         width: "fit-content",
                                         height: "fit-content",
@@ -104,7 +108,7 @@ export default function ProjectCard() {
                                         border: '1px solid #000',
                                         marginLeft: '0.1rem',
                                     }}
-                                    href="#linkToRepoHere"
+                                    href={data.github_link}
                                     underline="none">
                                     <GitHubIcon />
                                 </Link>
@@ -115,12 +119,12 @@ export default function ProjectCard() {
             </Box>
             <Box sx={{ display: 'flex', gap: 1, mt: 1.5, alignItems: 'center' }}>
                 <Avatar
-                    src="https://images.unsplash.com/profile-1502669002421-a8d274ad2897?dpr=2&auto=format&fit=crop&w=32&h=32&q=60&crop=faces&bg=fff"
+                    src={data.isIsmail ? ismailImg : imaneImg}
                     size="sm"
                     sx={{ '--Avatar-size': '1.5rem' }}
                 />
                 <Typography sx={{ fontSize: 'sm', fontWeight: 'md' }}>
-                    Ismail
+                    {data.owner_name}
                 </Typography>
                 <Chip
                     variant="outlined"
@@ -132,7 +136,7 @@ export default function ProjectCard() {
                         px: 0.5,
                     }}
                 >
-                    React | MUI
+                    {data.Techs}
                 </Chip>
             </Box>
         </Card>

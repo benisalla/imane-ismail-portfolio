@@ -4,8 +4,77 @@ import React from 'react'
 import GlowBubble from '../../Components/GlowBubble';
 import ProjectLogo from '../../Components/Logos/ProjectLogo';
 import ProjectCard from './components/ProjectCard';
+//----------< images here >----------//
+import project1 from "../../assets/ProjectsImages/project1.jfif";
 
 export const ProjectsContent = () => {
+
+    const projectsData = [
+        {
+            project_name: 'Project Name',
+            isIsmail: true,
+            owner_name: "Ismail",
+            Techs: 'React | MUI',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        },
+        {
+            project_name: 'Project Name',
+            isIsmail: true,
+            owner_name: "Ismail",
+            Techs: 'React | MUI',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        },
+        {
+            project_name: 'Project Name',
+            isIsmail: true,
+            owner_name: "Ismail",
+            Techs: 'React | MUI',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        },
+        {
+            project_name: 'Project Name',
+            isIsmail: false,
+            owner_name: "Imane",
+            Techs: 'React | MUI',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        },
+        {
+            project_name: 'Project Name',
+            isIsmail: true,
+            owner_name: "Ismail",
+            Techs: 'React | MUI',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        },
+        {
+            project_name: 'Project Name',
+            isIsmail: false,
+            owner_name: "Ismail",
+            Techs: 'React | MUI',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        },
+        {
+            project_name: 'Project Name',
+            isIsmail: true,
+            owner_name: "Ismail",
+            Techs: 'PHP | JS',
+            see_link: '#seeLinkHere',
+            github_link: '#githubLinkHere',
+            project_img: project1,
+        }
+    ]
+
     return (
         <GlowBubble>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -23,24 +92,13 @@ export const ProjectsContent = () => {
 
 
             <Grid container spacing={1}>
-                <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
-                    <ProjectCard />
-                </Grid>
+                {projectsData.map(data => {
+                    return (
+                        <Grid item xs={11} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                            <ProjectCard data={data}/>
+                        </Grid>
+                    )
+                })}
             </Grid>
         </GlowBubble>
     )

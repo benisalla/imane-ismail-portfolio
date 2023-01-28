@@ -9,6 +9,7 @@ export const TeamContent = () => {
 
   const ismail = {
     isLTR: false,
+    isIsmail: true,
     name: "ben alla ismail",
     profession: "computer science engineer",
     description: `
@@ -22,6 +23,7 @@ export const TeamContent = () => {
   }
   const imane = {
     isLTR: true,
+    isIsmail: false,
     name: "moutassem imane",
     profession: "computer science engineer",
     description: `
