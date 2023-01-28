@@ -8,9 +8,8 @@ import Chip from '@mui/joy/Chip';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
-import Favorite from '@mui/icons-material/Favorite';
-import Visibility from '@mui/icons-material/Visibility';
-import CreateNewFolder from '@mui/icons-material/CreateNewFolder';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 export default function ProjectCard() {
     return (
@@ -47,12 +46,12 @@ export default function ProjectCard() {
                             'linear-gradient(180deg, transparent 62%, rgba(0,0,0,0.00345888) 63.94%, rgba(0,0,0,0.014204) 65.89%, rgba(0,0,0,0.0326639) 67.83%, rgba(0,0,0,0.0589645) 69.78%, rgba(0,0,0,0.0927099) 71.72%, rgba(0,0,0,0.132754) 73.67%, rgba(0,0,0,0.177076) 75.61%, rgba(0,0,0,0.222924) 77.56%, rgba(0,0,0,0.267246) 79.5%, rgba(0,0,0,0.30729) 81.44%, rgba(0,0,0,0.341035) 83.39%, rgba(0,0,0,0.367336) 85.33%, rgba(0,0,0,0.385796) 87.28%, rgba(0,0,0,0.396541) 89.22%, rgba(0,0,0,0.4) 91.17%)',
                     }}
                 >
-                    {/* The first box acts as a container that inherits style from the CardCover */}
                     <Box>
                         <Box
                             sx={{
                                 p: 2,
                                 display: 'flex',
+                                justifyContent: 'space-between',
                                 alignItems: 'center',
                                 gap: 1.5,
                                 flexGrow: 1,
@@ -60,10 +59,8 @@ export default function ProjectCard() {
                             }}
                         >
                             <Typography level="h2" noWrap sx={{ fontSize: 'lg' }}>
-                                <Link
-                                    href="#dribbble-shot"
-                                    overlay
-                                    underline="none"
+                                <Typography
+
                                     sx={{
                                         color: '#fff',
                                         textOverflow: 'ellipsis',
@@ -72,14 +69,46 @@ export default function ProjectCard() {
                                     }}
                                 >
                                     Project Name
-                                </Link>
+                                </Typography>
                             </Typography>
-                            <IconButton size="sm" color="neutral" sx={{ ml: 'auto' }}>
-                                <CreateNewFolder />
-                            </IconButton>
-                            <IconButton size="sm" color="neutral">
-                                <Favorite />
-                            </IconButton>
+                            <Box sx={{ alignSelf: 'end', }}>
+                                <Link
+                                    color="neutral"
+                                    sx={{
+                                        ml: 'auto',
+                                        '&:hover': {
+                                            color: '#eee',
+                                        },
+                                        width: "fit-content",
+                                        height: "fit-content",
+                                        padding: '0.1rem',
+                                        borderRadius: '50%',
+                                        border: '1px solid #000',
+                                        marginLeft: '0.1rem',
+                                    }}
+                                    href="#linkToRepoHere"
+                                    underline="none">
+                                    <VisibilityIcon />
+                                </Link>
+                                <Link
+                                    color="neutral"
+                                    sx={{
+                                        ml: 'auto',
+                                        '&:hover': {
+                                            color: '#eee',
+                                        },
+                                        width: "fit-content",
+                                        height: "fit-content",
+                                        padding: '0.1rem',
+                                        borderRadius: '50%',
+                                        border: '1px solid #000',
+                                        marginLeft: '0.1rem',
+                                    }}
+                                    href="#linkToRepoHere"
+                                    underline="none">
+                                    <GitHubIcon />
+                                </Link>
+                            </Box>
                         </Box>
                     </Box>
                 </CardCover>

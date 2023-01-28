@@ -12,7 +12,10 @@ export const ProjectsContent = () => {
                 <ProjectLogo />
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Typography component="h1" style={{ color: "#000", padding: '2rem' }}>
+                <Typography component="h1" style={{ color: "#000", padding: '1rem', fontSize: '30px', textTransform: 'uppercase' }}>Our Projects</Typography>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
                     Here are some of our projects that we have completed
                     using different technologies and programming languages.
                 </Typography>

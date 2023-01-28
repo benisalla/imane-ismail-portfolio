@@ -2,7 +2,6 @@ import { Route, Routes, useLocation } from "react-router";
 import Home from "./Pages/Home";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
-import Documents from "./Pages/Projects";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import Sidebar from './Sidebar'
