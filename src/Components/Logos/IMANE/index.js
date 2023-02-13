@@ -4,7 +4,7 @@ import ParticleImage, { forces, Vector } from "react-particle-image";
 import ImgTarget from "../../../assets/AnimSrc/imane.png";
 
 
-const Imane = () => {
+const IMANE = () => {
     return (
         <div className={style.main} style={{ backgroundColor: "#000" }}>
             <ParticleImage
@@ -21,7 +21,7 @@ const Imane = () => {
                         const pixel = image.get(x, y);
                         return pixel.r === 255;
                     },
-                    color: () => "#000f",
+                    color: () => "#f4afe0",
                     friction: () => 0.15,
                     initialPosition: ({ canvasDimensions }) => {
                         return new Vector(
@@ -35,4 +35,4 @@ const Imane = () => {
     );
 };
 
-export default Imane;
+export default IMANE;

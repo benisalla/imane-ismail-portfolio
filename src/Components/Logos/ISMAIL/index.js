@@ -4,7 +4,7 @@ import ParticleImage, { forces, Vector } from "react-particle-image";
 import ImgTarget from "../../../assets/AnimSrc/ismail.png";
 
 
-const Ismail = () => {
+const ISMAIL = () => {
     return (
         <div className={style.main} style={{ backgroundColor: "#000" }}>
             <ParticleImage
@@ -35,4 +35,4 @@ const Ismail = () => {
     );
 };
 
-export default Ismail;
+export default ISMAIL;

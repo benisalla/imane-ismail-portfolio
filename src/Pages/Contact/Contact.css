@@ -1,0 +1,73 @@
+.home{
+    width: 100%;
+    overflow: hidden;
+}
+
+.imanePart{
+    margin-top: -100px;
+    float: right;
+    width: 37%;
+    height: 100%;
+}
+.imanepart .imane{
+    right: 0;
+    margin-top: 300px;
+    height: 200px;
+    width:500px
+}
+
+.imanePart .right{
+    position: absolute;
+    border-radius:  30% 70% 64% 36% / 33% 56% 44% 67% ;
+    background-color: #4B3869;
+    width: 40%;
+    height: 50%;
+    margin-left: -37px;
+    margin-top: -100px;
+}
+.ismailPart{
+    margin-top: -100px;
+    float: left;
+    width: 37%;
+    height: 100%;
+}
+
+.ismail{
+    left: 0;
+    margin-top: 300px;
+    height: 200px;
+    width:500px
+}
+.desc h3{
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+.desc p{
+ padding-right: 30px;
+ padding-left: 40px;
+}
+.iconsRight{
+    margin-top:50px;
+
+    margin-left: 130px;
+}
+
+.iconsLeft{
+left: 0px;
+margin-left: 130px;
+margin-top:50px
+}
+
+.left{
+    position: absolute;
+    border-radius:  30% 70% 64% 36% / 33% 56% 44% 67% ;
+    background-color: #4B3869;
+    width: 40%;
+    height: 50%;
+    margin-right: -3px;
+    margin-top: -100px;
+}
+
+

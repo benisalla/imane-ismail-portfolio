@@ -1,5 +1,6 @@
 import { Route, Routes, useLocation } from "react-router";
 import Home from "./Pages/Home";
+import  Contact from "./Pages/Contact";
 import Team from "./Pages/Team";
 import Calender from "./Pages/Calender";
 import styled from "styled-components";
@@ -26,11 +27,11 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={"Loading ..."}>
+      {/* <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
           <Scene />
         </Canvas>
-      </Suspense>
+      </Suspense> */}
       <Sidebar />
       <Pages>
         <AnimatePresence>
@@ -40,6 +41,8 @@ function App() {
             <Route path="/calender" element={<Calender/>} />
             <Route path="/projects" element={<Projects/>} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+
           </Routes>
         </AnimatePresence>
       </Pages>

@@ -58,7 +58,7 @@ export default function TeamCard({ data }) {
                     src={data.isIsmail ? IsmailProfile : ImaneProfile}
                     sx={{
                         borderRadius: 0.6,
-                        width: { xs: '100%', sm: 240 },
+                        width: { xs: '40%', sm: 240 },
                         height: { xs: 'auto', sm: 300 },
                         mr: { sm: 1.5 },
                         mb: { xs: 1.5, sm: 1 },
