@@ -11,7 +11,7 @@ import AboutCard from './components/AboutCard';
 import { useState } from 'react';
 import { Card } from '@mui/joy';
 import SkillCard from './components/SkillCard';
-
+import react from './skills/React.png'
 export const AboutContent = () => {
   const [loadingCV, setLoading] = useState(false);
 
@@ -68,13 +68,12 @@ export const AboutContent = () => {
                 lineHeight: '2rem',
                 padding: '1rem',
               }}>
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
-              motiviationnal text about us here, motiviationnal text about us here, motiviationnal text about us here,
+             Two young developers passionate by web developer ...
+              We believe that a great website should not only look beautiful but also function flawlessly, and we strive to achieve both.
+               we have worked on various projects, from small personal sites to full-stack websites. 
+              Our philosophy is to listen to your needs, understand your goals, and work collaboratively to bring your vision to life. 
+            We are committed to delivering high-quality work and exceeding your expectations.
+             Thank you for visiting our portfolio
             </Typography>
             <Box
               sx={
@@ -128,20 +127,33 @@ export const AboutContent = () => {
         <Chip label="Our Skills" sx={{ fontSize: '1rem', fontWeight: 600 }} />
       </Divider>
 
-      <Grid container spacing={1} style={{ margin: '2rem 0rem' }}>
-        <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-          <SkillCard />
+      <Grid container spacing={5} style={{ margin: '5rem 0rem' }}>
+      <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{ display: "flex", justifyContent: "center" }}>
+          <SkillCard 
+           src= {require('./skills/React.png')} 
+           alt=" react"/>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-          <SkillCard />
+        <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{ margin: '1rem 1rem' ,display: "flex", justifyContent: "center" }}>
+          <SkillCard 
+           src= {require('./skills/next.png')} 
+           alt=" next"/>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-          <SkillCard />
+        <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{ margin: '1rem 1rem' ,display: "flex", justifyContent: "center" }}>
+          <SkillCard
+           src= {require('./skills/java.png')} 
+           alt=" java"/>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-          <SkillCard />
+        <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{margin: '1rem 4rem' , display: "flex", justifyContent: "center" }}>
+          <SkillCard 
+           src= {require('./skills/dotnet.png')} 
+           alt=" dotnet"/>
         </Grid>
-      </Grid>
+        <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{ margin: '1rem 1rem' , display: "flex", justifyContent: "center" }}>
+          <SkillCard
+           src= {require('./skills/Csharp.png')} 
+           alt=" c"/> 
+        </Grid>
+        </Grid>
 
       {/* --------------------------------------------------------------------- */}
 
@@ -158,7 +170,7 @@ export const AboutContent = () => {
             variant="body2"
             color="text.secondary"
           >
-            9:30 am
+            2022-2023
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
@@ -169,7 +181,7 @@ export const AboutContent = () => {
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
-              Eat
+            2nd year computer engineering
             </Typography>
             <Typography>Because you need strength</Typography>
           </TimelineContent>
@@ -180,7 +192,7 @@ export const AboutContent = () => {
             variant="body2"
             color="text.secondary"
           >
-            10:00 am
+            2021-2022
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
@@ -191,12 +203,19 @@ export const AboutContent = () => {
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
-              Code
+            1st year computer science engineering
             </Typography>
             <Typography>Because it&apos;s awesome!</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
+        <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            variant="body2"
+            color="text.secondary"
+          >
+            2019-2021
+          </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot color="primary" variant="outlined">
@@ -206,12 +225,19 @@ export const AboutContent = () => {
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
-              Sleep
+            Integrated preparatory cycle at the national school of applied science in Fes 
             </Typography>
             <Typography>Because you need rest</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
+           <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            variant="body2"
+            color="text.secondary"
+          >
+            2018-2019
+          </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
             <TimelineDot color="secondary">
@@ -221,7 +247,7 @@ export const AboutContent = () => {
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
-              Repeat
+            Baccalaureate of science physics 
             </Typography>
             <Typography>Because this is the life you love!</Typography>
           </TimelineContent>
