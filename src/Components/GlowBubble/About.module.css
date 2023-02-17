@@ -16,7 +16,7 @@
 
 .aboutBackground::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: #F90;
+    background-color: #CCAEA4;
     background-image: -webkit-linear-gradient(90deg,
             rgba(255, 255, 255, .2) 25%,
             transparent 25%,
@@ -44,13 +44,13 @@
     left: 0;
     will-change: transform;
     border-radius: 50%;
-    background: rgb(234 200 10);
+    background: #CCAEA4;
     box-shadow: 10px 10px 10px 0px rgb(0 0 0);
     opacity: 1;
     z-index: 3;
-    box-shadow: 0 0 60px 30px #e61212,
-        0 0 140px 70px rgb(184 35 32),
-        0 0 140px 90px #03a9f4;
+    box-shadow: 0 0 60px 30px #C18845,
+        0 0 140px 70px #FFAE9D,
+        0 0 140px 90px #5D7052;
 }
 
 @keyframes pulse {

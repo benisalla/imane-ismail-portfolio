@@ -1,27 +1,27 @@
 import React from "react";
 import style from "./style.module.css";
 import ParticleImage, { forces, Vector } from "react-particle-image";
-import ImgTarget from "../../../assets/AnimSrc/imane-png.png";
+import ImgTarget from "../../../assets/AnimSrc/find-us.png";
 
 
-const IMANE = () => {
+const FindUsLogo = () => {
     return (
-        <div className={style.main} style={{ backgroundColor: "#0000" }}>
+        <div className={style.main}>
             <ParticleImage
-                scale={1.3}
-                maxParticles={5000}
+                scale={0.8}
+                maxParticles={9000}
                 backgroundColor="#0000"
                 src={ImgTarget}
                 mouseMoveForce={(x, y) => forces.disturbance(x, y, 6)}
                 touchMoveForce={(x, y) => forces.disturbance(x, y, 6)}
                 mouseDownForce={(x, y) => forces.disturbance(x, y, 50)}
                 particleOptions={{
-                    mass: () => 40,
+                    mass: () => 60,
                     filter: ({ x, y, image }) => {
                         const pixel = image.get(x, y);
                         return pixel.r === 255;
                     },
-                    color: () => "#f4afe0",
+                    color: () => "#000",
                     friction: () => 0.15,
                     initialPosition: ({ canvasDimensions }) => {
                         return new Vector(
@@ -35,4 +35,4 @@ const IMANE = () => {
     );
 };
 
-export default IMANE;
+export default FindUsLogo;

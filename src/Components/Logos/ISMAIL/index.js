@@ -1,16 +1,16 @@
 import React from "react";
 import style from "./style.module.css";
 import ParticleImage, { forces, Vector } from "react-particle-image";
-import ImgTarget from "../../../assets/AnimSrc/ismail.png";
+import ImgTarget from "../../../assets/AnimSrc/ismail-png.png";
 
 
-const Ismail = () => {
+const ISMAIL = () => {
     return (
-        <div className={style.main} style={{ backgroundColor: "#000" }}>
+        <div className={style.main} style={{ backgroundColor: "#0000" }}>
             <ParticleImage
-                scale={4}
+                scale={1.3}
                 maxParticles={5000}
-                backgroundColor="#000"
+                backgroundColor="#0000"
                 src={ImgTarget}
                 mouseMoveForce={(x, y) => forces.disturbance(x, y, 6)}
                 touchMoveForce={(x, y) => forces.disturbance(x, y, 6)}
@@ -35,4 +35,4 @@ const Ismail = () => {
     );
 };
 
-export default Ismail;
+export default ISMAIL;
