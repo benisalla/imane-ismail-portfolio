@@ -1,12 +1,11 @@
 import IMANE from "../../Components/Logos/IMANE";
 import ISMAIL from "../../Components/Logos/ISMAIL";
-import MotionHoc from "../MotionHoc";
 import SocialLink from "../../Components/SocialLink/SocialLink";
 import "./Contact.css"
 import { PageLayout } from "../../Components/PageLayout";
 import ReactCurvedText from 'react-curved-text';
 
-const ContactComponent = () => {
+const ContactContent = () => {
 
 
   return (
@@ -79,6 +78,4 @@ const ContactComponent = () => {
   );
 };
 
-const Contact = MotionHoc(ContactComponent);
-
-export default Contact;
+export default ContactContent;
