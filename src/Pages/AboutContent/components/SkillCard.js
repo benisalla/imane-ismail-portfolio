@@ -1,23 +1,21 @@
-import { Card, Typography } from '@mui/joy';
-import { LinearProgress } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, Card, Typography } from '@mui/material';
 import React from 'react'
 
-const SkillCard = ({src , alt }) => {
+const SkillCard = ({ src, title }) => {
 
-    const container ={
-        width: '200px',
-        height:'150px',
-        border_radius:'50%',
-        padding:'0px'
-        // border_color :'blue',
-    };
     return (
-       <div>
-            <div >
-                <img style={container} src={src} alt={alt}/>
-            </div>
-       </div>
+        <Card style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            padding: "1rem",
+        }}>
+            <Box style={{ margin: "1rem" }}>
+                <img src={src} width="60px" height="70px" />
+            </Box>
+            <Typography component="h1" style={{ color: "#fff", padding: '0.5rem', fontSize: '30px', textTransform: 'uppercase' }}>{title}</Typography>
+        </Card>
     )
 };
 

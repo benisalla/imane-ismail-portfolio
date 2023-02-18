@@ -109,7 +109,7 @@ export default function TeamCard({ data }) {
                             alignSelf: data.isLTR ? 'start' : 'end',
                         }
                     }>
-                    <Tooltip title={`CV of ${data.name}`}>
+                    <Tooltip title={`Resume of ${data.name}`}>
                         <LoadingButton
                             sx={{
                                 color: "#000",
