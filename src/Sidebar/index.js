@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import logo from "../assets/logo/robot.svg";
+import logo from "../assets/logo/dancing-little-robot.gif";
 import HomeIcon from '@mui/icons-material/Home';
 import Diversity2Icon from '@mui/icons-material/Diversity2';
 import InfoIcon from '@mui/icons-material/Info';
@@ -79,10 +79,10 @@ const SidebarContainer = styled.div`
 
 const Logo = styled.div`
   width: 2rem;
-
   img {
     width: 100%;
     height: auto;
+    border-radius: 50%;
   }
 `;
 
@@ -147,7 +147,7 @@ const Sidebar = () => {
   const handleClick = () => setClick(!click);
 
 
-  
+
 
   return (
     <Container style={{ zIndex: 10, position: "fixed", top: 0, left: 0 }}>

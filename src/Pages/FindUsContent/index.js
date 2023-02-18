@@ -69,7 +69,8 @@ export const FindUsContent = () => {
                 const fileURL = window.URL.createObjectURL(blob);
                 let alink = document.createElement('a');
                 alink.href = fileURL;
-                alink.download = 'SamplePDF.pdf';
+                // alink.download = 'ismail-ben-alla-cv.pdf';
+                
                 alink.click();
             })
         })
