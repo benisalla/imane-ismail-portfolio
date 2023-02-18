@@ -8,7 +8,6 @@ import PlaceIcon from '@mui/icons-material/Place';
 import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
-import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import PublicIcon from '@mui/icons-material/Public';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -17,6 +16,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import { LoadingButton } from '@mui/lab';
 import { useState } from 'react';
+import { SMTPClient } from 'emailjs';
 
 export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
     return (
@@ -70,12 +70,6 @@ export const FindUsContent = () => {
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Typography component="h1" style={{ color: "#000", padding: '1rem', fontSize: '34px', textTransform: 'uppercase' }}>Find us Easly</Typography>
             </Box>
-            {/* <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
-                    Here are some of our projects that we have completed
-                    using different technologies and programming languages.
-                </Typography>
-            </Box> */}
 
             <Grid container spacing={1} style={{ marginTop: "1rem" }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
@@ -212,3 +206,24 @@ export const FindUsContent = () => {
         </GlowBubble>
     )
 };
+
+
+const client = new SMTPClient({
+    user: 'user',
+    password: 'password',
+    host: 'smtp.your-email.com',
+    ssl: true,
+});
+
+try {
+    const message = await client.sendAsync({
+        text: 'i hope this works',
+        from: 'you <username@your-email.com>',
+        to: 'someone <someone@your-email.com>, another <another@your-email.com>',
+        cc: 'else <else@your-email.com>',
+        subject: 'testing emailjs',
+    });
+    console.log(message);
+} catch (err) {
+    console.error(err);
+}

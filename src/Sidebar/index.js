@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
-//All the svg files
 import logo from "../assets/logo.svg";
 import Home from "../assets/home-solid.svg";
 import Team from "../assets/social.svg";
 import Calender from "../assets/sceduled.svg";
 import Projects from "../assets/starred.svg";
 import Documents from "../assets/draft.svg";
-import PowerOff from "../assets/power-off-solid.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -284,24 +281,6 @@ const Sidebar = () => {
             <Text clicked={click}>Contact</Text>
           </Item>
         </SlickBar>
-
-        <Profile clicked={profileClick}>
-          <img
-            onClick={() => handleProfileClick()}
-            src="https://picsum.photos/200"
-            alt="Profile"
-          />
-          <Details clicked={profileClick}>
-            <Name>
-              <h4>Jhon&nbsp;Doe</h4>
-              <a href="/#">view&nbsp;profile</a>
-            </Name>
-
-            <Logout>
-              <img src={PowerOff} alt="logout" />
-            </Logout>
-          </Details>
-        </Profile>
       </SidebarContainer>
     </Container>
   );
