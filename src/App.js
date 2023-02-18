@@ -11,6 +11,7 @@ import Scene from "./Components/Robot/Scene";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import FindUs from "./Pages/FindUs";
+import SoundEffect from "./Components/SoundEffect";
 
 const Pages = styled.div`
   // width: 80vw;
@@ -22,10 +23,10 @@ const Pages = styled.div`
 function App() {
 
   const location = useLocation();
-  console.log(location)
 
   return (
     <>
+      <SoundEffect />
       <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
           <Scene />
@@ -40,7 +41,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/find-us" element={<FindUs />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact-us" element={<Contact />} />
           </Routes>
         </AnimatePresence>
       </Pages>

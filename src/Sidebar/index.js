@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
-import Home from "../assets/home-solid.svg";
-import Team from "../assets/social.svg";
-import Calender from "../assets/sceduled.svg";
-import Projects from "../assets/starred.svg";
-import Documents from "../assets/draft.svg";
+import { Link, NavLink } from "react-router-dom";
+
+import logo from "../assets/logo/robot.svg";
+import HomeIcon from '@mui/icons-material/Home';
+import Diversity2Icon from '@mui/icons-material/Diversity2';
+import InfoIcon from '@mui/icons-material/Info';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Box } from "@mui/material";
+
 
 const Container = styled.div`
   position: fixed;
@@ -93,7 +97,7 @@ const SlickBar = styled.ul`
   padding: 2rem 0;
 
   position: absolute;
-  top: 6rem;
+  top: 4rem;
   left: 0;
 
   width: ${(props) => (props.clicked ? "12rem" : "3.5rem")};
@@ -107,20 +111,22 @@ const Item = styled(NavLink)`
   width: 100%;
   padding: 1rem 0;
   cursor: pointer;
-
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   padding-left: 1rem;
 
   &:hover {
     border-right: 4px solid var(--white);
 
-    img {
+    Box {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
         brightness(103%) contrast(103%);
     }
   }
 
-  img {
+  Box {
     width: 1.2rem;
     height: auto;
     filter: invert(92%) sepia(4%) saturate(1033%) hue-rotate(169deg)
@@ -135,92 +141,13 @@ const Text = styled.span`
   transition: all 0.3s ease;
 `;
 
-const Profile = styled.div`
-  width: ${(props) => (props.clicked ? "14rem" : "3rem")};
-  height: 3rem;
-
-  padding: 0.5rem 1rem;
-  /* border: 2px solid var(--white); */
-  border-radius: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: ${(props) => (props.clicked ? "9rem" : "0")};
-
-  background-color: var(--black);
-  color: var(--white);
-
-  transition: all 0.3s ease;
-
-  img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-
-    &:hover {
-      border: 2px solid var(--grey);
-      padding: 2px;
-    }
-  }
-`;
-
-const Details = styled.div`
-  display: ${(props) => (props.clicked ? "flex" : "none")};
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Name = styled.div`
-  padding: 0 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h4 {
-    display: inline-block;
-  }
-
-  a {
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: var(--grey);
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
-const Logout = styled.button`
-  border: none;
-  width: 2rem;
-  height: 2rem;
-  background-color: transparent;
-
-  img {
-    width: 100%;
-    height: auto;
-    filter: invert(15%) sepia(70%) saturate(6573%) hue-rotate(2deg)
-      brightness(100%) contrast(126%);
-    transition: all 0.3s ease;
-    &:hover {
-      border: none;
-      padding: 0;
-      opacity: 0.5;
-    }
-  }
-`;
 
 const Sidebar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  const [profileClick, setprofileClick] = useState(false);
-  const handleProfileClick = () => setprofileClick(!profileClick);
+
+  
 
   return (
     <Container style={{ zIndex: 10, position: "fixed", top: 0, left: 0 }}>
@@ -228,16 +155,20 @@ const Sidebar = () => {
         Click
       </Button>
       <SidebarContainer>
-        <Logo>
-          <img src={logo} alt="logo" />
-        </Logo>
+        <Link
+          to="/"
+        >
+          <Logo>
+            <img src={logo} alt="logo" />
+          </Logo>
+        </Link>
         <SlickBar clicked={click}>
           <Item
             onClick={() => setClick(false)}
             activeclassname="active"
             to="/"
           >
-            <img src={Home} alt="Home" />
+            <Box><HomeIcon /></Box>
             <Text clicked={click}>Home</Text>
           </Item>
           <Item
@@ -245,15 +176,23 @@ const Sidebar = () => {
             activeclassname="active"
             to="/team"
           >
-            <img src={Team} alt="Team" />
+            <Box><Diversity2Icon /></Box>
             <Text clicked={click}>Team</Text>
+          </Item>
+          <Item
+            onClick={() => setClick(false)}
+            activeclassname="active"
+            to="/about-us"
+          >
+            <Box><InfoIcon /></Box>
+            <Text clicked={click}>About</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
             activeclassname="active"
             to="/projects"
           >
-            <img src={Calender} alt="Projects" />
+            <Box><EventAvailableIcon /></Box>
             <Text clicked={click}>Projects</Text>
           </Item>
           <Item
@@ -261,23 +200,15 @@ const Sidebar = () => {
             activeclassname="active"
             to="/find-us"
           >
-            <img src={Documents} alt="Find Us" />
-            <Text clicked={click}>Find Us</Text>
+            <Box><TravelExploreIcon /></Box>
+            <Text clicked={click}>Find</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
             activeclassname="active"
-            to="/about"
+            to="/contact-us"
           >
-            <img src={Projects} alt="about" />
-            <Text clicked={click}>About</Text>
-          </Item>
-          <Item
-            onClick={() => setClick(false)}
-            activeclassname="active"
-            to="/contact"
-          >
-            <img src={Projects} alt="about" />
+            <Box><ConnectWithoutContactIcon /></Box>
             <Text clicked={click}>Contact</Text>
           </Item>
         </SlickBar>

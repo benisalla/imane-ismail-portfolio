@@ -1,4 +1,4 @@
-import { Chip, Divider, Grid, Input, TextField, Tooltip, Typography } from '@mui/material'
+import { Button, Chip, Divider, FormControl, Grid, Input, TextField, Tooltip, Typography } from '@mui/material'
 import { Box } from '@mui/system';
 import React from 'react'
 import GlowBubble from '../../Components/GlowBubble';
@@ -14,9 +14,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import SendIcon from '@mui/icons-material/Send';
+import emailjs from 'emailjs-com';
+
 import { LoadingButton } from '@mui/lab';
 import { useState } from 'react';
-import { SMTPClient } from 'emailjs';
+import { useReducer } from 'react';
 
 export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
     return (
@@ -53,14 +56,34 @@ export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
     )
 }
 
+
 export const FindUsContent = () => {
 
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
+    const emailForm = useReducer();
 
     const DownLoadCvHandler = () => {
-        console.log("donwload cv");
+        fetch('../../assets/cv/ben_alla_ismail_cv.pdf').then(response => {
+            response.blob().then(blob => {
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = 'SamplePDF.pdf';
+                alink.click();
+            })
+        })
     };
+
+    const sendEmailHandler = (event) => {
+        event.preventDefault();
+        // to Mr ismail
+        emailjs.sendForm('service_5s0wiui', 'template_83upqxr', emailForm.current, 'W22FKR99ev5JVpQ9C');
+        // to Mrs imane
+        // emailjs.sendForm('service_5s0wiui', 'template_83upqxr', emailForm.current, 'W22FKR99ev5JVpQ9C');
+    }
+
+
 
     return (
         <GlowBubble>
@@ -114,69 +137,87 @@ export const FindUsContent = () => {
                 <Chip label="Feel Free to Send an Email 😀" sx={{ fontSize: '1rem', fontWeight: 600 }} />
             </Divider>
 
-            <Grid container spacing={1} style={{ marginTop: "1rem", justifyContent: "center" }}>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
-                    <input
-                        placeholder="Your Name ..."
-                        style={{
-                            borderRadius: "30px",
-                            fontSize: "1rem",
-                            padding: " 1rem 1.2rem",
-                            outline: "none",
-                            border: "none",
-                            backgroundColor: "#000",
-                            width: "100%",
-                            color: "white",
-                            resize: "none",
-                        }} />
+            <form ref={emailForm} >
+                <Grid container spacing={1} style={{ marginTop: "1rem", justifyContent: "center" }} variant="form" >
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
+                        <input
+                            name="sender_name"
+                            placeholder="Your Name ..."
+                            style={{
+                                borderRadius: "30px",
+                                fontSize: "1rem",
+                                padding: " 1rem 1.2rem",
+                                outline: "none",
+                                border: "none",
+                                backgroundColor: "#000",
+                                width: "100%",
+                                color: "white",
+                                resize: "none",
+                            }} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
+                        <input
+                            name="sender_email"
+                            placeholder="Your Email ..."
+                            style={{
+                                borderRadius: "30px",
+                                fontSize: "1rem",
+                                padding: " 1rem 1.2rem",
+                                outline: "none",
+                                border: "none",
+                                backgroundColor: "#000",
+                                width: "100%",
+                                color: "white",
+                                resize: "none",
+                            }} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
+                        <input
+                            name="sender_subject"
+                            placeholder="Subject ..."
+                            style={{
+                                borderRadius: "30px",
+                                fontSize: "1rem",
+                                padding: " 1rem 1.2rem",
+                                outline: "none",
+                                border: "none",
+                                backgroundColor: "#000",
+                                width: "100%",
+                                color: "white",
+                                resize: "none",
+                            }} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
+                        <textarea
+                            name="sender_message"
+                            placeholder="Your message ..."
+                            rows="8" cols="70"
+                            style={{
+                                borderRadius: "30px",
+                                fontSize: "1rem",
+                                padding: " 1rem 1.2rem",
+                                outline: "none",
+                                border: "none",
+                                backgroundColor: "#000",
+                                width: "100%",
+                                color: "white",
+                                resize: "none",
+                            }} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
+                        <Button type="submit" onClick={sendEmailHandler} variant="contained" endIcon={<SendIcon />}
+                            sx={{
+                                color: "#000",
+                                borderColor: '#000',
+                                margin: '0.5rem auto',
+                                padding: "0.5rem 3rem",
+                                borderRadius: '1rem',
+                            }}>
+                            Send
+                        </Button>
+                    </Grid>
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
-                    <input
-                        placeholder="Your Email ..."
-                        style={{
-                            borderRadius: "30px",
-                            fontSize: "1rem",
-                            padding: " 1rem 1.2rem",
-                            outline: "none",
-                            border: "none",
-                            backgroundColor: "#000",
-                            width: "100%",
-                            color: "white",
-                            resize: "none",
-                        }} />
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
-                    <input
-                        placeholder="Subject ..."
-                        style={{
-                            borderRadius: "30px",
-                            fontSize: "1rem",
-                            padding: " 1rem 1.2rem",
-                            outline: "none",
-                            border: "none",
-                            backgroundColor: "#000",
-                            width: "100%",
-                            color: "white",
-                            resize: "none",
-                        }} />
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
-                    <textarea
-                        placeholder="Your message ..."
-                        rows="8" cols="70"
-                        style={{
-                            borderRadius: "30px",
-                            fontSize: "1rem",
-                            padding: " 1rem 1.2rem",
-                            outline: "none",
-                            border: "none",
-                            backgroundColor: "#000",
-                            width: "100%",
-                            color: "white",
-                            resize: "none",
-                        }} />
-                </Grid>
-            </Grid>
+            </form>
 
             <Grid container spacing={1} style={{ marginTop: "1rem", marginBottom: "1rem", justifyContent: "center" }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
@@ -203,27 +244,6 @@ export const FindUsContent = () => {
                 </Grid>
             </Grid>
 
-        </GlowBubble>
+        </GlowBubble >
     )
 };
-
-
-const client = new SMTPClient({
-    user: 'user',
-    password: 'password',
-    host: 'smtp.your-email.com',
-    ssl: true,
-});
-
-try {
-    const message = await client.sendAsync({
-        text: 'i hope this works',
-        from: 'you <username@your-email.com>',
-        to: 'someone <someone@your-email.com>, another <another@your-email.com>',
-        cc: 'else <else@your-email.com>',
-        subject: 'testing emailjs',
-    });
-    console.log(message);
-} catch (err) {
-    console.error(err);
-}
