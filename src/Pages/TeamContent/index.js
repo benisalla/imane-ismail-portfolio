@@ -19,7 +19,8 @@ export const TeamContent = () => {
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
-    `
+    `,
+    url :"ben_alla_ismail_cv.pdf"
   }
   const imane = {
     isLTR: true,
@@ -33,7 +34,8 @@ export const TeamContent = () => {
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
-    `
+    `,
+    url : "Mouatassem Imane.pdf"
   }
 
   return (

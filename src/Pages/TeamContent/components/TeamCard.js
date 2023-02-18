@@ -19,10 +19,17 @@ export default function TeamCard({ data }) {
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
     const audioRef = useRef(null);
-
-    const DownLoadCvHandler = () => {
-        console.log("donwload cv");
-    };
+    
+    const DownloadCv = (url) => {
+        fetch(url).then(response => {
+            response.blob().then(blob => {
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = url;
+                alink.click();
+            })
+        })}
 
     const SpeachHandler = () => {
         setSpeak(prev => !prev);
@@ -120,7 +127,7 @@ export default function TeamCard({ data }) {
                                 marginRight: '0.4rem',
                                 borderRadius: '1rem',
                             }}
-                            onClick={DownLoadCvHandler}
+                            onClick={DownloadCv(data.url)}
                             loading={loadingCV}
                             loadingPosition="start"
                             endIcon={<CloudDownloadIcon />}
