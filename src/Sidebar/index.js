@@ -16,7 +16,7 @@ const Container = styled.div`
   position: fixed;
 
   .active {
-    border-right: 4px solid var(--white);
+    border-right: 4px solid #ffb11e;
 
     img {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
@@ -43,7 +43,7 @@ const Button = styled.button`
   &::before,
   &::after {
     content: "";
-    background-color: var(--white);
+    background-color: #ffb11e;
     height: 2px;
     width: 1rem;
     position: absolute;
@@ -87,7 +87,7 @@ const Logo = styled.div`
 `;
 
 const SlickBar = styled.ul`
-  color: var(--white);
+  color: #ffb11e;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -107,18 +107,18 @@ const SlickBar = styled.ul`
 
 const Item = styled(NavLink)`
   text-decoration: none;
-  color: var(--white);
+  color: #ffb11e;
   width: 100%;
   padding: 1rem 0;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   padding-left: 1rem;
 
   &:hover {
-    border-right: 4px solid var(--white);
+    border-right: 4px solid #ffb11e;
 
     Box {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
@@ -137,6 +137,7 @@ const Item = styled(NavLink)`
 const Text = styled.span`
   width: ${(props) => (props.clicked ? "100%" : "0")};
   overflow: hidden;
+  color: #ffb11e;
   margin-left: ${(props) => (props.clicked ? "1.5rem" : "0")};
   transition: all 0.3s ease;
 `;
@@ -168,7 +169,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/"
           >
-            <Box><HomeIcon /></Box>
+            <Box><HomeIcon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>Home</Text>
           </Item>
           <Item
@@ -176,7 +177,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/team"
           >
-            <Box><Diversity2Icon /></Box>
+            <Box><Diversity2Icon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>Team</Text>
           </Item>
           <Item
@@ -184,7 +185,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/about-us"
           >
-            <Box><InfoIcon /></Box>
+            <Box><InfoIcon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>About</Text>
           </Item>
           <Item
@@ -192,7 +193,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/projects"
           >
-            <Box><EventAvailableIcon /></Box>
+            <Box><EventAvailableIcon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>Projects</Text>
           </Item>
           <Item
@@ -200,7 +201,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/find-us"
           >
-            <Box><TravelExploreIcon /></Box>
+            <Box><TravelExploreIcon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>Find</Text>
           </Item>
           <Item
@@ -208,7 +209,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/contact-us"
           >
-            <Box><ConnectWithoutContactIcon /></Box>
+            <Box><ConnectWithoutContactIcon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>Contact</Text>
           </Item>
         </SlickBar>
