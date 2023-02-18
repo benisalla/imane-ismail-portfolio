@@ -38,7 +38,7 @@ export const TeamContent = () => {
 
   return (
     <GlowBubble>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      {/* <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <TeamLogo />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -60,7 +60,7 @@ export const TeamContent = () => {
           <TeamCard data={imane} />
         </Grid>
 
-      </Grid>
+      </Grid> */}
     </GlowBubble>
   )
 };

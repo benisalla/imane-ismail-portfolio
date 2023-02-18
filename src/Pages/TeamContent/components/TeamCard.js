@@ -122,9 +122,8 @@ export default function TeamCard({ data }) {
                             }}
                             onClick={DownLoadCvHandler}
                             loading={loadingCV}
-                            loadingPosition="start"
+                            loadingPosition="end"
                             endIcon={<CloudDownloadIcon />}
-                            startIcon={null}
                             variant="outlined"
                         >
                             <span>DownLoad CV</span>
