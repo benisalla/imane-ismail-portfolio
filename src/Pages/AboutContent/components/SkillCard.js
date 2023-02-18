@@ -9,12 +9,22 @@ const SkillCard = ({ src, title }) => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            padding: "1rem",
+            padding: "0.6rem",
+            margin: "0.4rem 0.4rem",
+            backgroundColor: "#0003",
+            minWidth: "160px",
+        }} sx={{
+            transition: "all 0.3s ease",
+            '&:hover': {
+                boxShadow: "#000 2px 2px 10px",
+            }
         }}>
-            <Box style={{ margin: "1rem" }}>
-                <img src={src} width="60px" height="70px" />
+            <Box style={{ margin: "0.5rem" }}>
+                <img src={src} width="100px" height="100px" />
             </Box>
-            <Typography component="h1" style={{ color: "#fff", padding: '0.5rem', fontSize: '30px', textTransform: 'uppercase' }}>{title}</Typography>
+            <Typography component="h1" style={{ color: "#000", padding: '0.5rem', fontWeight: '600', fontSize: '20px', textTransform: 'uppercase' }}>
+                {title}
+            </Typography>
         </Card>
     )
 };

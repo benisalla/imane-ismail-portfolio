@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { Card } from '@mui/joy';
 import SkillCard from './components/SkillCard';
 import react from './skills/React.png'
+import SoftSkills from './components/SoftSkills';
 export const AboutContent = () => {
   const [loadingCV, setLoading] = useState(false);
 
@@ -123,15 +124,13 @@ export const AboutContent = () => {
       {/* ------------------------------------------------------------------------------- */}
 
 
-      <Divider sx={{ padding: '0.4rem 1rem', }}>
+      <Divider sx={{ padding: '2rem 1rem', }}>
         <Chip label="Our Soft-Skills" sx={{ fontSize: '1rem', fontWeight: 600 }} />
       </Divider>
 
-      <Grid container spacing={5} style={{ margin: '5rem 0rem' }}>
-        <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{ display: "flex", justifyContent: "center" }}>
-          <SkillCard
-            src={require('./skills/React.png')}
-            name="React" />
+      <Grid container spacing={5} >
+        <Grid item xs={12} sm={12} md={12} xl={12} lg={12} >
+          <SoftSkills />
         </Grid>
       </Grid>
 
@@ -139,22 +138,52 @@ export const AboutContent = () => {
       {/* ------------------------------------------------------------------------------- */}
 
 
-      <Divider sx={{ padding: '0.4rem 1rem', }}>
+      <Divider sx={{ padding: '2rem 1rem', }}>
         <Chip label="Our Technical Skills" sx={{ fontSize: '1rem', fontWeight: 600 }} />
       </Divider>
 
-      <Grid container spacing={5} style={{ margin: '5rem 0rem' }}>
-        <Grid item xs={12} sm={3} md={1.5} xl={1.5} lg={1.5} style={{ display: "flex", justifyContent: "center" }}>
+      <Grid container spacing={1}>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
             src={require('./skills/React.png')}
-            name="React" />
+            title="React" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/React.png')}
+            title="React" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/React.png')}
+            title="React" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/React.png')}
+            title="React" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/React.png')}
+            title="React" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/React.png')}
+            title="React" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/React.png')}
+            title="React" />
         </Grid>
       </Grid>
 
       {/* --------------------------------------------------------------------- */}
 
 
-      <Divider sx={{ padding: '0.4rem 1rem', }}>
+      <Divider sx={{ padding: '2rem 1rem', }}>
         <Chip label="Our TimeLine" sx={{ fontSize: '1rem', fontWeight: 600 }} />
       </Divider>
 
