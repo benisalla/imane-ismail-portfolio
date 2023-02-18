@@ -40,7 +40,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/find-us" element={<FindUs />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
           </Routes>
         </AnimatePresence>

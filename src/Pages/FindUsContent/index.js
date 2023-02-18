@@ -1,6 +1,6 @@
 import { Button, Chip, Divider, FormControl, Grid, Input, TextField, Tooltip, Typography } from '@mui/material'
 import { Box } from '@mui/system';
-import React from 'react'
+import React, { useRef } from 'react'
 import GlowBubble from '../../Components/GlowBubble';
 import FindUsLogo from '../../Components/Logos/FindUsLogo';
 
@@ -62,18 +62,10 @@ export const FindUsContent = () => {
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
     const emailForm = useReducer();
+    const alink = useRef();
 
     const DownLoadCvHandler = () => {
-        fetch('../../assets/cv/ben_alla_ismail_cv.pdf').then(response => {
-            response.blob().then(blob => {
-                const fileURL = window.URL.createObjectURL(blob);
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                // alink.download = 'ismail-ben-alla-cv.pdf';
-                
-                alink.click();
-            })
-        })
+        alink.current.click();
     };
 
     const sendEmailHandler = (event) => {
@@ -81,7 +73,7 @@ export const FindUsContent = () => {
         // to Mr ismail
         emailjs.sendForm('service_5s0wiui', 'template_83upqxr', emailForm.current, 'W22FKR99ev5JVpQ9C');
         // to Mrs imane
-        // emailjs.sendForm('service_5s0wiui', 'template_83upqxr', emailForm.current, 'W22FKR99ev5JVpQ9C');
+        emailjs.sendForm('service_zo6qs9s', 'template_uf3owpp', emailForm.current, 'wwXOU0MamY4x_a4cZ');
     }
 
 
@@ -240,6 +232,8 @@ export const FindUsContent = () => {
                             variant="outlined"
                         >
                             <span>DownLoad CV</span>
+                            <a ref={alink} href='../../assets/cv/ben_alla_ismail_cv.pdf' style={{display:"none"}}
+                            download="ismail-ben-alla-cv.pdf"></a>
                         </LoadingButton>
                     </Tooltip>
                 </Grid>
