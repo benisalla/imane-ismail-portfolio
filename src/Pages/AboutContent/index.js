@@ -163,33 +163,53 @@ export const AboutContent = () => {
         </Grid>
         <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
-            src={require('./skills/React.png')}
-            title="React" />
+            src={require('./skills/next.png')}
+            title="Nextjs" />
         </Grid>
         <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
-            src={require('./skills/React.png')}
-            title="React" />
+            src={require('./skills/Csharp.png')}
+            title="C#" />
         </Grid>
         <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
-            src={require('./skills/React.png')}
-            title="React" />
+            src={require('./skills/dotnet.png')}
+            title="Dotnet" />
         </Grid>
         <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
-            src={require('./skills/React.png')}
-            title="React" />
+            src={require('./skills/java.png')}
+            title="Java" />
         </Grid>
         <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
-            src={require('./skills/React.png')}
-            title="React" />
+            src={require('./skills/JEE.png')}
+            title="JEE " />
         </Grid>
         <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
           <SkillCard
-            src={require('./skills/React.png')}
-            title="React" />
+            src={require('./skills/spring.png')}
+            title="Spring boot " />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/DRF.png')}
+            title="Django " />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/github.png')}
+            title="Git/Github" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/laravel.png')}
+            title="Laravel" />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/oracle.png')}
+            title="Oracle " />
         </Grid>
       </Grid>
 
@@ -221,7 +241,7 @@ export const AboutContent = () => {
             <Typography variant="h6" component="span">
               2nd year computer engineering
             </Typography>
-            <Typography>Because you need strength</Typography>
+            <Typography>National school of applied science in Fes</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -243,7 +263,7 @@ export const AboutContent = () => {
             <Typography variant="h6" component="span">
               1st year computer science engineering
             </Typography>
-            <Typography>Because it&apos;s awesome!</Typography>
+            <Typography>National school of applied science in Fes</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -263,9 +283,9 @@ export const AboutContent = () => {
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
-              Integrated preparatory cycle at the national school of applied science in Fes
+              Integrated preparatory cycle 
             </Typography>
-            <Typography>Because you need rest</Typography>
+            <Typography>National school of applied science in Fes</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
