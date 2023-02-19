@@ -13,14 +13,18 @@ export const TeamContent = () => {
     name: "ben alla ismail",
     profession: "computer science engineer",
     description: `
-    I'm a Web Developer, I love to create beautiful and functional websites. 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, libero? 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
+    Hello, My name is Ben alla Ismail, and I'm a software engineering student who is enthusiastic 
+    about developing unique, user-friendly software solutions.
+    As a software engineer, I am always looking for new technologies to learn and apply in 
+    order to create robust, efficient, and scalable software solutions.
+    Among the programming languages I am familiar with are Java, C++, C#, and JavaScript.
+
+    and hands-on experience building web applications with frameworks like React.js and ASP.NET.
+    In addition to my technical abilities, I excel at communication, problem-solving, and teamwork.
+    I've worked on numerous projects both independently and as part of a team, and I'm familiar with the 
+    software development life cycle.
     `,
-    url :"ben_alla_ismail_cv.pdf"
+    url: "ben_alla_ismail_cv.pdf"
   }
   const imane = {
     isLTR: true,
@@ -30,13 +34,13 @@ export const TeamContent = () => {
     description: `
     Hello, I'm Mouatassem imane, a software engineering student passionate about building innovative and user-friendly software solutions. 
     As a software engineer, I'm constantly striving to learn and apply new technologies to create robust, efficient,
-     and scalable software solutions. I'm experienced in programming languages such as Java, C++,C# and JavaScript, 
-     and have hands-on experience in building web applications using frameworks like React.js and ASP.NET.
+    and scalable software solutions. I'm experienced in programming languages such as Java, C++,C# and JavaScript, 
+    and have hands-on experience in building web applications using frameworks like React.js and ASP.NET.
     In addition to my technical skills, I possess excellent communication, problem-solving, and teamwork skills. 
     I've worked on various projects both independently and as part of a team, and have experience in all stages of 
     the software development life cycle.
     `,
-    url : "Mouatassem Imane.pdf"
+    url: "Mouatassem Imane.pdf"
   }
 
   return (

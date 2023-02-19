@@ -29,9 +29,11 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.6.1",
     "react-three-fiber": "^6.0.13",
+    "react-tsparticles": "^2.9.3",
     "styled-components": "^5.3.6",
     "three": "^0.148.0",
     "three-stdlib": "^2.21.5",
+    "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
