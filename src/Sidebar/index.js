@@ -10,7 +10,7 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import styled from "styled-components";
 import { Box } from "@mui/material";
-
+import WcOutlinedIcon from '@mui/icons-material/WcOutlined';
 
 const Container = styled.div`
   position: fixed;
@@ -185,7 +185,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/about-us"
           >
-            <Box><InfoIcon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><WcOutlinedIcon sx={{ color: "#ffb11e" }} /></Box>
             <Text clicked={click}>About</Text>
           </Item>
           <Item

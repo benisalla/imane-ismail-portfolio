@@ -13,18 +13,31 @@ import { Card } from '@mui/joy';
 import SkillCard from './components/SkillCard';
 import react from './skills/React.png'
 import SoftSkills from './components/SoftSkills';
+import FileSaver from 'file-saver';
+
+
 export const AboutContent = () => {
   const [loadingCV, setLoading] = useState(false);
 
-  const DownLoadCvHandler = () => {
-    console.log("downloading the CVs");
-  };
-
+ 
   const Carddata = {
     title: '300+',
     firstWord: 'Projects',
     secondWord: 'Completted',
   };
+
+
+
+  const downloadPDFs = () => {
+    // Get the URLs of the PDF files
+    const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
+    const file2Url = process.env.PUBLIC_URL + '/Mouatassem Imane.pdf';
+    
+    // Download the PDF files
+    FileSaver.saveAs(file1Url, 'ben_alla_ismail_cv.pdf');
+    FileSaver.saveAs(file2Url, 'Mouatassem Imane.pdf');
+  }
+
 
   return (
     <GlowBubble>
@@ -91,13 +104,13 @@ export const AboutContent = () => {
                     padding: "0.5rem 1rem",
                     borderRadius: '1rem',
                   }}
-                  onClick={DownLoadCvHandler}
+                  onClick={downloadPDFs}
                   loading={loadingCV}
                   loadingPosition="start"
                   endIcon={<CloudDownloadIcon />}
                   variant="outlined"
                 >
-                  <span>DownLoad CV</span>
+                  <span>DownLoad CVs</span>
                 </LoadingButton>
               </Tooltip>
             </Box>
