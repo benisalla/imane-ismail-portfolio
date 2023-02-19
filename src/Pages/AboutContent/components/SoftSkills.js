@@ -88,26 +88,26 @@ function ColorlibStepIcon2(props) {
     };
     const moreInfo = {
         1: {
-            title: "Communication",
-            content: "Successful communication helps us better " +
-                "understand people and situations. It helps us " +
-                "overcome diversities, build trust and respect," +
-                "and create conditions ...",
+            title: "Adaptability",
+            content: 
+                "It is the key skill that has helped us succeed"+
+            " in a variety of roles and environments."+
+            "We were able to adjust our approach as needed, "+
+            "communicate effectively with team members who were resistant to change, "+
+            "and work collaboratively to find solutions to technical issues"
         },
         2: {
-            title: "Communication",
-            content: "Successful communication helps us better " +
-                "understand people and situations. It helps us " +
-                "overcome diversities, build trust and respect," +
-                "and create conditions ...",
+            title: "Hardwork",
+            content: "It helps us to develop a range of skills and experiences"+
+            " that can be valuable to our future employers or clients."
         },
         3: {
-            title: "Communication",
-            content: "Successful communication helps us better " +
-                "understand people and situations. It helps us " +
-                "overcome diversities, build trust and respect," +
-                "and create conditions ...",
+            title: "Creativity",
+            content: "It helps us to generate new ideas and concepts, "+
+            "suggest solutions to improve existing processes"+
+            "and to come up with new solutions on the fly.",
         },
+        
     };
 
 
@@ -139,25 +139,18 @@ function ColorlibStepIcon3(props) {
     };
     const moreInfo = {
         1: {
-            title: "Communication",
-            content: "Successful communication helps us better " +
-                "understand people and situations. It helps us " +
-                "overcome diversities, build trust and respect," +
-                "and create conditions ...",
+            title:"Teamwork",
+            content:"In many projects, we collaborate with others to brainstorm ideas, "+
+            "listen to and incorporate feedback from others ..."
         },
         2: {
-            title: "Communication",
-            content: "Successful communication helps us better " +
-                "understand people and situations. It helps us " +
-                "overcome diversities, build trust and respect," +
-                "and create conditions ...",
+            title: "problem-solving ",
+            content: " It's our ability to identify problems, analyze information, and develop effective solutions.",
         },
         3: {
-            title: "Communication",
-            content: "Successful communication helps us better " +
-                "understand people and situations. It helps us " +
-                "overcome diversities, build trust and respect," +
-                "and create conditions ...",
+            title: "Leadership",
+            content: " Our cability to motivate "+
+            "and inspire others, set goals and priorities, and communicate effectively with stakeholders."
         },
     };
 
@@ -179,12 +172,55 @@ function ColorlibStepIcon3(props) {
         </BootstrapTooltip>
     );
 }
+//------------------------------------------------------------------------------//
+function ColorlibStepIcon4(props) {
+    const { active, completed, className } = props;
 
+    const icons = {
+        1: <SettingsIcon />,
+        2: <GroupAddIcon />,
+        3: <VideoLabelIcon />,
+    };
+    const moreInfo = {
+        1: {
+            title:"Time management",
+            content: "  We can prioritize tasks, meet deadlines, and manage your workload effectively..",
+
+        },
+        2: {
+            title: "Creativity ",
+            content: "  We can prioritize tasks, meet deadlines, and manage your workload effectively..",
+        },
+        3: {
+            title: "networking",
+            content: " it's really impprtant to build and maintain professional relationships, and to network effectively to achieve goals"
+        },
+    };
+
+
+    return (
+        <BootstrapTooltip title={
+            <React.Fragment>
+                <Typography color="inherit" style={{ textAlign: "center" }} >
+                    {moreInfo[String(props.icon)].title}
+                </Typography>
+                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.1rem" }}>
+                    {moreInfo[String(props.icon)].content}
+                </Typography>
+            </React.Fragment>
+        }>
+            <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
+                {icons[String(props.icon)]}
+            </ColorlibStepIconRoot>
+        </BootstrapTooltip>
+    );
+}
 //======================================( titles )========================================//
 
 const steps1 = ['Communication'];
 const steps2 = ['Adaptability', 'Hardwork', 'Creativity'];
-const steps3 = ['Something', 'Something', 'Something'];
+const steps3 = ['Teamwork', 'Problem-solving', 'Leadership'];
+const steps4 = ['Time management', 'Creativity', 'Networking'];
 
 
 //=========================================( main )=====================================//
@@ -230,6 +266,24 @@ export default function SoftSkills() {
                     <Step key={label}>
                         <StepLabel
                             StepIconComponent={ColorlibStepIcon3}>
+                            <Typography style={{
+                                color: "#000e",
+                                fontSize: "1rem",
+                                fontWeight: "500",
+                                textTransform: 'uppercase',
+                                fontFamily: ["monospace", "sans-serif", "cursive"],
+                            }}>
+                                {label}
+                            </Typography>
+                        </StepLabel>
+                    </Step>
+                ))}
+            </Stepper>
+            <Stepper style={{ marginTop: "2rem", marginBottom: "2rem" }} alternativeLabel activeStep={3} connector={<ColorlibConnector />}>
+                {steps4.map((label) => (
+                    <Step key={label}>
+                        <StepLabel
+                            StepIconComponent={ColorlibStepIcon4}>
                             <Typography style={{
                                 color: "#000e",
                                 fontSize: "1rem",
