@@ -9,12 +9,12 @@ const TeamLogo = () => {
         <div className={style.main}>
             <ParticleImage
                 scale={0.45}
-                maxParticles={7000}
+                maxParticles={6000}
                 backgroundColor="#0000"
                 src={ImgTarget}
-                mouseMoveForce={(x, y) => forces.disturbance(x, y, 6)}
-                touchMoveForce={(x, y) => forces.disturbance(x, y, 6)}
-                mouseDownForce={(x, y) => forces.disturbance(x, y, 50)}
+                mouseMoveForce={(x, y) => forces.disturbance(x, y, 5)}
+                touchMoveForce={(x, y) => forces.disturbance(x, y, 5)}
+                mouseDownForce={(x, y) => forces.disturbance(x, y, 40)}
                 particleOptions={{
                     mass: () => 40,
                     filter: ({ x, y, image }) => {
@@ -22,7 +22,7 @@ const TeamLogo = () => {
                         return pixel.r > 254 && pixel.b > 254 && pixel.g > 254;
                     },
                     color: () => "#000",
-                    friction: () => 0.16,
+                    friction: () => 0.26,
                     initialPosition: ({ canvasDimensions }) => {
                         return new Vector(
                             canvasDimensions.width / 9,

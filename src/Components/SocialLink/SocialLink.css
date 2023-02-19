@@ -16,7 +16,7 @@
 
 .icon-core {
     font-size: 35px;
-    color: rgb(38, 37, 37);
+    color: rgb(0, 0, 0);
 }
 
 .icons-rows .icon {
@@ -45,7 +45,7 @@
 .icons-rows .icon span {
     display: inline-block;
     position: absolute;
-    background: #000;
+    background: #000000;
     transition: transform 0.9s;
 }
 

@@ -10,6 +10,7 @@ const ContactContent = () => {
 
   return (
     <PageLayout>
+
       <div className="home">
         <div className="imanePart">
           <IMANE className="imane" />
