@@ -13,16 +13,12 @@ export const TeamContent = () => {
     name: "ben alla ismail",
     profession: "computer science engineer",
     description: `
-    Hello, My name is Ben alla Ismail, and I'm a software engineering student who is enthusiastic 
-    about developing unique, user-friendly software solutions.
-    As a software engineer, I am always looking for new technologies to learn and apply in 
-    order to create robust, efficient, and scalable software solutions.
-    Among the programming languages I am familiar with are Java, C++, C#, and JavaScript.
-
-    and hands-on experience building web applications with frameworks like React.js and ASP.NET.
-    In addition to my technical abilities, I excel at communication, problem-solving, and teamwork.
-    I've worked on numerous projects both independently and as part of a team, and I'm familiar with the 
-    software development life cycle.
+    I am Ismail ben alla, a software engineering student who is dedicated to acquiring knowledge and
+    skills in my field through hard work and perseverance. My passion for software engineering is 
+    evident, and I have a particular interest in 3D animation, deep learning, and machine learning. 
+    As a good communicator, I am able to explain difficult technical concepts to a variety of audiences. 
+    With my creative mindset, 
+    I approach software development challenges in novel ways, allowing me to come up with innovative solutions.
     `,
     url: "ben_alla_ismail_cv.pdf"
   }
@@ -32,13 +28,12 @@ export const TeamContent = () => {
     name: "moutassem imane",
     profession: "computer science engineer",
     description: `
-    Hello, I'm Mouatassem imane, a software engineering student passionate about building innovative and user-friendly software solutions. 
-    As a software engineer, I'm constantly striving to learn and apply new technologies to create robust, efficient,
-    and scalable software solutions. I'm experienced in programming languages such as Java, C++,C# and JavaScript, 
-    and have hands-on experience in building web applications using frameworks like React.js and ASP.NET.
-    In addition to my technical skills, I possess excellent communication, problem-solving, and teamwork skills. 
-    I've worked on various projects both independently and as part of a team, and have experience in all stages of 
-    the software development life cycle.
+    I'm Mouatassem Imane, a software engineering student who has a love for developing cutting-edge, 
+    usable software. I'm dedicated to lifelong learning and utilizing cutting-edge technology to create
+    reliable, effective, and scalable software. I have knowledge of creating web applications with ASP.NET
+    and React.js technologies. I also have great communication, problem-solving, and teamwork abilities
+    as a result of 
+    my autonomous and group work on numerous projects over the whole software development life cycle.
     `,
     url: "Mouatassem Imane.pdf"
   }

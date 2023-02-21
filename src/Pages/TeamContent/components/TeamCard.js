@@ -19,7 +19,7 @@ export default function TeamCard({ data }) {
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
     const audioRef = useRef(null);
-    
+
     const DownloadCv = (url) => {
         fetch(url).then(response => {
             response.blob().then(blob => {
@@ -29,7 +29,8 @@ export default function TeamCard({ data }) {
                 alink.download = url;
                 alink.click();
             })
-        })}
+        })
+    }
 
     const SpeachHandler = () => {
         setSpeak(prev => !prev);
@@ -100,44 +101,54 @@ export default function TeamCard({ data }) {
                 }
             >
                 <Box>
-                    <Typography variant="h1" style={{ fontSize: '26px', textTransform: 'uppercase' }} color="text.secondary">
-                        {data.name}
-                    </Typography>
-                    <Typography variant="h6" style={{ textTransform: 'uppercase', color: '#111', margin: '0', marginBottom: '1rem', padding: '0', fontSize: 'x-small' }} color="text.secondary">
-                        {data.profession}
-                    </Typography>
-                    <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem' }}>
-                        {data.description}
-                    </Typography>
-                </Box>
-                <Box
-                    sx={
-                        {
-                            alignSelf: data.isLTR ? 'start' : 'end',
-                        }
-                    }>
-                    <Tooltip title={`Resume of ${data.name}`}>
-                        <LoadingButton
-                            sx={{
-                                color: "#000",
-                                borderColor: '#000',
-                                margin: '0.5rem',
-                                padding: "0.5rem 1rem",
-                                marginBottom: '0.4rem',
-                                marginRight: '0.4rem',
-                                borderRadius: '1rem',
-                            }}
-                            onClick={() => DownloadCv(data.url)}
-                            loading={loadingCV}
-                            loadingPosition="end"
-                            endIcon={<CloudDownloadIcon />}
-                            variant="outlined"
-                        >
-                            <span>DownLoad CV</span>
-                        </LoadingButton>
-                    </Tooltip>
-                </Box>
+                    <Typography variant="h1" style={{
+                        fontSize: '26px',
+                        textTransform: 'uppercase',
+                        fontFamily: "cursive",
+                    }} color="text.secondary">
+                    {data.name}
+                </Typography>
+                <Typography variant="h6" style={{
+                    textTransform: 'uppercase',
+                    color: '#111', margin: '0',
+                    marginBottom: '1rem', padding: '0',
+                    fontSize: 'x-small',
+                    fontFamily: "cursive",
+                }} color="text.secondary">
+                    {data.profession}
+                </Typography>
+                <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem', fontFamily: "monospace" }}>
+                    {data.description}
+                </Typography>
             </Box>
+            <Box
+                sx={
+                    {
+                        alignSelf: data.isLTR ? 'start' : 'end',
+                    }
+                }>
+                <Tooltip title={`Resume of ${data.name}`}>
+                    <LoadingButton
+                        sx={{
+                            color: "#000",
+                            borderColor: '#000',
+                            margin: '0.5rem',
+                            padding: "0.5rem 1rem",
+                            marginBottom: '0.4rem',
+                            marginRight: '0.4rem',
+                            borderRadius: '1rem',
+                        }}
+                        onClick={() => DownloadCv(data.url)}
+                        loading={loadingCV}
+                        loadingPosition="end"
+                        endIcon={<CloudDownloadIcon />}
+                        variant="outlined"
+                    >
+                        <span>DownLoad CV</span>
+                    </LoadingButton>
+                </Tooltip>
+            </Box>
+        </Box>
         </Card >
     );
 }
