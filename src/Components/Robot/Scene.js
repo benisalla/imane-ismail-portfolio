@@ -25,7 +25,7 @@ const Scene = ({ ready }) => {
         enableZoom={true}
         enablePan={true}
       />
-      <fog attach="fog" args={["#111111", 10, 10]} />
+      <fog attach="fog" args={["#111110", 10, 10]} />
       <Environment preset="night" />
       <group position={[0, -1, 0]}>
         <Robot />
@@ -34,13 +34,13 @@ const Scene = ({ ready }) => {
 
       <EffectComposer>
         <Bloom
-          blendFunction={BlendFunction.ADD}
-          intensity={1}
+          blendFunction={BlendFunction.LIGHTEN}
+          intensity={0.2}
           width={1000}
           height={1000}
-          kernelSize={4}
+          kernelSize={3}
           luminanceThreshold={0.15}
-          luminanceSmoothing={0.8}
+          luminanceSmoothing={0.7}
         />
         <ChromaticAberration
           blendFunction={BlendFunction.NORMAL}
@@ -57,7 +57,7 @@ export default Scene;
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(10000), { radius: 1.5 })
+    random.inSphere(new Float32Array(2500), { radius: 1.5 })
   );
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -76,8 +76,8 @@ const Stars = (props) => {
       >
         <PointMaterial
           transparent
-          color="#ffb11e"
-          size={0.005}
+          color="#fff"
+          size={0.028}
           sizeAttenuation={true}
           depthWrite={false}
           Bloom
@@ -86,9 +86,10 @@ const Stars = (props) => {
       <EffectComposer>
         <Bloom
           blendFunction={BlendFunction.ADD}
-          intensity={3}
-          width={300}
-          height={300}
+          intensity={20}
+          color="#fff"
+          width={400}
+          height={400}
           kernelSize={3}
           luminanceThreshold={0.15}
           luminanceSmoothing={0.7}

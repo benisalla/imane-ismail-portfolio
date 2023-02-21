@@ -53,8 +53,9 @@ export const TeamContent = () => {
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
-          Here are some of our projects that we have completed
-          using different technologies and programming languages.
+          We believe in staying current with industry trends and staying up-to-date with
+          the latest technologies and tools. We are committed to continuous learning and growth,
+          and I always strive to improve my skills and knowledge.
         </Typography>
       </Box>
 

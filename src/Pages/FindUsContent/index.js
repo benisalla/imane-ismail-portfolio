@@ -70,9 +70,7 @@ export const FindUsContent = () => {
 
     const sendEmailHandler = (event) => {
         event.preventDefault();
-        // to Mr ismail
         emailjs.sendForm('service_5s0wiui', 'template_83upqxr', emailForm.current, 'W22FKR99ev5JVpQ9C');
-        // to Mrs imane
         emailjs.sendForm('service_zo6qs9s', 'template_uf3owpp', emailForm.current, 'wwXOU0MamY4x_a4cZ');
     }
 
