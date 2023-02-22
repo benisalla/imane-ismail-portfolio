@@ -16,7 +16,7 @@ const Container = styled.div`
   position: fixed;
 
   .active {
-    border-right: 4px solid #ffb11e;
+    border-right: 4px solid #647bff;
 
     img {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
@@ -43,7 +43,7 @@ const Button = styled.button`
   &::before,
   &::after {
     content: "";
-    background-color: #ffb11e;
+    background-color: #647bff;
     height: 2px;
     width: 1rem;
     position: absolute;
@@ -87,7 +87,7 @@ const Logo = styled.div`
 `;
 
 const SlickBar = styled.ul`
-  color: #ffb11e;
+  color: #647bff;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ const SlickBar = styled.ul`
 
 const Item = styled(NavLink)`
   text-decoration: none;
-  color: #ffb11e;
+  color: #647bff;
   width: 100%;
   padding: 1rem 0;
   cursor: pointer;
@@ -118,7 +118,7 @@ const Item = styled(NavLink)`
   padding-left: 1rem;
 
   &:hover {
-    border-right: 4px solid #ffb11e;
+    border-right: 4px solid #647bff;
 
     Box {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
@@ -137,7 +137,7 @@ const Item = styled(NavLink)`
 const Text = styled.span`
   width: ${(props) => (props.clicked ? "100%" : "0")};
   overflow: hidden;
-  color: #ffb11e;
+  color: #647bff;
   margin-left: ${(props) => (props.clicked ? "1.5rem" : "0")};
   transition: all 0.3s ease;
 `;
@@ -169,7 +169,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/"
           >
-            <Box><HomeIcon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><HomeIcon sx={{ color: "#647bff" }} /></Box>
             <Text clicked={click}>Home</Text>
           </Item>
           <Item
@@ -177,7 +177,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/team"
           >
-            <Box><Diversity2Icon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><Diversity2Icon sx={{ color: "#647bff" }} /></Box>
             <Text clicked={click}>Team</Text>
           </Item>
           <Item
@@ -185,7 +185,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/about-us"
           >
-            <Box><WcOutlinedIcon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><WcOutlinedIcon sx={{ color: "#647bff" }} /></Box>
             <Text clicked={click}>About</Text>
           </Item>
           <Item
@@ -193,7 +193,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/projects"
           >
-            <Box><EventAvailableIcon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><EventAvailableIcon sx={{ color: "#647bff" }} /></Box>
             <Text clicked={click}>Projects</Text>
           </Item>
           <Item
@@ -201,7 +201,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/find-us"
           >
-            <Box><TravelExploreIcon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><TravelExploreIcon sx={{ color: "#647bff" }} /></Box>
             <Text clicked={click}>Find</Text>
           </Item>
           <Item
@@ -209,7 +209,7 @@ const Sidebar = () => {
             activeclassname="active"
             to="/contact-us"
           >
-            <Box><ConnectWithoutContactIcon sx={{ color: "#ffb11e" }} /></Box>
+            <Box><ConnectWithoutContactIcon sx={{ color: "#647bff" }} /></Box>
             <Text clicked={click}>Contact</Text>
           </Item>
         </SlickBar>

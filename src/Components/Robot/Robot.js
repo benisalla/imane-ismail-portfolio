@@ -8,6 +8,7 @@ const Robot = (props) => {
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();
   }, [names, actions]);
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

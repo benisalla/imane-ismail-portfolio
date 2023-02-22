@@ -26,7 +26,7 @@ const Scene = ({ ready }) => {
         enablePan={true}
       />
       <fog attach="fog" args={["#111110", 10, 10]} />
-      <Environment preset="night" />
+      <Environment preset="forest" />
       <group position={[0, -1, 0]}>
         <Robot />
       </group>
@@ -57,7 +57,7 @@ export default Scene;
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(2500), { radius: 1.5 })
+    random.inSphere(new Float32Array(2000), { radius: 1.5 })
   );
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;

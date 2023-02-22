@@ -47,7 +47,7 @@
     background: #CCAEA4;
     box-shadow: 10px 10px 10px 0px rgb(0 0 0);
     opacity: 1;
-    box-shadow: 0 0 60px 30px #ffb11ed4, 0 0 140px 70px #f0b443e8, 0 0 140px 90px #d59826f0
+    box-shadow: 0 0 60px 30px #647bff, 0 0 140px 70px #647bff, 0 0 140px 90px #647bff
 }
 
 @keyframes pulse {
