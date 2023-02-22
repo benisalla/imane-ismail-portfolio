@@ -21,7 +21,7 @@ const ISMAIL = () => {
                         const pixel = image.get(x, y);
                         return pixel.r === 255;
                     },
-                    color: () => "#ffb11e",
+                    color: () => "#647bff",
                     friction: () => 0.25,
                     initialPosition: ({ canvasDimensions }) => {
                         return new Vector(

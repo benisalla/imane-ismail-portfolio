@@ -196,15 +196,16 @@ export const FindUsContent = () => {
                             }} />
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
-                        <Button type="submit" onClick={sendEmailHandler} variant="contained" endIcon={<SendIcon />}
+                        <Button type="submit" onClick={sendEmailHandler} variant="outlined" endIcon={<SendIcon />}
                             sx={{
                                 color: "#000",
                                 borderColor: '#000',
                                 margin: '0.5rem auto',
-                                padding: "0.5rem 3rem",
+                                padding: "0.6rem 4rem",
                                 borderRadius: '1rem',
+
                             }}>
-                            Send
+                            Send It!
                         </Button>
                     </Grid>
                 </Grid>

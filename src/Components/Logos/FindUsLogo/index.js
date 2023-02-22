@@ -9,7 +9,7 @@ const FindUsLogo = () => {
         <div className={style.main}>
             <ParticleImage
                 scale={0.8}
-                maxParticles={4000}
+                maxParticles={2500}
                 backgroundColor="#0000"
                 src={ImgTarget}
                 mouseMoveForce={(x, y) => forces.disturbance(x, y, 5)}
