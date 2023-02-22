@@ -64,9 +64,33 @@ export const FindUsContent = () => {
     const emailForm = useReducer();
     const alink = useRef();
 
-    const DownLoadCvHandler = () => {
-        alink.current.click();
-    };
+    const ismailURL = "./files/ben_alla_ismail_cv.pdf";
+    const imaneURL = "./files/Mouatassem_Imane_cv.pdf";
+
+    const DownloadCv = () => {
+        setLoadingCV(() => true);
+        fetch(ismailURL).then(response => {
+            response.blob().then(blob => {
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = "ismail_ben_alla.pdf";
+                alink.click();
+            })
+        })
+        fetch(imaneURL).then(response => {
+            response.blob().then(blob => {
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = "mouatassem_imane.pdf";
+                alink.click();
+                setTimeout(() => {
+                    setLoadingCV(() => false);
+                }, 2000)
+            })
+        })
+    }
 
     const sendEmailHandler = (event) => {
         event.preventDefault();
@@ -224,15 +248,13 @@ export const FindUsContent = () => {
                                 marginRight: '0.4rem',
                                 borderRadius: '1rem',
                             }}
-                            onClick={DownLoadCvHandler}
+                            onClick={DownloadCv}
                             loading={loadingCV}
                             loadingPosition="start"
                             endIcon={<CloudDownloadIcon />}
                             variant="outlined"
                         >
                             <span>DownLoad CV</span>
-                            <a ref={alink} href='../../assets/cv/ben_alla_ismail_cv.pdf' style={{display:"none"}}
-                            download="ismail-ben-alla-cv.pdf"></a>
                         </LoadingButton>
                     </Tooltip>
                 </Grid>

@@ -25,6 +25,7 @@ export const TeamContent = () => {
   const imane = {
     isLTR: true,
     isIsmail: false,
+    Reader: `../../../assets/assets/audio/imane-voice.mp3`,
     name: "moutassem imane",
     profession: "computer science engineer",
     description: `
@@ -35,7 +36,7 @@ export const TeamContent = () => {
     as a result of 
     my autonomous and group work on numerous projects over the whole software development life cycle.
     `,
-    url: "Mouatassem Imane.pdf"
+    url: "mouatassem_imane_cv.pdf"
   }
 
   return (
