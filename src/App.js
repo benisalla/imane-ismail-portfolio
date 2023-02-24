@@ -26,12 +26,12 @@ function App() {
 
   return (
     <>
-       {/* <SoundEffect />
+       <SoundEffect />
       <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
           <Scene />
         </Canvas>
-      </Suspense>  */}
+      </Suspense> 
       <Sidebar />
       <Pages>
         <AnimatePresence>
