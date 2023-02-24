@@ -29,15 +29,39 @@ export const AboutContent = () => {
 
 
 
-  const downloadPDFs = () => {
-    // Get the URLs of the PDF files
-    const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
-    const file2Url = process.env.PUBLIC_URL + '/Mouatassem Imane.pdf';
+  // const downloadPDFs = () => {
+  //   // Get the URLs of the PDF files
+  //   const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
+  //   const file2Url = process.env.PUBLIC_URL + '/Mouatassem Imane.pdf';
     
-    // Download the PDF files
-    FileSaver.saveAs(file1Url, 'ben_alla_ismail_cv.pdf');
-    FileSaver.saveAs(file2Url, 'Mouatassem Imane.pdf');
+  //   // Download the PDF files
+    
+  //   FileSaver.saveAs(file1Url, 'ben_alla_ismail_cv.pdf');
+  //   FileSaver.saveAs(file2Url, 'Mouatassem Imane.pdf');
+  // }
+  const downloadPDFs = () => {
+    const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
+    const file2Url = process.env.PUBLIC_URL + '/mouatassem_imane_cv.pdf';
+  
+    Promise.all([
+      fetch(file1Url),
+      fetch(file2Url)
+    ])
+      .then(responses => {
+        // Convert the response objects to blob objects
+        const blobs = responses.map(response => response.blob());
+        return Promise.all(blobs);
+      })
+      .then(blobs => {
+        // Save the blobs as files using FileSaver.js
+        FileSaver.saveAs(blobs[0], 'ben_alla_ismail_cv.pdf');
+        FileSaver.saveAs(blobs[1], 'Mouatassem Imane.pdf');
+      })
+      .catch(error => {
+        console.error('Error downloading PDF files:', error);
+      });
   }
+  
 
   const themedesc1 = createTheme(
     {
@@ -45,13 +69,12 @@ export const AboutContent = () => {
             fontFamily:[
               'Righteous', 'cursive'
             ].join(','),
-            // fontWeightLight: 200,
-            // fontWeightRegular: 400,
-            // fontWeightMedium: 900,
-            fontSize:25,
+            fontWeightLight: 200,
+            fontWeightRegular: 400,
+            fontWeightMedium: 900,
+            fontSize:20,
         }
     })
-
     const themedesc = createTheme(
       {
           typography: {
@@ -75,7 +98,6 @@ export const AboutContent = () => {
         <Typography
         // component="h1" 
         style={{ color: "#000", padding: '1rem', 
-       // fontSize: '30px',
          textTransform: 'uppercase' }}>Who Are we ?</Typography>
       </ThemeProvider>
       </Box>
@@ -88,7 +110,7 @@ export const AboutContent = () => {
             color: "#000",
             padding: '2.3rem',
             border: "1px solid #000", borderRadius:
-              '1rem', margin: '1rem',fontSize:20
+              '1rem', margin: '1rem'
           }}>
           Here are some of our projects that we have completed
           using different technologies and programming languages.
