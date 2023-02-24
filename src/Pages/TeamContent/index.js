@@ -4,9 +4,44 @@ import React from 'react'
 import GlowBubble from '../../Components/GlowBubble';
 import TeamLogo from '../../Components/Logos/TeamLogo';
 import TeamCard from './components/TeamCard';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const TeamContent = () => {
 
+  const themeTitle = createTheme(
+    {
+        typography: {
+            fontFamily:[
+                'Mynerve', 'cursive'
+            ].join(','),
+            fontSize:30
+        }
+    }
+  )
+
+    const themedesc = createTheme(
+      {
+          typography: {
+              fontFamily:[
+                'Pacifico', 'cursive'
+              ].join(','),
+              fontSize:25,
+              fontWeightBold:800,
+          }
+      })
+
+      const themedesc1 = createTheme(
+        {
+            typography: {
+                fontFamily:[
+                  'Righteous', 'cursive'
+                ].join(','),
+                fontWeightLight: 200,
+                fontWeightRegular: 400,
+                fontWeightMedium: 900,
+                fontSize:20,
+            }
+        })
   const ismail = {
     isLTR: false,
     isIsmail: true,
@@ -44,27 +79,39 @@ export const TeamContent = () => {
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <TeamLogo />
       </Box>
+      <ThemeProvider  theme={themedesc1}>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Typography component="h1" style={{ color: "#000", padding: '1rem', fontSize: '30px', textTransform: 'uppercase' }}>Our Team</Typography>
+        <Typography  component="h1"  style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Our Team</Typography>
       </Box>
+      </ThemeProvider  >
+
+      
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
+      <ThemeProvider theme={themedesc1}>
+        <Typography component="h2" style={{ color: "#000", padding: '2.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
+        
           We believe in staying current with industry trends and staying up-to-date with
           the latest technologies and tools. We are committed to continuous learning and growth,
           and I always strive to improve my skills and knowledge.
+          
         </Typography>
+        </ThemeProvider>
       </Box>
-
-
+      
       <Grid container spacing={1}>
-        <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex", justifyContent: "center" }}>
+      
+        <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex",fontFamily:"Mynerve", justifyContent: "center" }}>
+        
           <TeamCard data={ismail} />
+        
         </Grid>
+     
         <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex", justifyContent: "center" }}>
           <TeamCard data={imane} />
         </Grid>
 
       </Grid>
+  
     </GlowBubble>
   )
 };

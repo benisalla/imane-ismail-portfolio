@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 270px;
     justify-content: space-around;
-    margin: -1rem auto;
+    margin: 0.3rem auto;
 }
 
 .icons-rows {
@@ -16,7 +16,7 @@
 
 .icon-core {
     font-size: 35px;
-    color: rgb(0, 0, 0);
+    color:  white
 }
 
 .icons-rows .icon {

@@ -46,7 +46,8 @@ const ContactContent = () => {
           <ISMAIL className="ismail" />
 
           <div className="desc shape">
-            <h3>
+            <h3             
+>
               <ReactCurvedText
                 width={370}
                 height={300}
@@ -62,7 +63,8 @@ const ContactContent = () => {
               />
             </h3>
 
-            <div className="icons">
+            <div className="icons"              
+              sx={{ marginTop : "100"}}  >
               <SocialLink
                 linkedin=""
                 github="https://github.com/benisalla"

@@ -38,7 +38,7 @@ function SocialLink({ linkedin, gmail, github, slack }) {
       </div>
 
 
-
+{/* 
       <div className='icons-rows'>
         <div className="icon">
           <a href={linkedin}>
@@ -68,7 +68,7 @@ function SocialLink({ linkedin, gmail, github, slack }) {
             <span></span><span></span><span></span><span></span>
           </a>
         </div>
-      </div>
+      </div> */}
 
 
     </div>

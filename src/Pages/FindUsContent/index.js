@@ -20,8 +20,19 @@ import emailjs from 'emailjs-com';
 import { LoadingButton } from '@mui/lab';
 import { useState } from 'react';
 import { useReducer } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
+    const themedesc = createTheme(
+        {
+            typography: {
+                fontFamily:[
+                  'Pacifico', 'cursive'
+                ].join(','),
+                fontSize:25,
+                fontWeightBold:800,
+            }
+        })
     return (
         <Box
             style={{
@@ -39,6 +50,7 @@ export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
                 borderRadius: "30px",
                 padding: "0.8rem 1rem",
             }}>
+                
             <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 {icon}
                 <Typography style={{ marginLeft: "1.5rem" }} variant='subtitle1'>{title}</Typography>
@@ -58,7 +70,18 @@ export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
 
 
 export const FindUsContent = () => {
-
+    const themedesc1 = createTheme(
+        {
+            typography: {
+                fontFamily:[
+                  'Righteous', 'cursive'
+                ].join(','),
+                fontWeightLight: 200,
+                fontWeightRegular: 400,
+                fontWeightMedium: 900,
+                fontSize:35,
+            }
+        })
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
     const emailForm = useReducer();
@@ -98,21 +121,36 @@ export const FindUsContent = () => {
         emailjs.sendForm('service_zo6qs9s', 'template_uf3owpp', emailForm.current, 'wwXOU0MamY4x_a4cZ');
     }
 
-
+    const themedesc = createTheme(
+        {
+            typography: {
+                fontFamily:[
+                  'Pacifico', 'cursive'
+                ].join(','),
+                fontSize:25,
+                fontWeightBold:800,
+            }
+        })
+  
 
     return (
         <GlowBubble>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <FindUsLogo />
             </Box>
+            <ThemeProvider  theme={themedesc1}>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Typography component="h1" style={{ color: "#000", padding: '1rem', fontSize: '34px', textTransform: 'uppercase' }}>Find us Easly</Typography>
-            </Box>
+
+                <Typography component="h1" style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Find us Easly</Typography>
+            </Box>  
+            </ThemeProvider>
 
             <Grid container spacing={1} style={{ marginTop: "1rem" }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
+                   <ThemeProvider theme={themedesc}>
                     <InfoItem icon={<PlaceIcon />} title="Location" value1="Moroco / fes" />
-                </Grid>
+                    </ThemeProvider>
+                    </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
                     <InfoItem icon={<EmailIcon />} title="Email" value1="ismail.benalla1@usmba.ac.ma" value2="imane@gmail.com" />
                 </Grid>
@@ -209,7 +247,7 @@ export const FindUsContent = () => {
                             rows="8" cols="70"
                             style={{
                                 borderRadius: "30px",
-                                fontSize: "1rem",
+                                fontSize: "2rem",
                                 padding: " 1rem 1.2rem",
                                 outline: "none",
                                 border: "none",
@@ -220,6 +258,7 @@ export const FindUsContent = () => {
                             }} />
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center", maxWidth: "600px", margin: "0.3rem" }}>
+                        
                         <Button type="submit" onClick={sendEmailHandler} variant="outlined" endIcon={<SendIcon />}
                             sx={{
                                 color: "#000",
@@ -227,10 +266,14 @@ export const FindUsContent = () => {
                                 margin: '0.5rem auto',
                                 padding: "0.6rem 4rem",
                                 borderRadius: '1rem',
+                                fontFamily:  'Pacifico',
 
                             }}>
-                            Send It!
+                                <ThemeProvider theme={themedesc}>
+                            Send It
+                            </ThemeProvider>
                         </Button>
+                     
                     </Grid>
                 </Grid>
             </form>
@@ -253,8 +296,9 @@ export const FindUsContent = () => {
                             loadingPosition="start"
                             endIcon={<CloudDownloadIcon />}
                             variant="outlined"
-                        >
+                        ><ThemeProvider theme={themedesc}>
                             <span>DownLoad CV</span>
+                            </ThemeProvider>
                         </LoadingButton>
                     </Tooltip>
                 </Grid>

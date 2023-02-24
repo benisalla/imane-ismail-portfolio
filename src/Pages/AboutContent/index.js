@@ -14,6 +14,7 @@ import SkillCard from './components/SkillCard';
 import react from './skills/React.png'
 import SoftSkills from './components/SoftSkills';
 import FileSaver from 'file-saver';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 export const AboutContent = () => {
@@ -38,6 +39,29 @@ export const AboutContent = () => {
     FileSaver.saveAs(file2Url, 'Mouatassem Imane.pdf');
   }
 
+  const themedesc1 = createTheme(
+    {
+        typography: {
+            fontFamily:[
+              'Righteous', 'cursive'
+            ].join(','),
+            // fontWeightLight: 200,
+            // fontWeightRegular: 400,
+            // fontWeightMedium: 900,
+            fontSize:25,
+        }
+    })
+
+    const themedesc = createTheme(
+      {
+          typography: {
+              fontFamily:[
+                  'Mynerve', 'cursive'
+              ].join(','),
+              fontSize:30
+          }
+      }
+    )
 
   return (
     <GlowBubble>
@@ -45,19 +69,32 @@ export const AboutContent = () => {
         <AboutUsLogo />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Typography component="h1" style={{ color: "#000", padding: '1rem', fontSize: '30px', textTransform: 'uppercase' }}>Who Are we ?</Typography>
+     
+      <ThemeProvider  theme={themedesc1}>
+
+        <Typography
+        // component="h1" 
+        style={{ color: "#000", padding: '1rem', 
+       // fontSize: '30px',
+         textTransform: 'uppercase' }}>Who Are we ?</Typography>
+      </ThemeProvider>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Typography component="h1"
+      <ThemeProvider  theme={themedesc1}>
+
+        <Typography 
+        //component="h1"
           style={{
             color: "#000",
-            padding: '1.3rem',
+            padding: '2.3rem',
             border: "1px solid #000", borderRadius:
-              '1rem', margin: '1rem'
+              '1rem', margin: '1rem',fontSize:20
           }}>
           Here are some of our projects that we have completed
           using different technologies and programming languages.
         </Typography>
+        </ThemeProvider>
+
       </Box>
 
 
@@ -69,19 +106,26 @@ export const AboutContent = () => {
               display: 'flex',
               flexDirection: 'column',
             }}>
-            <Typography variant='h1'
+               <ThemeProvider  theme={themedesc}>
+            <Typography
+            //  variant='h1'
               sx={{
-                fontSize: '2rem',
+                fontSize: '2.5rem',
                 textTransform: 'uppercase',
+                justifyContent: "center"
               }}>
-              Hi there, here is some information about us
+             Hi there,
+              here is some information about us
             </Typography>
-            <Typography variant='subtitle1'
+            </ThemeProvider>
+            <Typography
+             variant='subtitle1'
               sx={{
                 fontSize: '1.1rem',
                 lineHeight: '2rem',
                 padding: '1rem',
-              }}>
+              }}
+              >
               Two young developers passionate by web developer ...
               We believe that a great website should not only look beautiful but also function flawlessly, and we strive to achieve both.
               we have worked on various projects, from small personal sites to full-stack websites.
@@ -89,6 +133,7 @@ export const AboutContent = () => {
               We are committed to delivering high-quality work and exceeding your expectations.
               Thank you for visiting our portfolio
             </Typography>
+
             <Box
               sx={
                 {
@@ -114,9 +159,9 @@ export const AboutContent = () => {
                 </LoadingButton>
               </Tooltip>
             </Box>
+            
           </Card>
         </Grid>
-
         <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '2rem 0rem' }}>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
