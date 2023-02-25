@@ -26,13 +26,13 @@ function App() {
 
   return (
     <>
-       <SoundEffect />
-       <Suspense fallback={"Loading ..."}>
+      <SoundEffect />
+      <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
           <Scene />
         </Canvas>
-      </Suspense> 
-      <Sidebar /> 
+      </Suspense>
+      <Sidebar />
       <Pages>
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
