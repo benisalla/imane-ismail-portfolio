@@ -70,7 +70,7 @@ export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
 
 
 export const FindUsContent = () => {
-    const themedesc1 = createTheme(
+    const bigTitle = createTheme(
         {
             typography: {
                 fontFamily:[
@@ -79,7 +79,7 @@ export const FindUsContent = () => {
                 fontWeightLight: 200,
                 fontWeightRegular: 400,
                 fontWeightMedium: 900,
-                fontSize:35,
+                fontSize:30,
             }
         })
     const [loadingCV, setLoadingCV] = useState(false);
@@ -127,7 +127,7 @@ export const FindUsContent = () => {
                 fontFamily:[
                   'Pacifico', 'cursive'
                 ].join(','),
-                fontSize:25,
+                fontSize:18,
                 fontWeightBold:800,
             }
         })
@@ -138,7 +138,7 @@ export const FindUsContent = () => {
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <FindUsLogo />
             </Box>
-            <ThemeProvider  theme={themedesc1}>
+            <ThemeProvider  theme={bigTitle}>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
                 <Typography component="h1" style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Find us Easly</Typography>
@@ -152,16 +152,25 @@ export const FindUsContent = () => {
                     </ThemeProvider>
                     </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
-                    <InfoItem icon={<EmailIcon />} title="Email" value1="ismail.benalla1@usmba.ac.ma" value2="imane@gmail.com" />
+                <ThemeProvider theme={themedesc}>
+                    <InfoItem icon={<EmailIcon />} title="Email" value1="ismail.benalla1@usmba.ac.ma" value2="imane12mouatassem@gmail.com" />
+                </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
+                <ThemeProvider theme={themedesc}>
                     <InfoItem icon={<SchoolIcon />} title="Education" value1="Computer science engineering" />
+                </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
+                    
+                <ThemeProvider theme={themedesc}>
                     <InfoItem icon={<PhoneIcon />} title="Mobile Number" value1="(+212) 06 04 06 63 55" value2="(+212) 06 04 06 63 55" />
+                </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
+                <ThemeProvider theme={themedesc}> 
                     <InfoItem icon={<PublicIcon />} title="Languages" value1="English" value2="Frensh" />
+                </ThemeProvider>
                 </Grid>
             </Grid>
 
@@ -269,9 +278,9 @@ export const FindUsContent = () => {
                                 fontFamily:  'Pacifico',
 
                             }}>
-                                <ThemeProvider theme={themedesc}>
+                                {/* <ThemeProvider theme={themedesc}> */}
                             Send It
-                            </ThemeProvider>
+                            {/* </ThemeProvider> */}
                         </Button>
                      
                     </Grid>

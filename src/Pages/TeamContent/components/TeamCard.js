@@ -13,6 +13,7 @@ import IsmailProfile from "../../../assets/ProfileImages/ismail-ben-alla-1.jpg";
 import ImaneProfile from "../../../assets/ProfileImages/imane-moutassem-1.jpg";
 import ismailVoice from "../../../assets/audio/ismail-voice.mp3";
 import imaneVoice from "../../../assets/audio/imane-voice.mp3";
+import FileSaver from 'file-saver';
 
 
 
@@ -22,20 +23,24 @@ export default function TeamCard({ data }) {
     const audioRef = useRef(null);
 
     const DownloadCv = (url) => {
-        setLoadingCV(() => true);
-        fetch("./files/" + url).then(response => {
-            response.blob().then(blob => {
-                const fileURL = window.URL.createObjectURL(blob);
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = url;
-                alink.click();
-                setTimeout(() => {
-                    setLoadingCV(() => false);
-                }, 3000)
-            })
-        })
-    }
+        const Url = process.env.PUBLIC_URL + url;
+      
+        Promise.all([
+          fetch(Url),
+        ])
+          .then(responses => {
+            // Convert the response objects to blob objects
+            const blobs = responses.map(response => response.blob());
+            return Promise.all(blobs);
+          })
+          .then(blobs => {
+            // Save the blobs as files using FileSaver.js
+            FileSaver.saveAs(blobs[0], url);
+          })
+          .catch(error => {
+            console.error('Error downloading PDF files:', error);
+          });
+      }
 
     const SpeachHandler = () => {
         setSpeak(prev => !prev);

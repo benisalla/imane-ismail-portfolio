@@ -17,12 +17,24 @@ export const ProjectsContent = () => {
                 fontFamily:[
                   'Righteous', 'cursive'
                 ].join(','),
-                // fontWeightLight: 200,
-                // fontWeightRegular: 400,
-                // fontWeightMedium: 900,
-                // fontSize:30,
+                fontWeightLight: 200,
+                fontWeightRegular: 400,
+                fontWeightMedium: 900,
+                fontSize:20,
             }
         })
+        const bigTitle = createTheme(
+            {
+                typography: {
+                    fontFamily:[
+                      'Righteous', 'cursive'
+                    ].join(','),
+                    fontWeightLight: 200,
+                    fontWeightRegular: 400,
+                    fontWeightMedium: 900,
+                    fontSize:30,
+                }
+            })
     const projectsData = [
         {
             project_name: 'knknk',
@@ -88,6 +100,7 @@ export const ProjectsContent = () => {
             project_img: project1,
         }
     ]
+    
 
     return (
         <GlowBubble>
@@ -95,7 +108,7 @@ export const ProjectsContent = () => {
                 <ProjectLogo />
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <ThemeProvider  theme={themedesc1}>
+            <ThemeProvider  theme={bigTitle}>
 
                 <Typography 
                 //component="h1"
@@ -104,10 +117,12 @@ export const ProjectsContent = () => {
 
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <ThemeProvider  theme={themedesc1}>
                 <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
                     Here are some of our projects that we have completed
                     using different technologies and programming languages.
                 </Typography>
+            </ThemeProvider>
             </Box>
 
 

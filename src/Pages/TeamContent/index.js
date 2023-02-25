@@ -42,6 +42,19 @@ export const TeamContent = () => {
                 fontSize:20,
             }
         })
+
+        const bigTitle = createTheme(
+          {
+              typography: {
+                  fontFamily:[
+                    'Righteous', 'cursive'
+                  ].join(','),
+                  fontWeightLight: 200,
+                  fontWeightRegular: 400,
+                  fontWeightMedium: 900,
+                  fontSize:30,
+              }
+          })
   const ismail = {
     isLTR: false,
     isIsmail: true,
@@ -79,7 +92,7 @@ export const TeamContent = () => {
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <TeamLogo />
       </Box>
-      <ThemeProvider  theme={themedesc1}>
+      <ThemeProvider  theme={bigTitle}>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <Typography  component="h1"  style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Our Team</Typography>
       </Box>
