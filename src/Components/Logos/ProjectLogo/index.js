@@ -9,20 +9,21 @@ const ProjectLogo = () => {
         <div className={style.main}>
             <ParticleImage
                 scale={0.36}
-                maxParticles={7000}
+                maxParticles={5500}
+                entropy={4}
                 backgroundColor="#0000"
                 src={ImgTarget}
                 mouseMoveForce={(x, y) => forces.disturbance(x, y, 5)}
                 touchMoveForce={(x, y) => forces.disturbance(x, y, 5)}
                 mouseDownForce={(x, y) => forces.disturbance(x, y, 40)}
                 particleOptions={{
-                    mass: () => 40,
+                    mass: () => 13,
                     filter: ({ x, y, image }) => {
                         const pixel = image.get(x, y);
                         return pixel.r === 255;
                     },
                     color: () => "#000",
-                    friction: () => 0.25,
+                    friction: () => 0.16,
                     initialPosition: ({ canvasDimensions }) => {
                         return new Vector(
                             canvasDimensions.width / 9,

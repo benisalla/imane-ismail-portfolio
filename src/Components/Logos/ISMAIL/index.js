@@ -11,6 +11,7 @@ const ISMAIL = () => {
                 scale={1.3}
                 maxParticles={1400}
                 backgroundColor="#0000"
+                entropy={10}
                 src={ImgTarget}
                 mouseMoveForce={(x, y) => forces.disturbance(x, y, 5)}
                 touchMoveForce={(x, y) => forces.disturbance(x, y, 5)}

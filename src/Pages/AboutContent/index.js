@@ -20,7 +20,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 export const AboutContent = () => {
   const [loadingCV, setLoading] = useState(false);
 
- 
+
   const Carddata = {
     title: '300+',
     firstWord: 'Projects',
@@ -33,16 +33,16 @@ export const AboutContent = () => {
   //   // Get the URLs of the PDF files
   //   const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
   //   const file2Url = process.env.PUBLIC_URL + '/Mouatassem Imane.pdf';
-    
+
   //   // Download the PDF files
-    
+
   //   FileSaver.saveAs(file1Url, 'ben_alla_ismail_cv.pdf');
   //   FileSaver.saveAs(file2Url, 'Mouatassem Imane.pdf');
   // }
   const downloadPDFs = () => {
     const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
     const file2Url = process.env.PUBLIC_URL + '/mouatassem_imane_cv.pdf';
-  
+
     Promise.all([
       fetch(file1Url),
       fetch(file2Url)
@@ -61,30 +61,30 @@ export const AboutContent = () => {
         console.error('Error downloading PDF files:', error);
       });
   }
-  
+
 
   const themedesc1 = createTheme(
     {
-        typography: {
-            fontFamily:[
-              'Righteous', 'cursive'
-            ].join(','),
-            fontWeightLight: 200,
-            fontWeightRegular: 400,
-            fontWeightMedium: 900,
-            fontSize:20,
-        }
-    })
-    const themedesc = createTheme(
-      {
-          typography: {
-              fontFamily:[
-                  'Mynerve', 'cursive'
-              ].join(','),
-              fontSize:30
-          }
+      typography: {
+        fontFamily: [
+          'Righteous', 'cursive'
+        ].join(','),
+        fontWeightLight: 200,
+        fontWeightRegular: 400,
+        fontWeightMedium: 900,
+        fontSize: 20,
       }
-    )
+    })
+  const themedesc = createTheme(
+    {
+      typography: {
+        fontFamily: [
+          'Mynerve', 'cursive'
+        ].join(','),
+        fontSize: 30
+      }
+    }
+  )
 
   return (
     <GlowBubble>
@@ -92,29 +92,31 @@ export const AboutContent = () => {
         <AboutUsLogo />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-     
-      <ThemeProvider  theme={themedesc1}>
 
-        <Typography
-        // component="h1" 
-        style={{ color: "#000", padding: '1rem', 
-         textTransform: 'uppercase' }}>Who Are we ?</Typography>
-      </ThemeProvider>
+        <ThemeProvider theme={themedesc1}>
+
+          <Typography
+            // component="h1" 
+            style={{
+              color: "#000", padding: '1rem',
+              textTransform: 'uppercase'
+            }}>Who Are we ?</Typography>
+        </ThemeProvider>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <ThemeProvider  theme={themedesc1}>
+        <ThemeProvider theme={themedesc1}>
 
-        <Typography 
-        //component="h1"
-          style={{
-            color: "#000",
-            padding: '2.3rem',
-            border: "1px solid #000", borderRadius:
-              '1rem', margin: '1rem'
-          }}>
-          Here are some of our projects that we have completed
-          using different technologies and programming languages.
-        </Typography>
+          <Typography
+            //component="h1"
+            style={{
+              color: "#000",
+              padding: '2.3rem',
+              border: "1px solid #000", borderRadius:
+                '1rem', margin: '1rem'
+            }}>
+            Here are some of our projects that we have completed
+            using different technologies and programming languages.
+          </Typography>
         </ThemeProvider>
 
       </Box>
@@ -128,26 +130,26 @@ export const AboutContent = () => {
               display: 'flex',
               flexDirection: 'column',
             }}>
-               <ThemeProvider  theme={themedesc}>
-            <Typography
-            //  variant='h1'
-              sx={{
-                fontSize: '2.5rem',
-                textTransform: 'uppercase',
-                justifyContent: "center"
-              }}>
-             Hi there,
-              here is some information about us
-            </Typography>
+            <ThemeProvider theme={themedesc}>
+              <Typography
+                //  variant='h1'
+                sx={{
+                  fontSize: '2.5rem',
+                  textTransform: 'uppercase',
+                  justifyContent: "center"
+                }}>
+                Hi there,
+                here is some information about us
+              </Typography>
             </ThemeProvider>
             <Typography
-             variant='subtitle1'
+              variant='subtitle1'
               sx={{
                 fontSize: '1.1rem',
                 lineHeight: '2rem',
                 padding: '1rem',
               }}
-              >
+            >
               Two young developers passionate by web developer ...
               We believe that a great website should not only look beautiful but also function flawlessly, and we strive to achieve both.
               we have worked on various projects, from small personal sites to full-stack websites.
@@ -181,7 +183,7 @@ export const AboutContent = () => {
                 </LoadingButton>
               </Tooltip>
             </Box>
-            
+
           </Card>
         </Grid>
         <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '2rem 0rem' }}>
@@ -350,7 +352,7 @@ export const AboutContent = () => {
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span">
-              Integrated preparatory cycle 
+              Integrated preparatory cycle
             </Typography>
             <Typography>National school of applied science in Fes</Typography>
           </TimelineContent>
