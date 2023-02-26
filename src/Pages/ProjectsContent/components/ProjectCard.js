@@ -70,7 +70,7 @@ export default function ProjectCard({ data }) {
                                         display: 'block',
                                     }}
                                 >
-                                    Project Name
+                                    {data.project_name}
                                 </Typography>
                             </Typography>
                             <Box sx={{ alignSelf: 'end', }}>

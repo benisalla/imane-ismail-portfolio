@@ -27,7 +27,7 @@ const reducer = (state, action) => {
 
 const ISIMControllerProvider = ({ children }) => {
     const initialState = {
-        isStartSound: false,
+        isStartSound: true,
         isMainSound: false,
         isImaneTalk: false,
         isIsmailTalk: false,
