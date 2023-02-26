@@ -86,7 +86,7 @@ export const AboutContent = () => {
     }
   )
 
-  
+
   const themeT = createTheme(
     {
       typography: {
@@ -135,7 +135,7 @@ export const AboutContent = () => {
       </Box>
 
 
-      <Grid container spacing={5} style={{ marginTop: '2rem' ,justifyContent: "center"}}>
+      <Grid container spacing={5} style={{ marginTop: '2rem', justifyContent: "center" }}>
         <Grid item xs={12} sm={12} md={12} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
           <Card
             sx={{
@@ -168,8 +168,8 @@ export const AboutContent = () => {
               we have worked on various projects, from small personal sites to full-stack websites.<br />
               Our philosophy is to listen to your needs, understand your goals, and work collaboratively to bring your vision to life.
               We are committed to delivering high-quality work and exceeding your expectations.<br />
-               Thank you for visiting our portfolio.
-             
+              Thank you for visiting our portfolio.
+
             </Typography>
 
             <Box
@@ -200,7 +200,7 @@ export const AboutContent = () => {
 
           </Card>
         </Grid>
-        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem' ,justifyContent: "flexend"}}>
+        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem', justifyContent: "flexend" }}>
           {/* <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
           </Grid>
