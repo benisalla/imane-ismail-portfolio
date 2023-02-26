@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import music from "../../assets/audio/sound-effect.mp3"
-import { setIsMainSound, useISIMController } from '../../context'
+import link1 from "../../assets/audio/sound-effect.mp3"
+import link2 from "../../assets/audio/first-sound-effect.mp3"
+import { setIsStartSound, useISIMController } from '../../context'
 
 const Box = styled.div`
 display:flex;
@@ -13,7 +14,7 @@ bottom:1rem;
 z-index:999;
 
 &>*:nth-child(1){
-    animation-delay: 0.1s;
+    animation-delay: 0.4s;
 }
 &>*:nth-child(2){
     animation-delay: 0.15s;
@@ -22,13 +23,13 @@ z-index:999;
     animation-delay: 0.2s;
 }
 &>*:nth-child(4){
-    animation-delay: 0.25s;
+    animation-delay: 0.35s;
 }
 &>*:nth-child(5){
-    animation-delay: 0.3s;
+    animation-delay: 0.5s;
 }
 &>*:nth-child(6){
-    animation-delay: 0.35s;
+    animation-delay: 0.2s;
 }
 &>*:nth-child(7){
     animation-delay: 0.4s;
@@ -37,10 +38,10 @@ z-index:999;
     animation-delay: 0.45s;
 }
 &>*:nth-child(9){
-    animation-delay: 0.5s;
+    animation-delay: 0.2s;
 }
 &>*:nth-child(10){
-    animation-delay: 0.55s;
+    animation-delay: 0.3s;
 }
 `
 
@@ -80,19 +81,24 @@ const colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 
 const SoundEffect = () => {
 
-    const ref = useRef(null);
+    const mainRef = useRef();
+    const firstRef = useRef();
+    const [isPlay, setIsPlay] = useState(false);
+    const [index, setIndex] = useState("one");
     const [isChangeColor, setIsChangeColor] = useState(false);
     const [color, setColor] = useState(colorArray[0])
     const [controller, dispatch] = useISIMController();
-    const { isMainSound } = controller;
+    const { isStartSound } = controller;
 
+    const mainSoundEffect = { "one": link1, "two": link2 }
 
     const playSoundEffectHandler = () => {
-        setIsMainSound(dispatch, !isMainSound);
-        if (!isMainSound) {
-            ref.current.play();
+        setIndex(() => 1);
+        setIsPlay(!isPlay);
+        if (!isPlay) {
+            mainRef.current.play();
         } else {
-            ref.current.pause();
+            mainRef.current.pause();
         }
     }
 
@@ -101,7 +107,7 @@ const SoundEffect = () => {
         const timer = setInterval(() => {
             const index = Math.floor(Math.random() * colorArray.length);
             setColor(() => colorArray[index]);
-            if (isMainSound) {
+            if (isPlay) {
                 setIsChangeColor(prev => !prev);
             } else {
                 clearInterval(timer);
@@ -115,25 +121,34 @@ const SoundEffect = () => {
 
 
     useEffect(() => {
-        if (isMainSound) {
+        if (isPlay) {
             setIsChangeColor(prev => !prev);
         }
-    }, [isMainSound])
+    }, [isPlay])
 
+    useEffect(() => {
+        if (isStartSound) {
+            setIndex(() => "two");
+            setIsPlay((prev) => false);
+        } else {
+            setIndex(() => "one");
+            setIsPlay((prev) => false);
+        }
+    }, [isStartSound])
 
     return (
         <Box onClick={() => playSoundEffectHandler()}>
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <Line isPlay={isMainSound} style={{ color }} />
-            <audio src={music} ref={ref} loop />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <Line isPlay={isPlay} style={{ color }} />
+            <audio src={mainSoundEffect[index]} ref={mainRef} loop />
         </Box>
     )
 }

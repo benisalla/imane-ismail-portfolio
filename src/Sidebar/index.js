@@ -11,6 +11,7 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import styled from "styled-components";
 import { Box } from "@mui/material";
 import WcOutlinedIcon from '@mui/icons-material/WcOutlined';
+import { setIsStartSound, useISIMController } from "../context";
 
 const Container = styled.div`
   position: fixed;
@@ -147,6 +148,8 @@ const Sidebar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
+  const [controller, dispatch] = useISIMController();
+
 
 
 
@@ -165,7 +168,7 @@ const Sidebar = () => {
         </Link>
         <SlickBar clicked={click}>
           <Item
-            onClick={() => setClick(false)}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, true) }}
             activeclassname="active"
             to="/"
           >
@@ -173,7 +176,7 @@ const Sidebar = () => {
             <Text clicked={click}>Home</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false) }}
             activeclassname="active"
             to="/team"
           >
@@ -181,7 +184,7 @@ const Sidebar = () => {
             <Text clicked={click}>Team</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false) }}
             activeclassname="active"
             to="/about-us"
           >
@@ -189,7 +192,7 @@ const Sidebar = () => {
             <Text clicked={click}>About</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false) }}
             activeclassname="active"
             to="/projects"
           >
@@ -197,7 +200,7 @@ const Sidebar = () => {
             <Text clicked={click}>Projects</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false) }}
             activeclassname="active"
             to="/find-us"
           >
@@ -205,7 +208,7 @@ const Sidebar = () => {
             <Text clicked={click}>Find</Text>
           </Item>
           <Item
-            onClick={() => setClick(false)}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false) }}
             activeclassname="active"
             to="/contact-us"
           >

@@ -175,7 +175,7 @@ export const AboutContent = () => {
                   }}
                   onClick={downloadPDFs}
                   loading={loadingCV}
-                  loadingPosition="start"
+                  loadingPosition="end"
                   endIcon={<CloudDownloadIcon />}
                   variant="outlined"
                 >
