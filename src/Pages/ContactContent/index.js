@@ -16,7 +16,7 @@ const ContactContent = () => {
           <IMANE className="imane" />
 
           <div className="desc shape">
-            <h3 style={{ color: "#fff !important" }}>
+            <h3>
               <ReactCurvedText
                 width={370}
                 height={300}
@@ -47,8 +47,8 @@ const ContactContent = () => {
           <ISMAIL className="ismail" />
 
           <div className="desc shape">
-            <h3
-            >
+            <h3             
+>
               <ReactCurvedText
                 width={370}
                 height={300}
@@ -64,8 +64,8 @@ const ContactContent = () => {
               />
             </h3>
 
-            <div className="icons"
-              sx={{ marginTop: "100" }}  >
+            <div className="icons"              
+              sx={{ marginTop : "100"}}  >
               <SocialLink
                 linkedin="https://www.linkedin.com/in/ismail-ben-alla-7144b5221/"
                 github="https://github.com/benisalla"
