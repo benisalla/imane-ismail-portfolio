@@ -127,7 +127,7 @@ export default function TeamCard({ data }) {
                     }} color="text.secondary">
                         {data.profession}
                     </Typography>
-                    <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem', fontFamily: "monospace" }}>
+                    <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem', fontFamily: "monospace", fontSize:"1.2rem" }}>
                         {data.description}
                     </Typography>
                 </Box>

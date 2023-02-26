@@ -29,7 +29,8 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
         color: theme.palette.common.black,
     },
     [`& .${tooltipClasses.tooltip}`]: {
-        backgroundColor: theme.palette.common.black,
+        // backgroundColor: theme.palette.common.black,
+        backgroundColor: '#111f28'
     },
 }));
 
@@ -37,7 +38,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     [`& .${stepConnectorClasses.line}`]: {
         top: 30,
         marginTop: "1rem",
-        backgroundColor: "#000",
+        backgroundColor: "#CCAEA4",
     },
 }));
 
@@ -75,7 +76,7 @@ function ColorlibStepIcon1(props) {
                 <Typography color="inherit" style={{ textAlign: "center" }} >
                     {moreInfo[String(props.icon)].title}
                 </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.1rem" }}>
+                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem" ,lineHeight:'1.2rem'}}>
                     {moreInfo[String(props.icon)].content}
                 </Typography>
             </React.Fragment>
@@ -126,7 +127,7 @@ function ColorlibStepIcon2(props) {
                 <Typography color="inherit" style={{ textAlign: "center" }} >
                     {moreInfo[String(props.icon)].title}
                 </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.1rem" }}>
+                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem" ,lineHeight:'1.2rem'}}>
                     {moreInfo[String(props.icon)].content}
                 </Typography>
             </React.Fragment>
@@ -170,7 +171,7 @@ function ColorlibStepIcon3(props) {
                 <Typography color="inherit" style={{ textAlign: "center" }} >
                     {moreInfo[String(props.icon)].title}
                 </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.1rem" }}>
+                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem",lineHeight:'1.2rem' }}>
                     {moreInfo[String(props.icon)].content}
                 </Typography>
             </React.Fragment>
@@ -215,7 +216,7 @@ function ColorlibStepIcon4(props) {
                 <Typography color="inherit" style={{ textAlign: "center" }} >
                     {moreInfo[String(props.icon)].title}
                 </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.1rem" }}>
+                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem",lineHeight:'1.2rem' }}>
                     {moreInfo[String(props.icon)].content}
                 </Typography>
             </React.Fragment>
@@ -296,7 +297,7 @@ export default function SoftSkills() {
                         <StepLabel
                             StepIconComponent={ColorlibStepIcon4}>
                             <Typography style={{
-                                color: "#000e",
+                                color: "#CCAEA4",
                                 fontSize: "1rem",
                                 fontWeight: "500",
                                 textTransform: 'uppercase',

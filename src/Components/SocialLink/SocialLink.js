@@ -2,10 +2,10 @@ import React from 'react'
 import { AiFillLinkedin } from 'react-icons/ai'
 import { SiGmail } from 'react-icons/si'
 import { BsGithub } from 'react-icons/bs'
-import { BsSlack } from 'react-icons/bs'
+import { BsTwitter } from 'react-icons/bs'
 import './SocialLink.css'
 
-function SocialLink({ linkedin, gmail, github, slack }) {
+function SocialLink({ linkedin, gmail, github, twitter }) {
   return (
     <div className="icons">
 
@@ -18,57 +18,26 @@ function SocialLink({ linkedin, gmail, github, slack }) {
           </a>
         </div>
         <div className="icon">
-          <a href={linkedin} >
+          <a href={gmail} >
             <SiGmail className='icon-core' />
             <span></span><span></span><span></span><span></span>
           </a>
         </div>
         <div className="icon">
-          <a href={linkedin} >
+          <a href={github} >
             <BsGithub className='icon-core' />
             <span></span><span></span><span></span><span></span>
           </a>
         </div>
         <div className="icon">
-          <a href={linkedin}>
-            <BsSlack className='icon-core' />
+          <a href={twitter}>
+            <BsTwitter className='icon-core' />
             <span></span><span></span><span></span><span></span>
           </a>
         </div>
       </div>
 
 
-{/* 
-      <div className='icons-rows'>
-        <div className="icon">
-          <a href={linkedin}>
-            <AiFillLinkedin className='icon-core' />
-            <span></span><span></span><span></span><span></span>
-          </a>
-        </div>
-        <div className="icon">
-          <a href={linkedin} >
-            <SiGmail className='icon-core' />
-            <span></span><span></span><span></span><span></span>
-          </a>
-        </div>
-        <div className="icon">
-          <a href={linkedin}>
-            <BsGithub className='icon-core' />
-            <span></span><span></span><span></span><span></span>
-          </a>
-        </div>
-      </div>
-
-
-      <div className='icons-rows'>
-        <div className="icon">
-          <a href={linkedin} >
-            <AiFillLinkedin className='icon-core' />
-            <span></span><span></span><span></span><span></span>
-          </a>
-        </div>
-      </div> */}
 
 
     </div>
