@@ -15,6 +15,7 @@ import react from './skills/React.png'
 import SoftSkills from './components/SoftSkills';
 import FileSaver from 'file-saver';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Center } from '@react-three/drei';
 
 
 export const AboutContent = () => {
@@ -27,18 +28,27 @@ export const AboutContent = () => {
     secondWord: 'Completted',
   };
 
+  const experience={
+    title: "1+",
+    firstWord:'Years of ',
+    secondWord:'Experience',
+
+  };
+
+  const customer={
+    title:"1+",
+    firstWord:'Customer',
+    secondWord:'Reviews',
+  }
+
+  const internship={
+    title:"2+",
+    firstWord:'Completed',
+    secondWord:'internships'
+  };
 
 
-  // const downloadPDFs = () => {
-  //   // Get the URLs of the PDF files
-  //   const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
-  //   const file2Url = process.env.PUBLIC_URL + '/Mouatassem Imane.pdf';
-
-  //   // Download the PDF files
-
-  //   FileSaver.saveAs(file1Url, 'ben_alla_ismail_cv.pdf');
-  //   FileSaver.saveAs(file2Url, 'Mouatassem Imane.pdf');
-  // }
+  
   const downloadPDFs = () => {
     const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
     const file2Url = process.env.PUBLIC_URL + '/mouatassem_imane_cv.pdf';
@@ -63,18 +73,19 @@ export const AboutContent = () => {
   }
 
 
-  const themedesc1 = createTheme(
-    {
-      typography: {
-        fontFamily: [
-          'Source Serif Pro', 'serif'
-        ].join(','),
-        fontWeightLight: 200,
-        fontWeightRegular: 400,
-        fontWeightMedium: 900,
-        fontSize: 20,
-      }
-    })
+
+    const themedesc1 = createTheme(
+      {
+        typography: {
+          fontFamily: [
+            'Righteous', 'cursive'
+          ].join(','),
+          fontWeightLight: 200,
+          fontWeightRegular: 400,
+          fontWeightMedium: 900,
+          fontSize: 20,
+        }
+      })
   const themedesc = createTheme(
     {
       typography: {
@@ -125,10 +136,11 @@ export const AboutContent = () => {
               color: "#000",
               padding: '2.3rem',
               border: "1px solid #000", borderRadius:
-                '1rem', margin: '1rem'
+                '1rem', margin: '1rem',
+                textAlign:'center'
             }}>
-            Here are some of our projects that we have completed
-            using different technologies and programming languages.
+            <strong >Learn about our values and story </strong> <br/> Discover moe about us by looking through our about page. 
+            Find out more about our purpose and future Vision.
           </Typography>
         </ThemeProvider>
 
@@ -155,6 +167,7 @@ export const AboutContent = () => {
                 here is some information about us
               </Typography>
             </ThemeProvider>
+            <ThemeProvider theme={themedesc1}>
             <Typography
               variant='subtitle1'
               sx={{
@@ -163,15 +176,16 @@ export const AboutContent = () => {
                 padding: '1rem',
               }}
             >
-              Two young developers passionate by web development ...<br />
-              We believe that a great website should not only look beautiful but also function flawlessly, and we strive to achieve both.<br />
-              we have worked on various projects, from small personal sites to full-stack websites.<br />
-              Our philosophy is to listen to your needs, understand your goals, and work collaboratively to bring your vision to life.
-              We are committed to delivering high-quality work and exceeding your expectations.<br />
-              Thank you for visiting our portfolio.
-
+              
+              Two young web developers who are incredibly passionate about their profession. 
+              Our focus is on attaining both because we are firmly convinced that a good website must not only have aesthetic 
+              appeal but also effective implementation. <br/>We have worked on everything from small personal projects to comprehensive 
+              full-stack websites. We adhere to the principle of carefully hearing your needs, understanding your goals, 
+              and collaborating closely with you to realize your vision. Our commitment is 
+              to produce work of the highest caliber and to exceed your expectations. <br/>We want to thank you for looking at our portfolio.
+               
             </Typography>
-
+            </ThemeProvider>
             <Box
               sx={
                 {
@@ -200,18 +214,18 @@ export const AboutContent = () => {
 
           </Card>
         </Grid>
-        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem', justifyContent: "flexend" }}>
-          {/* <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <AboutCard data={Carddata} />
-          </Grid>
+        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem' ,justifyContent: "flexend"}}>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
           </Grid>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <AboutCard data={Carddata} />
-          </Grid> */}
+            <AboutCard data={experience} />
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
+            <AboutCard data={customer} />
+          </Grid> 
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", alignItems: "flexend" }}>
-            <AboutCard data={Carddata} />
+            <AboutCard data={internship} />
           </Grid>
         </Grid>
       </Grid>
@@ -293,6 +307,11 @@ export const AboutContent = () => {
           <SkillCard
             src={require('./skills/oracle.png')}
             title="Oracle " />
+        </Grid>
+        <Grid item xs={6} sm={4} md={3} xl={2} lg={2} >
+          <SkillCard
+            src={require('./skills/SQL.png')}
+            title="sql" />
         </Grid>
       </Grid>
 
@@ -390,7 +409,7 @@ export const AboutContent = () => {
             <Typography variant="h6" component="span">
               Baccalaureate of science physics
             </Typography>
-            <Typography>Because this is the life you love!</Typography>
+            <Typography>Ibno rochd high school / Al bouhaira high school</Typography>
           </TimelineContent>
         </TimelineItem>
       </Timeline>

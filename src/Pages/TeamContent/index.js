@@ -113,7 +113,7 @@ export const TeamContent = () => {
 
       <Grid container spacing={1}>
 
-        <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex", fontFamily: "Mynerve", justifyContent: "center" }}>
+        <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex", fontFamily: "Mynerve", justifyContent: "center" , fontSize: "2.1rem"}}>
 
           <TeamCard data={ismail} />
 

@@ -27,16 +27,17 @@ const ContactContent = () => {
                 startOffset={50}
                 reversed={true}
                 tspanProps={{ dy: '10' }}
-                textProps={{ style: { fontSize: '16', color: "#fff" } }}
+                textProps={{ style: { fontSize: '16' ,color:'#fff'} }}
                 text="hi, these are my social media accounts."
+               
               />
             </h3>
             <div className="icons">
               <SocialLink
                 linkedin="https://www.linkedin.com/in/imane-mouatassem-3aa79a200/"
                 github="https://github.com/ImaneMouatassem"
-                gmail=""
-                slack=""
+                gmail="mailTo:imane12mouatassem@gmail.com"
+                twitter="https://twitter.com/ImaneMouatassem?t=7xkA4m0O70HTZaqtXXkBTg&s=09"
               />
             </div>
           </div>
@@ -66,10 +67,10 @@ const ContactContent = () => {
             <div className="icons"
               sx={{ marginTop: "100" }}  >
               <SocialLink
-                linkedin=""
+                linkedin="https://www.linkedin.com/in/ismail-ben-alla-7144b5221/"
                 github="https://github.com/benisalla"
-                gmail=""
-                slack=""
+                gmail="mailTo:ismailbenalla52@gmail.com"
+                twitter="https://twitter.com/ismail_ben_alla"
               />
             </div>
           </div>

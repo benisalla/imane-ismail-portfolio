@@ -24,15 +24,15 @@ export const ProjectsContent = () => {
 
     const themedesc1 = createTheme(
         {
-            typography: {
-                fontFamily: [
-                    'Source Serif Pro', 'serif'
-                ].join(','),
-                fontWeightLight: 200,
-                fontWeightRegular: 400,
-                fontWeightMedium: 900,
-                fontSize: 20,
-            }
+          typography: {
+            fontFamily: [
+              'Righteous', 'cursive'
+            ].join(','),
+            fontWeightLight: 200,
+            fontWeightRegular: 400,
+            fontWeightMedium: 900,
+            fontSize: 20,
+          }
         })
     const bigTitle = createTheme(
         {
@@ -133,17 +133,8 @@ export const ProjectsContent = () => {
             isIsmail: false,
             owner_name: "Imane",
             Techs: 'JAVA | Android Studio',
-            see_link: '#seeLinkHere',
+            see_link: 'https://github.com/ImaneMouatassem/Calculator',
             github_link: 'https://github.com/ImaneMouatassem/Calculator',
-            project_img: imaneCalcul,
-        },
-        {
-            project_name: '',
-            isIsmail: true,
-            owner_name: "Ismail",
-            Techs: 'React | MUI',
-            see_link: '#seeLinkHere',
-            github_link: '#githubLinkHere',
             project_img: imaneCalcul,
         },
         {
@@ -151,7 +142,7 @@ export const ProjectsContent = () => {
             isIsmail: false,
             owner_name: "Imane",
             Techs: 'Nextjs | API | Django rest framework ',
-            see_link: '#seeLinkHere',
+            see_link: 'https://github.com/ImaneMouatassem/Point-de-vente',
             github_link: 'https://github.com/ImaneMouatassem/Point-de-vente',
             project_img: multisale,
         }
@@ -175,8 +166,7 @@ export const ProjectsContent = () => {
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <ThemeProvider theme={themedesc1}>
                     <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
-                        Here are some of our projects that we have completed
-                        using different technologies and programming languages.
+                    Explore Our Accomplished projects developed using a variety of tools and programming languages.
                     </Typography>
                 </ThemeProvider>
             </Box>

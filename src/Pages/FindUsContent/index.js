@@ -16,6 +16,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import SendIcon from '@mui/icons-material/Send';
 import emailjs from 'emailjs-com';
+import FileSaver from 'file-saver';
 
 import { LoadingButton } from '@mui/lab';
 import { useState } from 'react';
@@ -101,28 +102,35 @@ export const FindUsContent = () => {
         emailjs.sendForm('service_zo6qs9s', 'template_uf3owpp', emailForm.current, 'wwXOU0MamY4x_a4cZ');
     }
 
-    const themedesc = createTheme(
-        {
-            typography: {
-                fontFamily:[
-                    'Source Serif Pro', 'serif'
-                ].join(','),
-                fontSize:16,
-                fontWeightBold:800,
-            }
-        })
   
+    const themedesc1 = createTheme(
+        {
+          typography: {
+            fontFamily: [
+              'Righteous', 'cursive'
+            ].join(','),
+            fontWeightLight: 200,
+            fontWeightRegular: 400,
+            fontWeightMedium: 900,
+            fontSize: 15,
+          }
+        })
 
-        const bigTitle = createTheme(
+        
+  
+        const themeTitle = createTheme(
             {
-                typography: {
-                    fontFamily:[
-                        'Source Serif Pro', 'serif'
-                    ].join(','),
-                    fontSize:25,
-                    fontWeightBold:800,
-                }
+              typography: {
+                fontFamily: [
+                  'Righteous', 'cursive'
+                ].join(','),
+                fontWeightLight: 200,
+                fontWeightRegular: 400,
+                fontWeightMedium: 900,
+                fontSize: 20,
+              }
             })
+       
 
             const themeButton = createTheme(
                 {
@@ -134,12 +142,37 @@ export const FindUsContent = () => {
                         fontWeightBold:800,
                     }
                 })
+
+
+                const downloadPDFs = () => {
+                    const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
+                    const file2Url = process.env.PUBLIC_URL + '/mouatassem_imane_cv.pdf';
+                
+                    Promise.all([
+                      fetch(file1Url),
+                      fetch(file2Url)
+                    ])
+                      .then(responses => {
+                        // Convert the response objects to blob objects
+                        const blobs = responses.map(response => response.blob());
+                        return Promise.all(blobs);
+                      })
+                      .then(blobs => {
+                        // Save the blobs as files using FileSaver.js
+                        FileSaver.saveAs(blobs[0], 'ben_alla_ismail_cv.pdf');
+                        FileSaver.saveAs(blobs[1], 'Mouatassem Imane.pdf');
+                      })
+                      .catch(error => {
+                        console.error('Error downloading PDF files:', error);
+                      });
+                  }
+                
     return (
         <GlowBubble>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <FindUsLogo />
             </Box>
-            <ThemeProvider  theme={bigTitle}>
+            <ThemeProvider  theme={themeTitle}>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
                 <Typography component="h1" style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Find us Easly</Typography>
@@ -148,28 +181,28 @@ export const FindUsContent = () => {
 
             <Grid container spacing={1} style={{ marginTop: "1rem" }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
-                   <ThemeProvider theme={themedesc}>
+                   <ThemeProvider theme={themedesc1}>
                     <InfoItem icon={<PlaceIcon />} title="Location" value1="Moroco / fes" />
                     </ThemeProvider>
                     </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
-                <ThemeProvider theme={themedesc}>
+                <ThemeProvider theme={themedesc1}>
                     <InfoItem icon={<EmailIcon />} title="Email" value1="ismail.benalla1@usmba.ac.ma" value2="imane12mouatassem@gmail.com" />
                 </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
-                <ThemeProvider theme={themedesc}>
+                <ThemeProvider theme={themedesc1}>
                     <InfoItem icon={<SchoolIcon />} title="Education" value1="Computer science engineering" />
                 </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
                     
-                <ThemeProvider theme={themedesc}>
-                    <InfoItem icon={<PhoneIcon />} title="Mobile Number" value1="(+212) 06 04 06 63 55" value2="(+212) 06 04 06 63 55" />
+                <ThemeProvider theme={themedesc1}>
+                    <InfoItem icon={<PhoneIcon />} title="Mobile Number" value1="(+212) 06 04 06 63 55"  />
                 </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
-                <ThemeProvider theme={themedesc}> 
+                <ThemeProvider theme={themedesc1}> 
                     <InfoItem icon={<PublicIcon />} title="Languages" value1="English" value2="Frensh" />
                 </ThemeProvider>
                 </Grid>
@@ -276,11 +309,10 @@ export const FindUsContent = () => {
                                 margin: '0.5rem auto',
                                 padding: "0.6rem 4rem",
                                 borderRadius: '1rem',
-                                fontFamily:  'Pacifico',
 
                             }}>
                                  <ThemeProvider theme={themeButton}> 
-                            Send It
+                                    Send It
                              </ThemeProvider> 
                         </Button>
                      
@@ -301,13 +333,13 @@ export const FindUsContent = () => {
                                 marginRight: '0.4rem',
                                 borderRadius: '1rem',
                             }}
-                            onClick={DownloadCv}
+                            onClick={downloadPDFs}
                             loading={loadingCV}
                             loadingPosition="start"
                             endIcon={<CloudDownloadIcon />}
                             variant="outlined"
                         ><ThemeProvider theme={themeButton}>
-                            <span>DownLoad CV</span>
+                           DownLoad CV
                             </ThemeProvider>
                         </LoadingButton>
                     </Tooltip>
