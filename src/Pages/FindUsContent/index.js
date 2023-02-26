@@ -23,16 +23,7 @@ import { useReducer } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
-    const themedesc = createTheme(
-        {
-            typography: {
-                fontFamily:[
-                  'Pacifico', 'cursive'
-                ].join(','),
-                fontSize:25,
-                fontWeightBold:800,
-            }
-        })
+   
     return (
         <Box
             style={{
@@ -70,18 +61,7 @@ export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
 
 
 export const FindUsContent = () => {
-    const bigTitle = createTheme(
-        {
-            typography: {
-                fontFamily:[
-                  'Righteous', 'cursive'
-                ].join(','),
-                fontWeightLight: 200,
-                fontWeightRegular: 400,
-                fontWeightMedium: 900,
-                fontSize:30,
-            }
-        })
+
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
     const emailForm = useReducer();
@@ -125,14 +105,35 @@ export const FindUsContent = () => {
         {
             typography: {
                 fontFamily:[
-                  'Pacifico', 'cursive'
+                    'Source Serif Pro', 'serif'
                 ].join(','),
-                fontSize:18,
+                fontSize:16,
                 fontWeightBold:800,
             }
         })
   
 
+        const bigTitle = createTheme(
+            {
+                typography: {
+                    fontFamily:[
+                        'Source Serif Pro', 'serif'
+                    ].join(','),
+                    fontSize:25,
+                    fontWeightBold:800,
+                }
+            })
+
+            const themeButton = createTheme(
+                {
+                    typography: {
+                        fontFamily:[
+                          'Pacifico', 'cursive'
+                        ].join(','),
+                        fontSize:25,
+                        fontWeightBold:800,
+                    }
+                })
     return (
         <GlowBubble>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -256,7 +257,7 @@ export const FindUsContent = () => {
                             rows="8" cols="70"
                             style={{
                                 borderRadius: "30px",
-                                fontSize: "2rem",
+                                fontSize: "1rem",
                                 padding: " 1rem 1.2rem",
                                 outline: "none",
                                 border: "none",
@@ -278,9 +279,9 @@ export const FindUsContent = () => {
                                 fontFamily:  'Pacifico',
 
                             }}>
-                                {/* <ThemeProvider theme={themedesc}> */}
+                                 <ThemeProvider theme={themeButton}> 
                             Send It
-                            {/* </ThemeProvider> */}
+                             </ThemeProvider> 
                         </Button>
                      
                     </Grid>
@@ -305,7 +306,7 @@ export const FindUsContent = () => {
                             loadingPosition="start"
                             endIcon={<CloudDownloadIcon />}
                             variant="outlined"
-                        ><ThemeProvider theme={themedesc}>
+                        ><ThemeProvider theme={themeButton}>
                             <span>DownLoad CV</span>
                             </ThemeProvider>
                         </LoadingButton>

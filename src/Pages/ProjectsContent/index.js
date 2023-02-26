@@ -26,7 +26,7 @@ export const ProjectsContent = () => {
         {
             typography: {
                 fontFamily: [
-                    'Righteous', 'cursive'
+                    'Source Serif Pro', 'serif'
                 ].join(','),
                 fontWeightLight: 200,
                 fontWeightRegular: 400,
@@ -164,7 +164,7 @@ export const ProjectsContent = () => {
                 <ProjectLogo />
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <ThemeProvider theme={bigTitle}>
+                <ThemeProvider theme={themedesc1}>
 
                     <Typography
                         //component="h1"

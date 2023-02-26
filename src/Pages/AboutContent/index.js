@@ -22,7 +22,7 @@ export const AboutContent = () => {
 
 
   const Carddata = {
-    title: '300+',
+    title: '10+',
     firstWord: 'Projects',
     secondWord: 'Completted',
   };
@@ -67,7 +67,7 @@ export const AboutContent = () => {
     {
       typography: {
         fontFamily: [
-          'Righteous', 'cursive'
+          'Source Serif Pro', 'serif'
         ].join(','),
         fontWeightLight: 200,
         fontWeightRegular: 400,
@@ -79,12 +79,25 @@ export const AboutContent = () => {
     {
       typography: {
         fontFamily: [
+          'Lobster Two', 'cursive'
+        ].join(','),
+        fontSize: 30
+      }
+    }
+  )
+
+  
+  const themeT = createTheme(
+    {
+      typography: {
+        fontFamily: [
           'Mynerve', 'cursive'
         ].join(','),
         fontSize: 30
       }
     }
   )
+
 
   return (
     <GlowBubble>
@@ -122,7 +135,7 @@ export const AboutContent = () => {
       </Box>
 
 
-      <Grid container spacing={1} style={{ marginTop: '2rem' }}>
+      <Grid container spacing={5} style={{ marginTop: '2rem' ,justifyContent: "center"}}>
         <Grid item xs={12} sm={12} md={12} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
           <Card
             sx={{
@@ -150,12 +163,13 @@ export const AboutContent = () => {
                 padding: '1rem',
               }}
             >
-              Two young developers passionate by web developer ...
-              We believe that a great website should not only look beautiful but also function flawlessly, and we strive to achieve both.
-              we have worked on various projects, from small personal sites to full-stack websites.
+              Two young developers passionate by web development ...<br />
+              We believe that a great website should not only look beautiful but also function flawlessly, and we strive to achieve both.<br />
+              we have worked on various projects, from small personal sites to full-stack websites.<br />
               Our philosophy is to listen to your needs, understand your goals, and work collaboratively to bring your vision to life.
-              We are committed to delivering high-quality work and exceeding your expectations.
-              Thank you for visiting our portfolio
+              We are committed to delivering high-quality work and exceeding your expectations.<br />
+               Thank you for visiting our portfolio.
+             
             </Typography>
 
             <Box
@@ -186,8 +200,8 @@ export const AboutContent = () => {
 
           </Card>
         </Grid>
-        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '2rem 0rem' }}>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
+        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem' ,justifyContent: "flexend"}}>
+          {/* <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
           </Grid>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
@@ -195,8 +209,8 @@ export const AboutContent = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
+          </Grid> */}
+          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", alignItems: "flexend" }}>
             <AboutCard data={Carddata} />
           </Grid>
         </Grid>
