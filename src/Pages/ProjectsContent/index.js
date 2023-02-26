@@ -24,15 +24,15 @@ export const ProjectsContent = () => {
 
     const themedesc1 = createTheme(
         {
-          typography: {
-            fontFamily: [
-              'Righteous', 'cursive'
-            ].join(','),
-            fontWeightLight: 200,
-            fontWeightRegular: 400,
-            fontWeightMedium: 900,
-            fontSize: 20,
-          }
+            typography: {
+                fontFamily: [
+                    'Righteous', 'cursive'
+                ].join(','),
+                fontWeightLight: 200,
+                fontWeightRegular: 400,
+                fontWeightMedium: 900,
+                fontSize: 20,
+            }
         })
     const bigTitle = createTheme(
         {
@@ -84,7 +84,7 @@ export const ProjectsContent = () => {
             project_img: linkBio,
         },
         {
-            project_name: 'Simple Scientific Calculator',
+            project_name: 'Scientific Calculator',
             isIsmail: true,
             owner_name: "Ismail",
             Techs: 'Android Studio | java',
@@ -120,7 +120,7 @@ export const ProjectsContent = () => {
             project_img: operationResearch,
         },
         {
-            project_name: 'Linear algebra and Num Analy',
+            project_name: 'Linear Algebra',
             isIsmail: true,
             owner_name: "Ismail",
             Techs: 'Matlab',
@@ -129,7 +129,7 @@ export const ProjectsContent = () => {
             project_img: linearAlgebra,
         },
         {
-            project_name: 'Simple calculator using Android Studio',
+            project_name: 'Calculator',
             isIsmail: false,
             owner_name: "Imane",
             Techs: 'JAVA | Android Studio',
@@ -138,10 +138,10 @@ export const ProjectsContent = () => {
             project_img: imaneCalcul,
         },
         {
-            project_name: 'multiple point of sale site',
+            project_name: 'Multi-Store App',
             isIsmail: false,
             owner_name: "Imane",
-            Techs: 'Nextjs | API | Django rest framework ',
+            Techs: 'Nextjs | DRF ',
             see_link: 'https://github.com/ImaneMouatassem/Point-de-vente',
             github_link: 'https://github.com/ImaneMouatassem/Point-de-vente',
             project_img: multisale,
@@ -166,7 +166,7 @@ export const ProjectsContent = () => {
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <ThemeProvider theme={themedesc1}>
                     <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
-                    Explore Our Accomplished projects developed using a variety of tools and programming languages.
+                        Explore Our Accomplished projects developed using a variety of tools and programming languages.
                     </Typography>
                 </ThemeProvider>
             </Box>

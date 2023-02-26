@@ -27,9 +27,9 @@ const ContactContent = () => {
                 startOffset={50}
                 reversed={true}
                 tspanProps={{ dy: '10' }}
-                textProps={{ style: { fontSize: '16' ,color:'#fff'} }}
-                text="hi, these are my social media accounts."
-               
+                textProps={{ style: { fontSize: '16', color: '#fff !important' } }}
+                text="hi, these are my social media accounts🥰"
+
               />
             </h3>
             <div className="icons">
@@ -47,8 +47,8 @@ const ContactContent = () => {
           <ISMAIL className="ismail" />
 
           <div className="desc shape">
-            <h3             
->
+            <h3
+            >
               <ReactCurvedText
                 width={370}
                 height={300}
@@ -60,12 +60,12 @@ const ContactContent = () => {
                 reversed={true}
                 tspanProps={{ dy: '10' }}
                 textProps={{ style: { fontSize: '16' } }}
-                text="hello, these are my social media accounts."
+                text="hello, these are my social media accounts😁"
               />
             </h3>
 
-            <div className="icons"              
-              sx={{ marginTop : "100"}}  >
+            <div className="icons"
+              sx={{ marginTop: "100" }}  >
               <SocialLink
                 linkedin="https://www.linkedin.com/in/ismail-ben-alla-7144b5221/"
                 github="https://github.com/benisalla"

@@ -7,6 +7,9 @@ const reducer = (state, action) => {
         case "IS_START_SOUND": {
             return { ...state, isStartSound: action.value };
         }
+        case "IS_ANIMATION_SET": {
+            return { ...state, isBGASet: action.value };
+        }
         case "IS_MAIN_SOUND": {
             return { ...state, isMainSound: action.value };
         }
@@ -28,6 +31,7 @@ const reducer = (state, action) => {
 const ISIMControllerProvider = ({ children }) => {
     const initialState = {
         isStartSound: true,
+        isBGASet: true,
         isMainSound: false,
         isImaneTalk: false,
         isIsmailTalk: false,
@@ -54,6 +58,7 @@ const useISIMController = () => {
 // Context module functions
 
 const setIsStartSound = (dispatch, value) => dispatch({ type: "IS_START_SOUND", value });
+const setIsBGASet = (dispatch, value) => dispatch({ type: "IS_ANIMATION_SET", value });
 const setIsMainSound = (dispatch, value) => dispatch({ type: "IS_MAIN_SOUND", value });
 const setIsImaneTalk = (dispatch, value) => dispatch({ type: "IS_IMANE_TALK", value });
 const setIsIsmailTalk = (dispatch, value) => dispatch({ type: "IS_ISMAIL_TALK", value });
@@ -67,4 +72,5 @@ export {
     setIsImaneTalk,
     setIsIsmailTalk,
     setIsStarsWork,
+    setIsBGASet,
 };

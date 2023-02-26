@@ -28,27 +28,27 @@ export const AboutContent = () => {
     secondWord: 'Completted',
   };
 
-  const experience={
+  const experience = {
     title: "1+",
-    firstWord:'Years of ',
-    secondWord:'Experience',
+    firstWord: 'Years of ',
+    secondWord: 'Experience',
 
   };
 
-  const customer={
-    title:"1+",
-    firstWord:'Customer',
-    secondWord:'Reviews',
+  const customer = {
+    title: "1+",
+    firstWord: 'Customer',
+    secondWord: 'Reviews',
   }
 
-  const internship={
-    title:"2+",
-    firstWord:'Completed',
-    secondWord:'internships'
+  const internship = {
+    title: "2+",
+    firstWord: 'Completed',
+    secondWord: 'internships'
   };
 
 
-  
+
   const downloadPDFs = () => {
     const file1Url = process.env.PUBLIC_URL + '/ben_alla_ismail_cv.pdf';
     const file2Url = process.env.PUBLIC_URL + '/mouatassem_imane_cv.pdf';
@@ -74,18 +74,18 @@ export const AboutContent = () => {
 
 
 
-    const themedesc1 = createTheme(
-      {
-        typography: {
-          fontFamily: [
-            'Righteous', 'cursive'
-          ].join(','),
-          fontWeightLight: 200,
-          fontWeightRegular: 400,
-          fontWeightMedium: 900,
-          fontSize: 20,
-        }
-      })
+  const themedesc1 = createTheme(
+    {
+      typography: {
+        fontFamily: [
+          'Righteous', 'cursive'
+        ].join(','),
+        fontWeightLight: 200,
+        fontWeightRegular: 400,
+        fontWeightMedium: 900,
+        fontSize: 20,
+      }
+    })
   const themedesc = createTheme(
     {
       typography: {
@@ -137,9 +137,10 @@ export const AboutContent = () => {
               padding: '2.3rem',
               border: "1px solid #000", borderRadius:
                 '1rem', margin: '1rem',
-                textAlign:'center'
+              textAlign: 'center'
             }}>
-            <strong >Learn about our values and story </strong> <br/> Discover moe about us by looking through our about page. 
+            <strong >Learn about our values and story </strong>
+            <br /> Discover moe about us by looking through our about page.
             Find out more about our purpose and future Vision.
           </Typography>
         </ThemeProvider>
@@ -157,7 +158,6 @@ export const AboutContent = () => {
             }}>
             <ThemeProvider theme={themedesc}>
               <Typography
-                //  variant='h1'
                 sx={{
                   fontSize: '2.5rem',
                   textTransform: 'uppercase',
@@ -168,23 +168,23 @@ export const AboutContent = () => {
               </Typography>
             </ThemeProvider>
             <ThemeProvider theme={themedesc1}>
-            <Typography
-              variant='subtitle1'
-              sx={{
-                fontSize: '1.1rem',
-                lineHeight: '2rem',
-                padding: '1rem',
-              }}
-            >
-              
-              Two young web developers who are incredibly passionate about their profession. 
-              Our focus is on attaining both because we are firmly convinced that a good website must not only have aesthetic 
-              appeal but also effective implementation. <br/>We have worked on everything from small personal projects to comprehensive 
-              full-stack websites. We adhere to the principle of carefully hearing your needs, understanding your goals, 
-              and collaborating closely with you to realize your vision. Our commitment is 
-              to produce work of the highest caliber and to exceed your expectations. <br/>We want to thank you for looking at our portfolio.
-               
-            </Typography>
+              <Typography
+                variant='subtitle1'
+                sx={{
+                  fontSize: '1.1rem',
+                  lineHeight: '2rem',
+                  padding: '1rem',
+                }}
+              >
+
+                Two young web developers who are incredibly passionate about their profession.
+                Our focus is on attaining both because we are firmly convinced that a good website must not only have aesthetic
+                appeal but also effective implementation. <br />We have worked on everything from small personal projects to comprehensive
+                full-stack websites. We adhere to the principle of carefully hearing your needs, understanding your goals,
+                and collaborating closely with you to realize your vision. Our commitment is
+                to produce work of the highest caliber and to exceed your expectations. <br />We want to thank you for looking at our portfolio.
+
+              </Typography>
             </ThemeProvider>
             <Box
               sx={
@@ -214,7 +214,7 @@ export const AboutContent = () => {
 
           </Card>
         </Grid>
-        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem' ,justifyContent: "flexend"}}>
+        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem', justifyContent: "flexend" }}>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
           </Grid>
@@ -223,7 +223,7 @@ export const AboutContent = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={customer} />
-          </Grid> 
+          </Grid>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", alignItems: "flexend" }}>
             <AboutCard data={internship} />
           </Grid>
