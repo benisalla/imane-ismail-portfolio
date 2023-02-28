@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Robot = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('./models/Robot/scene.gltf')
+  const { nodes, materials, animations } = useGLTF('./models/Robot/scene.gltf');
   const { actions, names } = useAnimations(animations, group);
   useEffect(() => {
     actions[names[0]].reset().fadeIn(0.5).play();

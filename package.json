@@ -34,7 +34,6 @@
     "styled-components": "^5.3.6",
     "three": "^0.148.0",
     "three-stdlib": "^2.21.5",
-    "tsparticles": "^2.9.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -64,6 +63,8 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
+    "gh-pages": "^5.0.0"
     "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^5.0.0"
   }

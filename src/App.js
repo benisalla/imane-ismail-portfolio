@@ -12,7 +12,7 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import FindUs from "./Pages/FindUs";
 import SoundEffect from "./Components/SoundEffect";
-import { ISIMControllerProvider } from "./context";
+import { useISIMController } from "./context";
 
 const Pages = styled.div`
   // width: 80vw;
@@ -23,16 +23,22 @@ const Pages = styled.div`
 
 function App() {
 
+  const [controller, dispatch] = useISIMController();
+  const { isBGASet } = controller;
+
   const location = useLocation();
 
   return (
-    <ISIMControllerProvider>
+    <>
       <SoundEffect />
-      {/* <Suspense fallback={"Loading ..."}>
+
+
+      <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
-          <Scene />
+          {isBGASet ? (<Scene />) : null}
         </Canvas>
-      </Suspense> */}
+      </Suspense>
+
       <Sidebar />
       <Pages>
         <AnimatePresence>
@@ -46,7 +52,7 @@ function App() {
           </Routes>
         </AnimatePresence>
       </Pages>
-    </ISIMControllerProvider>
+    </>
   );
 }
 
