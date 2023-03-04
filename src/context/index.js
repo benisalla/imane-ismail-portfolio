@@ -25,6 +25,9 @@ const reducer = (state, action) => {
         case "SET_PROJECTS": {
             return { ...state, projects: action.value };
         }
+        case "SET_OPEN_SIDE_BAR": {
+            return { ...state, openSideBar: action.value };
+        }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`);
         };
@@ -41,6 +44,7 @@ const ISIMControllerProvider = ({ children }) => {
         isIsmailTalk: false,
         isStarsWork: true,
         projects: [],
+        openSideBar: true,
     };
 
     const [controller, dispatch] = useReducer(reducer, initialState);
@@ -69,6 +73,7 @@ const setIsImaneTalk = (dispatch, value) => dispatch({ type: "IS_IMANE_TALK", va
 const setIsIsmailTalk = (dispatch, value) => dispatch({ type: "IS_ISMAIL_TALK", value });
 const setIsStarsWork = (dispatch, value) => dispatch({ type: "IS_STARS_WORK", value });
 const setProjects = (dispatch, value) => dispatch({ type: "SET_PROJECTS", value });
+const setOpenSidebar = (dispatch, value) => dispatch({ type: "SET_OPEN_SIDE_BAR", value });
 
 export {
     ISIMControllerProvider,
@@ -80,4 +85,5 @@ export {
     setIsStarsWork,
     setIsBGASet,
     setProjects,
+    setOpenSidebar,
 };

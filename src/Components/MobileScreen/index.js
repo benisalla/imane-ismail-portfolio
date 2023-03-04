@@ -54,7 +54,7 @@ const MobileScreen = () => {
                         value: "#647BFF",
                     },
                     links: {
-                        color: "#647BFF",
+                        color: "#647BFF88",
                         distance: 100,
                         enable: true,
                         opacity: 0.7,
@@ -70,7 +70,7 @@ const MobileScreen = () => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 1,
+                        speed: 0.3,
                         straight: false,
                     },
                     number: {
@@ -78,16 +78,16 @@ const MobileScreen = () => {
                             enable: true,
                             area: 800,
                         },
-                        value: 500,
+                        value: 700,
                     },
                     opacity: {
-                        value: 0.7,
+                        value: 0.9,
                     },
                     shape: {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 5 },
+                        value: { min: 1, max: 6 },
                     },
                 },
                 detectRetina: true,

@@ -27,7 +27,8 @@ const ContactContent = () => {
                 startOffset={50}
                 reversed={true}
                 tspanProps={{ dy: '10' }}
-                textProps={{ style: { fontSize: '16', color: '#fff !important' } }}
+                textPathProps={{"fill": "#647BFF"}}
+                textProps={{ style: { fontSize: '16'} }}
                 text="hi, these are my social media accounts🥰"
 
               />
@@ -59,6 +60,7 @@ const ContactContent = () => {
                 startOffset={50}
                 reversed={true}
                 tspanProps={{ dy: '10' }}
+                textPathProps={{"fill": "#647BFF"}}
                 textProps={{ style: { fontSize: '16' } }}
                 text="hello, these are my social media accounts😁"
               />

@@ -11,7 +11,7 @@ import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import styled from "styled-components";
 import { Box } from "@mui/material";
 import WcOutlinedIcon from '@mui/icons-material/WcOutlined';
-import { setIsBGASet, setIsStartSound, useISIMController } from "../context";
+import { setIsBGASet, setIsStartSound, setOpenSidebar, useISIMController } from "../context";
 
 const Container = styled.div`
   position: fixed;
@@ -69,13 +69,12 @@ const SidebarContainer = styled.div`
   margin-top: 1rem;
   border-radius: 0 30px 30px 0;
   padding: 1rem 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   position: relative;
+  transition: all 0.3s ease-in-out;
 `;
 
 const Logo = styled.div`
@@ -146,19 +145,22 @@ const Text = styled.span`
 
 const Sidebar = () => {
   const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-
   const [controller, dispatch] = useISIMController();
+  const { openSideBar } = controller;
 
-
-
+  const handleClick = (isMouseEnter) => {
+    setClick(isMouseEnter);
+  }
 
   return (
     <Container style={{ zIndex: 10, position: "fixed", top: 0, left: 0 }}>
-      <Button clicked={click} onClick={() => handleClick()}>
+      <Button clicked={!openSideBar} onClick={() => setOpenSidebar(dispatch, !openSideBar)}>
         Click
       </Button>
-      <SidebarContainer>
+      <SidebarContainer
+        style={{ left: openSideBar ? "-4rem" : "0rem" }}
+        onMouseLeave={() => handleClick(false)}
+        onMouseEnter={() => handleClick(true)}>
         <Link
           to="/"
           onClick={() => { setClick(false); setIsStartSound(dispatch, true); setIsBGASet(dispatch, true); }}

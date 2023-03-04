@@ -131,7 +131,6 @@ export const AboutContent = () => {
         <ThemeProvider theme={themedesc1}>
 
           <Typography
-            //component="h1"
             style={{
               color: "#000",
               padding: '2.3rem',

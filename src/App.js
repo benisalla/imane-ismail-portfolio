@@ -61,6 +61,7 @@ function App() {
       </Suspense>
 
       <Sidebar />
+      
       <Pages>
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>

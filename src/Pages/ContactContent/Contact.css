@@ -21,9 +21,10 @@
 .shape {
     position: relative;
     border-radius: 52% 58% 50% 56% / 32% 62% 45% 82%;
-    background-color: #647bff;
-    box-shadow: #647bff 1px 1px 15px;
-    ;
+    border-width: 2px;
+    border-color: #647bff;
+    background-color: #00000090;
+    box-shadow: #647bff 1px 1px 10px;
     width: 360px;
     height: 240px;
     margin-top: -5rem;
