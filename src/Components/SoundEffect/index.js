@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import link1 from "../../assets/audio/sound-effect.mp3"
-import link2 from "../../assets/audio/first-sound-effect.mp3"
+import mainSoundEffect from "../../assets/audio/sound-effect.mp3"
+import robotSoundEffect from "../../assets/audio/first-sound-effect.mp3"
 import { setIsStartSound, useISIMController } from '../../context'
 
 const Box = styled.div`
 display:flex;
 cursor:pointer;
 position:fixed;
-right:1.6rem;
+right:1rem;
 bottom:1rem;
 z-index:999;
 
@@ -82,23 +82,25 @@ const colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 const SoundEffect = () => {
 
     const mainRef = useRef();
-    const firstRef = useRef();
+    const robotRef = useRef();
     const [isPlay, setIsPlay] = useState(false);
-    const [index, setIndex] = useState("one");
     const [isChangeColor, setIsChangeColor] = useState(false);
     const [color, setColor] = useState(colorArray[0])
     const [controller, dispatch] = useISIMController();
     const { isStartSound } = controller;
 
-    const mainSoundEffect = { "one": link1, "two": link2 }
-
     const playSoundEffectHandler = () => {
-        setIndex(() => 1);
-        setIsPlay(!isPlay);
+        setIsPlay(prev => !prev);
+        console.log(`from playHandler : ${isPlay}`)
         if (!isPlay) {
-            mainRef.current.play();
+            if (isStartSound) {
+                robotRef.current.play();
+            } else {
+                mainRef.current.play();
+            }
         } else {
             mainRef.current.pause();
+            robotRef.current.pause();
         }
     }
 
@@ -122,17 +124,20 @@ const SoundEffect = () => {
 
     useEffect(() => {
         if (isPlay) {
-            setIsChangeColor(prev => !prev);
         }
+        setIsChangeColor(prev => !prev);
     }, [isPlay])
 
+
     useEffect(() => {
-        if (isStartSound) {
-            setIndex(() => "two");
-            setIsPlay((prev) => false);
-        } else {
-            setIndex(() => "one");
-            setIsPlay((prev) => false);
+        if (isPlay) {
+            if (isStartSound) {
+                robotRef.current.play();
+                mainRef.current.pause();
+            } else {
+                mainRef.current.play();
+                robotRef.current.pause();
+            }
         }
     }, [isStartSound])
 
@@ -148,7 +153,8 @@ const SoundEffect = () => {
             <Line isPlay={isPlay} style={{ color }} />
             <Line isPlay={isPlay} style={{ color }} />
             <Line isPlay={isPlay} style={{ color }} />
-            <audio src={mainSoundEffect[index]} ref={mainRef} loop />
+            <audio src={mainSoundEffect} ref={mainRef} loop />
+            <audio src={robotSoundEffect} ref={robotRef} loop />
         </Box>
     )
 }

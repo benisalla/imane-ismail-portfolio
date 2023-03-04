@@ -12,7 +12,9 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import FindUs from "./Pages/FindUs";
 import SoundEffect from "./Components/SoundEffect";
-import { useISIMController } from "./context";
+import { setProjects, useISIMController } from "./context";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Pages = styled.div`
   // width: 80vw;
@@ -28,6 +30,24 @@ function App() {
 
   const location = useLocation();
 
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'https://imane-ismail-portfolio-default-rtdb.firebaseio.com/projects.json',
+      params: {},
+    }).then(function (response) {
+      const keys = Object.keys(response.data);
+      const all_projects = [];
+      keys.forEach(item => {
+        all_projects.push(...response.data[item])
+      });
+      setProjects(dispatch, all_projects)
+      console.log(all_projects)
+    }).catch(function (error) {
+      console.log("there is an error !");
+    })
+  }, [])
+
   return (
     <>
       <SoundEffect />
@@ -35,7 +55,8 @@ function App() {
 
       <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
-          {isBGASet ? (<Scene />) : null}
+          {/* {isBGASet ? (<Scene />) : null} */}
+          <Scene />
         </Canvas>
       </Suspense>
 

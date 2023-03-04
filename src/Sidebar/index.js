@@ -161,6 +161,7 @@ const Sidebar = () => {
       <SidebarContainer>
         <Link
           to="/"
+          onClick={() => { setClick(false); setIsStartSound(dispatch, true); setIsBGASet(dispatch, true); }}
         >
           <Logo>
             <img src={logo} alt="logo" />

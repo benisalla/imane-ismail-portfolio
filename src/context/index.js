@@ -22,6 +22,9 @@ const reducer = (state, action) => {
         case "IS_STARS_WORK": {
             return { ...state, isStarsWork: action.value };
         }
+        case "SET_PROJECTS": {
+            return { ...state, projects: action.value };
+        }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`);
         };
@@ -29,6 +32,7 @@ const reducer = (state, action) => {
 };
 
 const ISIMControllerProvider = ({ children }) => {
+    
     const initialState = {
         isStartSound: true,
         isBGASet: true,
@@ -36,6 +40,7 @@ const ISIMControllerProvider = ({ children }) => {
         isImaneTalk: false,
         isIsmailTalk: false,
         isStarsWork: true,
+        projects: [],
     };
 
     const [controller, dispatch] = useReducer(reducer, initialState);
@@ -63,6 +68,7 @@ const setIsMainSound = (dispatch, value) => dispatch({ type: "IS_MAIN_SOUND", va
 const setIsImaneTalk = (dispatch, value) => dispatch({ type: "IS_IMANE_TALK", value });
 const setIsIsmailTalk = (dispatch, value) => dispatch({ type: "IS_ISMAIL_TALK", value });
 const setIsStarsWork = (dispatch, value) => dispatch({ type: "IS_STARS_WORK", value });
+const setProjects = (dispatch, value) => dispatch({ type: "SET_PROJECTS", value });
 
 export {
     ISIMControllerProvider,
@@ -73,4 +79,5 @@ export {
     setIsIsmailTalk,
     setIsStarsWork,
     setIsBGASet,
+    setProjects,
 };

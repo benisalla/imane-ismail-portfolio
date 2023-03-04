@@ -12,6 +12,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ismailImg from "../../../assets/ProfileImages/ismail-ben-alla-1.jpg";
 import imaneImg from "../../../assets/ProfileImages/imane-moutassem-1.jpg";
+import { Image } from '@mui/icons-material';
 
 export default function ProjectCard({ data }) {
 
@@ -31,7 +32,7 @@ export default function ProjectCard({ data }) {
                     <figure>
                         <img
                             src={data.project_img}
-                            loading="lazy"
+                            // src={"https://images.unsplash.com/photo-1525097487452-6278ff080c31"}
                             alt="project image"
                         />
                     </figure>
