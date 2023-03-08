@@ -78,7 +78,7 @@ export const AboutContent = () => {
     {
       typography: {
         fontFamily: [
-          'Righteous', 'cursive'
+          'Open Sans', 'sans serif'
         ].join(','),
         fontWeightLight: 200,
         fontWeightRegular: 400,
@@ -90,7 +90,7 @@ export const AboutContent = () => {
     {
       typography: {
         fontFamily: [
-          'Lobster Two', 'cursive'
+          'Open Sans', 'sans serif'
         ].join(','),
         fontSize: 30
       }
@@ -102,7 +102,7 @@ export const AboutContent = () => {
     {
       typography: {
         fontFamily: [
-          'Mynerve', 'cursive'
+          'Open Sans', 'sans serif'
         ].join(','),
         fontSize: 30
       }

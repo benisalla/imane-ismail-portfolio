@@ -31,7 +31,7 @@ export const ProjectsContent = () => {
         {
             typography: {
                 fontFamily: [
-                    'Righteous', 'cursive'
+                    'Open Sans', 'sans serif'
                 ].join(','),
                 fontWeightLight: 200,
                 fontWeightRegular: 400,
@@ -43,7 +43,7 @@ export const ProjectsContent = () => {
         {
             typography: {
                 fontFamily: [
-                    'Righteous', 'cursive'
+                    'Open Sans', 'sans serif'
                 ].join(','),
                 fontWeightLight: 200,
                 fontWeightRegular: 400,

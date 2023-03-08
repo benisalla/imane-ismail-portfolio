@@ -23,7 +23,7 @@ export const TeamContent = () => {
     {
       typography: {
         fontFamily: [
-          'Pacifico', 'cursive'
+          'Open Sans', 'sans serif'
         ].join(','),
         fontSize: 25,
         fontWeightBold: 800,
@@ -34,7 +34,7 @@ export const TeamContent = () => {
     {
       typography: {
         fontFamily: [
-          'Righteous', 'cursive'
+          'Open Sans', 'sans serif'
         ].join(','),
         fontWeightLight: 200,
         fontWeightRegular: 400,
@@ -47,7 +47,7 @@ export const TeamContent = () => {
     {
       typography: {
         fontFamily: [
-          'Righteous', 'cursive'
+          'Open Sans', 'sans serif'
         ].join(','),
         fontWeightLight: 200,
         fontWeightRegular: 400,
