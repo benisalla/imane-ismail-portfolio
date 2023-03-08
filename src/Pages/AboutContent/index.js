@@ -1,5 +1,5 @@
 import { LoadingButton, Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
-import { Chip, Divider, Grid, Tooltip, Typography } from '@mui/material'
+import { Chip, Divider, Grid, Tooltip, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system';
 import React from 'react';
 import GlowBubble from '../../Components/GlowBubble';
@@ -58,12 +58,10 @@ export const AboutContent = () => {
       fetch(file2Url)
     ])
       .then(responses => {
-        // Convert the response objects to blob objects
         const blobs = responses.map(response => response.blob());
         return Promise.all(blobs);
       })
       .then(blobs => {
-        // Save the blobs as files using FileSaver.js
         FileSaver.saveAs(blobs[0], 'ben_alla_ismail_cv.pdf');
         FileSaver.saveAs(blobs[1], 'Mouatassem Imane.pdf');
       })
@@ -97,7 +95,6 @@ export const AboutContent = () => {
     }
   )
 
-
   const themeT = createTheme(
     {
       typography: {
@@ -109,6 +106,9 @@ export const AboutContent = () => {
     }
   )
 
+  const isMobile = useMediaQuery('(min-width:768px)');
+
+  const textColor = !isMobile ? "#fff" : "#000";
 
   return (
     <GlowBubble>
@@ -120,9 +120,9 @@ export const AboutContent = () => {
         <ThemeProvider theme={themedesc1}>
 
           <Typography
-            // component="h1" 
             style={{
-              color: "#000", padding: '1rem',
+              color: textColor,
+              padding: '1rem',
               textTransform: 'uppercase'
             }}>Who Are we ?</Typography>
         </ThemeProvider>
@@ -132,12 +132,13 @@ export const AboutContent = () => {
 
           <Typography
             style={{
-              color: "#000",
+              color: textColor,
               padding: '2.3rem',
               border: "1px solid #000", borderRadius:
                 '1rem', margin: '1rem',
               textAlign: 'center'
-            }}>
+            }}
+          >
             <strong >Learn about our values and story </strong>
             <br /> Discover moe about us by looking through our about page.
             Find out more about our purpose and future Vision.
@@ -160,8 +161,10 @@ export const AboutContent = () => {
                 sx={{
                   fontSize: '2.5rem',
                   textTransform: 'uppercase',
-                  justifyContent: "center"
-                }}>
+                  justifyContent: "center",
+                  color: textColor,
+                }}
+              >
                 Hi there,
                 here is some information about us
               </Typography>
@@ -173,6 +176,7 @@ export const AboutContent = () => {
                   fontSize: '1.1rem',
                   lineHeight: '2rem',
                   padding: '1rem',
+                  color: textColor,
                 }}
               >
 
@@ -213,7 +217,7 @@ export const AboutContent = () => {
 
           </Card>
         </Grid>
-        <Grid container spacing={1} xs={12} sm={12} md={12} xl={6} lg={6} style={{ margin: '6rem 0rem', justifyContent: "flexend" }}>
+        <Grid container spacing={1} style={{ margin: '6rem 0rem', justifyContent: "flexend" }}>
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={Carddata} />
           </Grid>
@@ -223,7 +227,7 @@ export const AboutContent = () => {
           <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={customer} />
           </Grid>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", alignItems: "flexend" }}>
+          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
             <AboutCard data={internship} />
           </Grid>
         </Grid>
@@ -234,7 +238,7 @@ export const AboutContent = () => {
 
 
       <Divider sx={{ padding: '2rem 1rem', }}>
-        <Chip label="Our Soft-Skills" sx={{ fontSize: '1rem', fontWeight: 600 }} />
+        <Chip label="Our Soft-Skills" sx={{ fontSize: '1rem', fontWeight: 600, color: textColor }} />
       </Divider>
 
       <Grid container spacing={5} >
@@ -248,7 +252,7 @@ export const AboutContent = () => {
 
 
       <Divider sx={{ padding: '2rem 1rem', }}>
-        <Chip label="Our Technical Skills" sx={{ fontSize: '1rem', fontWeight: 600 }} />
+        <Chip label="Our Technical Skills" sx={{ fontSize: '1rem', fontWeight: 600, color: { textColor } }} />
       </Divider>
 
       <Grid container spacing={1}>
@@ -318,7 +322,7 @@ export const AboutContent = () => {
 
 
       <Divider sx={{ padding: '2rem 1rem', }}>
-        <Chip label="Our TimeLine" sx={{ fontSize: '1rem', fontWeight: 600 }} />
+        <Chip label="Our TimeLine" sx={{ fontSize: '1rem', fontWeight: 600, color: textColor }} />
       </Divider>
 
       <Timeline position="alternate">
@@ -339,10 +343,10 @@ export const AboutContent = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant="h6" component="span" color={textColor}>
               2nd year computer engineering
             </Typography>
-            <Typography>National school of applied science in Fes</Typography>
+            <Typography color={textColor}>National school of applied science in Fes</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -361,10 +365,10 @@ export const AboutContent = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant="h6" component="span" color={textColor}>
               1st year computer science engineering
             </Typography>
-            <Typography>National school of applied science in Fes</Typography>
+            <Typography color={textColor}>National school of applied science in Fes</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -383,10 +387,10 @@ export const AboutContent = () => {
             <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant="h6" component="span" color={textColor}>
               Integrated preparatory cycle
             </Typography>
-            <Typography>National school of applied science in Fes</Typography>
+            <Typography color={textColor}>National school of applied science in Fes</Typography>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>
@@ -405,10 +409,10 @@ export const AboutContent = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant="h6" component="span" color={textColor}>
               Baccalaureate of science physics
             </Typography>
-            <Typography>Ibno rochd high school / Al bouhaira high school</Typography>
+            <Typography color={textColor}>Ibno rochd high school / Al bouhaira high school</Typography>
           </TimelineContent>
         </TimelineItem>
       </Timeline>

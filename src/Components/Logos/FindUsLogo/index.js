@@ -2,9 +2,13 @@ import React from "react";
 import style from "./style.module.css";
 import ParticleImage, { forces, Vector } from "react-particle-image";
 import ImgTarget from "../../../assets/AnimSrc/find-us.png";
+import { useMediaQuery } from "@mui/material";
 
 
 const FindUsLogo = () => {
+
+    const isMobile = useMediaQuery('(min-width:768px)');
+
     return (
         <div className={style.main}>
             <ParticleImage
@@ -22,7 +26,7 @@ const FindUsLogo = () => {
                         const pixel = image.get(x, y);
                         return pixel.r === 255;
                     },
-                    color: () => "#000",
+                    color: () => !isMobile ? "#647bff": "#000",
                     friction: () => 0.16,
                     initialPosition: ({ canvasDimensions }) => {
                         return new Vector(

@@ -1,7 +1,13 @@
 import Card from '@mui/joy/Card';
 import { Typography } from '@mui/joy';
+import { useMediaQuery } from '@mui/material';
 
 export default function AboutCard({ data }) {
+
+    const isMobile = useMediaQuery('(min-width:768px)');
+
+    const textColor = !isMobile ? "#fff" : "#000";
+
 
     return (
         <Card
@@ -32,7 +38,8 @@ export default function AboutCard({ data }) {
                 sx={{
                     fontSize: '3rem',
                     fontWeight: 700,
-                    margin: '2rem 1rem'
+                    margin: '2rem 1rem',
+                    color: textColor,
                 }}>
                 {data.title}
             </Typography>
@@ -44,6 +51,7 @@ export default function AboutCard({ data }) {
                 textTransform: 'uppercase',
                 fontSize: '1.2rem',
                 letterSpacing: "2px",
+                color: textColor,
                 '&::before': {
                     content: '""',
                     position: 'absolute',

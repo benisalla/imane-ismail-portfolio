@@ -15,8 +15,6 @@ import ismailVoice from "../../../assets/audio/ismail-voice.mp3";
 import imaneVoice from "../../../assets/audio/imane-voice.mp3";
 import FileSaver from 'file-saver';
 
-
-
 export default function TeamCard({ data }) {
     const [loadingCV, setLoadingCV] = useState(false);
     const [speak, setSpeak] = useState(false);
@@ -29,12 +27,10 @@ export default function TeamCard({ data }) {
             fetch(Url),
         ])
             .then(responses => {
-                // Convert the response objects to blob objects
                 const blobs = responses.map(response => response.blob());
                 return Promise.all(blobs);
             })
             .then(blobs => {
-                // Save the blobs as files using FileSaver.js
                 FileSaver.saveAs(blobs[0], url);
             })
             .catch(error => {
@@ -83,7 +79,6 @@ export default function TeamCard({ data }) {
                     }}
                 />
 
-                {/* -------------< say something >------------ */}
                 <audio src={data.isIsmail ? ismailVoice : imaneVoice} ref={audioRef} />
                 <IconButton
                     onClick={SpeachHandler}
@@ -96,7 +91,6 @@ export default function TeamCard({ data }) {
                     }}>
                     {speak ? <RecordVoiceOverIcon /> : <VoiceOverOffIcon />}
                 </IconButton>
-                {/* -------------< say something >------------ */}
             </Box>
             <Box
                 sx={
@@ -114,7 +108,7 @@ export default function TeamCard({ data }) {
                     <Typography variant="h1" style={{
                         fontSize: '26px',
                         textTransform: 'uppercase',
-                        fontFamily: "cursive",
+                        fontFamily: "Open Sans",
                     }} color="text.secondary">
                         {data.name}
                     </Typography>
@@ -123,11 +117,11 @@ export default function TeamCard({ data }) {
                         color: '#111', margin: '0',
                         marginBottom: '1rem', padding: '0',
                         fontSize: 'x-small',
-                        fontFamily: "cursive",
+                        fontFamily: "Open Sans",
                     }} color="text.secondary">
                         {data.profession}
                     </Typography>
-                    <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem', fontFamily: "monospace", fontSize:"1.2rem" }}>
+                    <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem', fontFamily: "Open Sans", fontSize: "1.2rem" }}>
                         {data.description}
                     </Typography>
                 </Box>

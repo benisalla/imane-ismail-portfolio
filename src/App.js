@@ -12,9 +12,11 @@ import About from "./Pages/About";
 import Projects from "./Pages/Projects";
 import FindUs from "./Pages/FindUs";
 import SoundEffect from "./Components/SoundEffect";
-import { setProjects, useISIMController } from "./context";
+import { setIsMobile, setProjects, useISIMController } from "./context";
 import axios from "axios";
 import { useEffect } from "react";
+import { useMediaQuery } from "@mui/material";
+import { useState } from "react";
 
 const Pages = styled.div`
   // width: 80vw;
@@ -28,7 +30,6 @@ function App() {
   // "homepage": "https://benisalla.github.io/imane-ismail-portfolio/",
 
   const [controller, dispatch] = useISIMController();
-  const { isBGASet } = controller;
 
   const location = useLocation();
 
@@ -53,17 +54,13 @@ function App() {
   return (
     <>
       <SoundEffect />
-
-
       <Suspense fallback={"Loading ..."}>
         <Canvas style={{ width: "100vw", height: "100vh" }} shadows>
           {/* {isBGASet ? (<Scene />) : null} */}
           <Scene />
         </Canvas>
       </Suspense>
-
       <Sidebar />
-      
       <Pages>
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>

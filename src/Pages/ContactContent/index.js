@@ -9,7 +9,7 @@ const ContactContent = () => {
 
 
   return (
-    <PageLayout>
+    <PageLayout isAnim={false}>
 
       <div className="home">
         <div className="imanePart">
