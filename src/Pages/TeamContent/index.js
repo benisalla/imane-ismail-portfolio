@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system';
 import React from 'react'
 import GlowBubble from '../../Components/GlowBubble';
@@ -87,6 +87,9 @@ export const TeamContent = () => {
     url: "mouatassem_imane_cv.pdf"
   }
 
+  const isMobile = useMediaQuery('(min-width:768px)');
+  const textColor = !isMobile ? "#fff" : "#000";
+
   return (
     <GlowBubble>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -94,14 +97,14 @@ export const TeamContent = () => {
       </Box>
       <ThemeProvider theme={bigTitle}>
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <Typography component="h1" style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Our Team</Typography>
+          <Typography component="h1" style={{ color: textColor, padding: '1rem', textTransform: 'uppercase' }}>Our Team</Typography>
         </Box>
       </ThemeProvider  >
 
 
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <ThemeProvider theme={themedesc1}>
-          <Typography component="h2" style={{ color: "#000", padding: '2.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
+          <Typography component="h2" style={{ color: textColor, padding: '2.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
 
             We believe in staying current with industry trends and staying up-to-date with
             the latest technologies and tools. We are committed to continuous learning and growth,

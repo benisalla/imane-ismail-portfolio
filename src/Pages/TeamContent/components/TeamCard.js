@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import Typography from '@mui/joy/Typography';
-import { CardMedia, IconButton, Tooltip } from '@mui/material';
+import { CardMedia, IconButton, Tooltip, useMediaQuery } from '@mui/material';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import LoadingButton from '@mui/lab/LoadingButton';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
@@ -47,15 +47,20 @@ export default function TeamCard({ data }) {
         }
     };
 
+    const isMobile = useMediaQuery('(min-width:768px)');
+    const textColor = !isMobile ? "#fff" : "#000";
+
     return (
         <Card
             variant="outlined"
             sx={{
                 display: 'flex',
+                justifyContent: "center",
+                alignItems: "flex-start",
                 flex: 1,
                 p: 1,
                 flexDirection: data.isLTR ? {
-                    xs: 'column-reverse',
+                    // xs: 'column-reverse',
                     sm: 'row-reverse',
                 } : {
                     xs: 'column',
@@ -66,8 +71,8 @@ export default function TeamCard({ data }) {
             <Box sx={{ position: 'relative' }}>
                 <CardMedia
                     component="img"
-                    width="200px"
-                    height="300px"
+                    width="300px"
+                    height="400px"
                     alt="Ismail ben alla"
                     src={data.isIsmail ? IsmailProfile : ImaneProfile}
                     sx={{
@@ -83,7 +88,7 @@ export default function TeamCard({ data }) {
                 <IconButton
                     onClick={SpeachHandler}
                     sx={{
-                        color: '#000d',
+                        color: textColor,
                         position: 'absolute',
                         top: '0.8rem',
                         left: '0.8rem',
@@ -109,19 +114,20 @@ export default function TeamCard({ data }) {
                         fontSize: '26px',
                         textTransform: 'uppercase',
                         fontFamily: "Open Sans",
-                    }} color="text.secondary">
+                        color: textColor,
+                    }}>
                         {data.name}
                     </Typography>
                     <Typography variant="h6" style={{
                         textTransform: 'uppercase',
-                        color: '#111', margin: '0',
+                        color: textColor, margin: '0',
                         marginBottom: '1rem', padding: '0',
                         fontSize: 'x-small',
                         fontFamily: "Open Sans",
-                    }} color="text.secondary">
+                    }}>
                         {data.profession}
                     </Typography>
-                    <Typography variant="dev" color='dark' style={{ marginRight: '0.3rem', fontFamily: "Open Sans", fontSize: "1.2rem" }}>
+                    <Typography variant="dev" style={{ marginRight: '0.3rem', fontFamily: "Open Sans", fontSize: "1.2rem", color: textColor }}>
                         {data.description}
                     </Typography>
                 </Box>
@@ -134,8 +140,8 @@ export default function TeamCard({ data }) {
                     <Tooltip title={`Resume of ${data.name}`}>
                         <LoadingButton
                             sx={{
-                                color: "#000",
-                                borderColor: '#000',
+                                color: textColor,
+                                borderColor: textColor,
                                 margin: '0.5rem',
                                 padding: "0.5rem 1rem",
                                 marginBottom: '0.4rem',

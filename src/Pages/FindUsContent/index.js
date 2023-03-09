@@ -1,4 +1,4 @@
-import { Button, Chip, Divider, FormControl, Grid, Input, TextField, Tooltip, Typography } from '@mui/material'
+import { Button, Chip, Divider, FormControl, Grid, Input, TextField, Tooltip, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system';
 import {
     useState,
@@ -68,6 +68,10 @@ export const FindUsContent = () => {
     const [speak, setSpeak] = useState(false);
     const emailForm = useReducer();
     const alink = useRef();
+
+
+    const isMobile = useMediaQuery('(min-width:768px)');
+    const textColor = !isMobile ? "#fff" : "#000";
 
     const ismailURL = "./files/ben_alla_ismail_cv.pdf";
     const imaneURL = "./files/Mouatassem_Imane_cv.pdf";
@@ -208,7 +212,7 @@ export const FindUsContent = () => {
             </Grid>
 
             <Divider sx={{ padding: '1rem 1rem', }}>
-                <Chip label="Just click, They are so smooth 😁" sx={{ fontSize: '1rem', fontWeight: 600 }} />
+                <Chip label="Just click, They are so smooth 😁" sx={{ fontSize: '1rem', fontWeight: 600, color: textColor }} />
             </Divider>
 
             <Grid container spacing={1} style={{ justifyContent: "center" }}>
@@ -229,7 +233,7 @@ export const FindUsContent = () => {
             </Grid>
 
             <Divider sx={{ padding: '1rem 1rem', }}>
-                <Chip label="Feel Free to Send an Email 😀" sx={{ fontSize: '1rem', fontWeight: 600 }} />
+                <Chip label="Feel Free to Send an Email 😀" sx={{ fontSize: '1rem', fontWeight: 600, color: textColor }} />
             </Divider>
 
             <form ref={emailForm} >
@@ -246,7 +250,7 @@ export const FindUsContent = () => {
                                 border: "none",
                                 backgroundColor: "#000",
                                 width: "100%",
-                                color: "white",
+                                color: textColor,
                                 resize: "none",
                             }} />
                     </Grid>
@@ -262,7 +266,7 @@ export const FindUsContent = () => {
                                 border: "none",
                                 backgroundColor: "#000",
                                 width: "100%",
-                                color: "white",
+                                color: textColor,
                                 resize: "none",
                             }} />
                     </Grid>
@@ -278,7 +282,7 @@ export const FindUsContent = () => {
                                 border: "none",
                                 backgroundColor: "#000",
                                 width: "100%",
-                                color: "white",
+                                color: textColor,
                                 resize: "none",
                             }} />
                     </Grid>
@@ -295,7 +299,7 @@ export const FindUsContent = () => {
                                 border: "none",
                                 backgroundColor: "#000",
                                 width: "100%",
-                                color: "white",
+                                color: textColor,
                                 resize: "none",
                             }} />
                     </Grid>
@@ -303,12 +307,11 @@ export const FindUsContent = () => {
 
                         <Button type="submit" onClick={sendEmailHandler} variant="outlined" endIcon={<SendIcon />}
                             sx={{
-                                color: "#000",
-                                borderColor: '#000',
+                                color: textColor,
+                                borderColor: textColor,
                                 margin: '0.5rem auto',
                                 padding: "0.6rem 4rem",
                                 borderRadius: '1rem',
-
                             }}>
                             <ThemeProvider theme={themeButton}>
                                 Send It
@@ -324,8 +327,8 @@ export const FindUsContent = () => {
                     <Tooltip title={`Both Resumes`}>
                         <LoadingButton
                             sx={{
-                                color: "#000",
-                                borderColor: '#000',
+                                color: textColor,
+                                borderColor: textColor,
                                 margin: '0.5rem',
                                 padding: "0.5rem 1rem",
                                 marginBottom: '0.4rem',

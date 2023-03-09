@@ -13,8 +13,12 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import ismailImg from "../../../assets/ProfileImages/ismail-ben-alla-1.jpg";
 import imaneImg from "../../../assets/ProfileImages/imane-moutassem-1.jpg";
 import { Image } from '@mui/icons-material';
+import { useMediaQuery } from '@mui/material';
 
 export default function ProjectCard({ data }) {
+
+    const isMobile = useMediaQuery('(min-width:768px)');
+    const textColor = !isMobile ? "#fff" : "#000";
 
     return (
         <Card
@@ -24,6 +28,7 @@ export default function ProjectCard({ data }) {
                 boxShadow: 'none',
                 '--Card-padding': '0px',
                 border: '1px #000 solid',
+
                 padding: '0.5rem',
             }}
         >
@@ -65,7 +70,7 @@ export default function ProjectCard({ data }) {
                                 <Typography
 
                                     sx={{
-                                        color: '#fff',
+                                        color: textColor,
                                         textOverflow: 'ellipsis',
                                         overflow: 'hidden',
                                         display: 'block',

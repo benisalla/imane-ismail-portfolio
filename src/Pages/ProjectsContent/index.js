@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system';
 import React, { useEffect } from 'react'
 import GlowBubble from '../../Components/GlowBubble';
@@ -6,21 +6,7 @@ import ProjectLogo from '../../Components/Logos/ProjectLogo';
 import ProjectCard from './components/ProjectCard';
 //----------< images here >----------//
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import imaneCalcul from '../../assets/ProjectsImages/imaneCalcul.PNG'
-import multisale from '../../assets/ProjectsImages/multisale.png'
-//----------< images here >----------//
-import ticTacTow from '../../assets/ProjectsImages/tic-tac-tow.png';
-import snakeGame from '../../assets/ProjectsImages/snake-game.png';
-import operationResearch from '../../assets/ProjectsImages/operation-research.png';
-import linkBio from '../../assets/ProjectsImages/link-bio.png';
-import linearAlgebra from '../../assets/ProjectsImages/linear-algebra.png';
-import jeefOfficialWebsite from '../../assets/ProjectsImages/jeef-official-website.png';
-import jeefEvent from '../../assets/ProjectsImages/jeef-event-img.png';
-import calculatorAndroidStudio from '../../assets/ProjectsImages/calculator-android-studio.png';
-import voiceRecognition from '../../assets/ProjectsImages/voice-recognition.png';
-import axios from 'axios';
 import { useISIMController } from '../../context';
-import { BsNutFill } from 'react-icons/bs';
 
 
 export const ProjectsContent = () => {
@@ -154,6 +140,9 @@ export const ProjectsContent = () => {
     // ]
 
 
+    const isMobile = useMediaQuery('(min-width:768px)');
+    const textColor = !isMobile ? "#fff" : "#000";
+
     return (
         <GlowBubble>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -163,14 +152,13 @@ export const ProjectsContent = () => {
                 <ThemeProvider theme={themedesc1}>
 
                     <Typography
-                        //component="h1"
-                        style={{ color: "#000", padding: '1rem', fontSize: '30px', textTransform: 'uppercase' }}>Our Projects</Typography>
+                        style={{ color: textColor, padding: '1rem', fontSize: '30px', textTransform: 'uppercase' }}>Our Projects</Typography>
                 </ThemeProvider >
 
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <ThemeProvider theme={themedesc1}>
-                    <Typography component="h1" style={{ color: "#000", padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
+                    <Typography component="h1" style={{ color: textColor, padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
                         Explore Our Accomplished projects developed using a variety of tools and programming languages.
                     </Typography>
                 </ThemeProvider>
