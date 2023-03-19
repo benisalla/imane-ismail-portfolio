@@ -7,6 +7,7 @@ const SkillCard = ({ src, title }) => {
 
     const textColor = !isMobile ? "#647bff" : "#000";
     const borderColor = !isMobile ? "#857f84" : "#000";
+    const boxShadow = !isMobile ? '#647bff 1px 1px 4px,#647bff -1px -1px 4px' : '';
 
 
     return (
@@ -19,16 +20,17 @@ const SkillCard = ({ src, title }) => {
             margin: "0.4rem 0.4rem",
             backgroundColor: "#0003",
             minWidth: "160px",
+            boxShadow: boxShadow,
         }} sx={{
             transition: "all 0.3s ease",
             '&:hover': {
-                boxShadow: "#000 2px 2px 10px",
+                boxShadow: "#fff 1px 1px 15px",
             }
         }}>
             <Box style={{ margin: "0.5rem" }}>
                 <img src={src} width="100px" height="100px" />
             </Box>
-            <Typography component="h1" style={{ color: "#000", padding: '0.5rem', fontWeight: '600', fontSize: '20px', textTransform: 'uppercase' }}>
+            <Typography component="h1" style={{ color: textColor, padding: '0.5rem', fontWeight: '600', fontSize: '20px', textTransform: 'uppercase' }}>
                 {title}
             </Typography>
         </Card>

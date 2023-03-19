@@ -18,7 +18,9 @@ import { useMediaQuery } from '@mui/material';
 export default function ProjectCard({ data }) {
 
     const isMobile = useMediaQuery('(min-width:768px)');
-    const textColor = !isMobile ? "#fff" : "#000";
+
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
 
     return (
         <Card
@@ -28,7 +30,7 @@ export default function ProjectCard({ data }) {
                 boxShadow: 'none',
                 '--Card-padding': '0px',
                 border: '1px #000 solid',
-
+                borderColor: borderColor,
                 padding: '0.5rem',
             }}
         >
@@ -81,7 +83,7 @@ export default function ProjectCard({ data }) {
                             </Typography>
                             <Box sx={{ alignSelf: 'end', }}>
                                 <Link
-                                    color="neutral"
+                                    color={textColor}
                                     sx={{
                                         ml: '4px',
                                         '&:hover': {
@@ -100,7 +102,7 @@ export default function ProjectCard({ data }) {
                                     <VisibilityIcon />
                                 </Link>
                                 <Link
-                                    color="neutral"
+                                    color={textColor}
                                     sx={{
                                         mr: '4px',
                                         '&:hover': {
@@ -129,14 +131,15 @@ export default function ProjectCard({ data }) {
                     size="sm"
                     sx={{ '--Avatar-size': '1.5rem' }}
                 />
-                <Typography sx={{ fontSize: 'sm', fontWeight: 'md' }}>
+                <Typography sx={{ color: textColor, fontSize: 'sm', fontWeight: 'md' }}>
                     {data.owner_name}
                 </Typography>
                 <Chip
                     variant="outlined"
-                    color="neutral"
                     size="sm"
                     sx={{
+                        color: textColor,
+                        borderColor: borderColor,
                         borderRadius: 'sm',
                         py: 0.25,
                         px: 0.5,

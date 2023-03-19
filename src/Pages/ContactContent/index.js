@@ -12,18 +12,18 @@ const ContactContent = () => {
     <PageLayout isAnim={false}>
 
       <div className="home">
-        <div className="imanePart">
+        <div className="part">
           <IMANE className="imane" />
 
           <div className="desc shape">
             <h3>
               <ReactCurvedText
-                width={370}
+                width={300}
                 height={300}
-                cx="160"
-                cy="97"
-                rx={164}
-                ry={80}
+                cx="150"
+                cy="145"
+                rx={140}
+                ry={135}
                 startOffset={50}
                 reversed={true}
                 tspanProps={{ dy: '10' }}
@@ -44,19 +44,19 @@ const ContactContent = () => {
           </div>
         </div>
 
-        <div className="ismailPart">
+        <div className="part">
           <ISMAIL className="ismail" />
 
           <div className="desc shape">
             <h3
             >
               <ReactCurvedText
-                width={370}
+                width={300}
                 height={300}
-                cx="160"
-                cy="97"
-                rx={164}
-                ry={80}
+                cx="150"
+                cy="145"
+                rx={140}
+                ry={135}
                 startOffset={50}
                 reversed={true}
                 tspanProps={{ dy: '10' }}

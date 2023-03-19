@@ -26,10 +26,16 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
 
+    const isMobile = useMediaQuery('(min-width:768px)');
+
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
+
     return (
         <Box
             style={{
                 display: 'flex',
+                flexWrap: "wrap",
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 margin: "0.2rem auto",
@@ -41,18 +47,19 @@ export const InfoItem = ({ icon, title, value1, value2 = "" }) => {
                 borderBottom: "1px solid #000",
                 borderTop: "1px solid #000",
                 borderRadius: "30px",
+                borderColor: borderColor,
                 padding: "0.8rem 1rem",
             }}>
 
             <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 {icon}
-                <Typography style={{ marginLeft: "1.5rem" }} variant='subtitle1'>{title}</Typography>
+                <Typography style={{ marginLeft: "1rem", color: textColor }} variant='subtitle1'>{title}</Typography>
             </Box>
             <Box>
-                <Typography>
+                <Typography style={{ color: textColor  }}>
                     {value1}
                 </Typography>
-                <Typography>
+                <Typography style={{ color: textColor  }}>
                     {value2}
                 </Typography>
             </Box>
@@ -71,7 +78,9 @@ export const FindUsContent = () => {
 
 
     const isMobile = useMediaQuery('(min-width:768px)');
-    const textColor = !isMobile ? "#fff" : "#000";
+
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
 
     const ismailURL = "./files/ben_alla_ismail_cv.pdf";
     const imaneURL = "./files/Mouatassem_Imane_cv.pdf";
@@ -177,57 +186,56 @@ export const FindUsContent = () => {
             </Box>
             <ThemeProvider theme={themeTitle}>
                 <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-
-                    <Typography component="h1" style={{ color: "#000", padding: '1rem', textTransform: 'uppercase' }}>Find us Easly</Typography>
+                    <Typography component="h1" style={{ color: textColor, padding: '1rem', textTransform: 'uppercase' }}>Find us Easly</Typography>
                 </Box>
             </ThemeProvider>
 
             <Grid container spacing={1} style={{ marginTop: "1rem" }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
                     <ThemeProvider theme={themedesc1}>
-                        <InfoItem icon={<PlaceIcon />} title="Location" value1="Moroco / fes" />
+                        <InfoItem icon={<PlaceIcon sx={{ color: textColor }}/>} title="Location" value1="Moroco / fes" />
                     </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
                     <ThemeProvider theme={themedesc1}>
-                        <InfoItem icon={<EmailIcon />} title="Email" value1="ismail.benalla1@usmba.ac.ma" value2="imane12mouatassem@gmail.com" />
+                        <InfoItem icon={<EmailIcon sx={{ color: textColor }}/>} title="Email" value1="ismail.benalla1@usmba.ac.ma" value2="imane12mouatassem@gmail.com" />
                     </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
                     <ThemeProvider theme={themedesc1}>
-                        <InfoItem icon={<SchoolIcon />} title="Education" value1="Computer science engineering" />
+                        <InfoItem icon={<SchoolIcon sx={{ color: textColor }}/>} title="Education" value1="Computer science engineering" />
                     </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
 
                     <ThemeProvider theme={themedesc1}>
-                        <InfoItem icon={<PhoneIcon />} title="Mobile Number" value1="(+212) 06 04 06 63 55" />
+                        <InfoItem icon={<PhoneIcon sx={{ color: textColor }}/>} title="Mobile Number" value1="(+212) 06 04 06 63 55" />
                     </ThemeProvider>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ display: "flex", justifyContent: "center" }}>
                     <ThemeProvider theme={themedesc1}>
-                        <InfoItem icon={<PublicIcon />} title="Languages" value1="English" value2="Frensh" />
+                        <InfoItem icon={<PublicIcon sx={{ color: textColor }}/>} title="Languages" value1="English" value2="Frensh" />
                     </ThemeProvider>
                 </Grid>
             </Grid>
 
-            <Divider sx={{ padding: '1rem 1rem', }}>
+            <Divider sx={{ padding: '1rem 1rem' }}>
                 <Chip label="Just click, They are so smooth 😁" sx={{ fontSize: '1rem', fontWeight: 600, color: textColor }} />
             </Divider>
 
             <Grid container spacing={1} style={{ justifyContent: "center" }}>
                 <Grid item xs={3} sm={3} md={3} lg={3} xl={3} style={{ display: "flex", justifyContent: "center" }}>
                     <Box style={{ margin: "0.6rem", border: '1px dashed #000', borderRadius: "5px", display: 'flex', justifyContent: "center", alignItems: "center" }}>
-                        <a href="www.google.com"><GitHubIcon fontSize='large' style={{ color: "#000" }} /></a>
+                        <a href="www.google.com"><GitHubIcon fontSize='large' style={{ color: textColor }} /></a>
                     </Box>
                     <Box style={{ margin: "0.6rem", border: '1px dashed #000', borderRadius: "5px", display: 'flex', justifyContent: "center", alignItems: "center" }}>
-                        <a href="www.google.com"><LinkedInIcon fontSize='large' style={{ color: "#000" }} /></a>
+                        <a href="www.google.com"><LinkedInIcon fontSize='large' style={{ color: textColor }} /></a>
                     </Box>
                     <Box style={{ margin: "0.6rem", border: '1px dashed #000', borderRadius: "5px", display: 'flex', justifyContent: "center", alignItems: "center" }}>
-                        <a href="www.google.com"><LogoDevIcon fontSize='large' style={{ color: "#000" }} /></a>
+                        <a href="www.google.com"><LogoDevIcon fontSize='large' style={{ color: textColor }} /></a>
                     </Box>
                     <Box style={{ margin: "0.6rem", border: '1px dashed #000', borderRadius: "5px", display: 'flex', justifyContent: "center", alignItems: "center" }}>
-                        <a href="www.google.com"><TwitterIcon fontSize='large' style={{ color: "#000" }} /></a>
+                        <a href="www.google.com"><TwitterIcon fontSize='large' style={{ color: textColor }} /></a>
                     </Box>
                 </Grid>
             </Grid>
@@ -247,8 +255,9 @@ export const FindUsContent = () => {
                                 fontSize: "1rem",
                                 padding: " 1rem 1.2rem",
                                 outline: "none",
-                                border: "none",
-                                backgroundColor: "#000",
+                                backgroundColor: "#fff1",
+                                border: "1px solid #fff",
+                                borderColor: borderColor,
                                 width: "100%",
                                 color: textColor,
                                 resize: "none",
@@ -263,8 +272,9 @@ export const FindUsContent = () => {
                                 fontSize: "1rem",
                                 padding: " 1rem 1.2rem",
                                 outline: "none",
-                                border: "none",
-                                backgroundColor: "#000",
+                                backgroundColor: "#fff1",
+                                border: "1px solid #fff",
+                                borderColor: borderColor,
                                 width: "100%",
                                 color: textColor,
                                 resize: "none",
@@ -279,8 +289,9 @@ export const FindUsContent = () => {
                                 fontSize: "1rem",
                                 padding: " 1rem 1.2rem",
                                 outline: "none",
-                                border: "none",
-                                backgroundColor: "#000",
+                                backgroundColor: "#fff1",
+                                border: "1px solid #fff",
+                                borderColor: borderColor,
                                 width: "100%",
                                 color: textColor,
                                 resize: "none",
@@ -296,8 +307,9 @@ export const FindUsContent = () => {
                                 fontSize: "1rem",
                                 padding: " 1rem 1.2rem",
                                 outline: "none",
-                                border: "none",
-                                backgroundColor: "#000",
+                                backgroundColor: "#fff1",
+                                border: "1px solid #fff",
+                                borderColor: borderColor,
                                 width: "100%",
                                 color: textColor,
                                 resize: "none",
@@ -308,7 +320,7 @@ export const FindUsContent = () => {
                         <Button type="submit" onClick={sendEmailHandler} variant="outlined" endIcon={<SendIcon />}
                             sx={{
                                 color: textColor,
-                                borderColor: textColor,
+                                borderColor: borderColor,
                                 margin: '0.5rem auto',
                                 padding: "0.6rem 4rem",
                                 borderRadius: '1rem',
@@ -328,7 +340,7 @@ export const FindUsContent = () => {
                         <LoadingButton
                             sx={{
                                 color: textColor,
-                                borderColor: textColor,
+                                borderColor: borderColor,
                                 margin: '0.5rem',
                                 padding: "0.5rem 1rem",
                                 marginBottom: '0.4rem',

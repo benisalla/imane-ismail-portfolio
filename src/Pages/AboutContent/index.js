@@ -7,6 +7,10 @@ import AboutUsLogo from '../../Components/Logos/AboutUsLogo';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 
+import SchoolIcon from '@mui/icons-material/School';
+import ScienceIcon from '@mui/icons-material/Science';
+import TerminalIcon from '@mui/icons-material/Terminal';
+
 import AboutCard from './components/AboutCard';
 import { useState } from 'react';
 import { Card } from '@mui/joy';
@@ -347,11 +351,11 @@ export const AboutContent = () => {
             2022-2023
           </TimelineOppositeContent>
           <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot>
-              <DateRangeIcon />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
+            <TimelineDot sx={{ borderColor: borderColor, backgroundColor: 'transparent' }} variant="outlined">
+              <DateRangeIcon sx={{ color: textColor }}/>
             </TimelineDot>
-            <TimelineConnector />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span" color={textColor}>
@@ -369,11 +373,11 @@ export const AboutContent = () => {
             2021-2022
           </TimelineOppositeContent>
           <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot color="primary">
-              <DateRangeIcon />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
+            <TimelineDot sx={{ borderColor: borderColor, backgroundColor: 'transparent' }} variant="outlined">
+              <TerminalIcon sx={{ color: textColor }}/>
             </TimelineDot>
-            <TimelineConnector />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span" color={textColor}>
@@ -391,11 +395,11 @@ export const AboutContent = () => {
             2019-2021
           </TimelineOppositeContent>
           <TimelineSeparator>
-            <TimelineConnector />
-            <TimelineDot color="primary" variant="outlined">
-              <DateRangeIcon />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
+            <TimelineDot sx={{ borderColor: borderColor, backgroundColor: 'transparent' }} variant="outlined">
+              <ScienceIcon sx={{ color: textColor }}/>
             </TimelineDot>
-            <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span" color={textColor}>
@@ -413,11 +417,11 @@ export const AboutContent = () => {
             2018-2019
           </TimelineOppositeContent>
           <TimelineSeparator>
-            <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-            <TimelineDot color="secondary">
-              <DateRangeIcon />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
+            <TimelineDot sx={{ borderColor: borderColor, backgroundColor: 'transparent' }} variant="outlined">
+              <SchoolIcon sx={{ color: textColor }}/>
             </TimelineDot>
-            <TimelineConnector />
+            <TimelineConnector sx={{ bgcolor: borderColor }} />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
             <Typography variant="h6" component="span" color={textColor}>

@@ -2,13 +2,17 @@ import React from "react";
 import style from "./style.module.css";
 import ParticleImage, { forces, Vector } from "react-particle-image";
 import ImgTarget from "../../../assets/AnimSrc/imane-png.png";
+import { useMediaQuery } from "@mui/material";
 
 
 const IMANE = () => {
+    const isMobile = useMediaQuery('(min-width:768px)');
+
+    const scale = !isMobile ? "1" : "1.3";
     return (
         <div className={style.main} style={{ backgroundColor: "#0000" }}>
             <ParticleImage
-                scale={1.3}
+                scale={scale}
                 maxParticles={1200}
                 backgroundColor="#0000"
                 entropy={10}

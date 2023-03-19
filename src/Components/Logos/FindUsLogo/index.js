@@ -8,11 +8,12 @@ import { useMediaQuery } from "@mui/material";
 const FindUsLogo = () => {
 
     const isMobile = useMediaQuery('(min-width:768px)');
+    const scale = !isMobile ? "0.6" : "0.8";
 
     return (
         <div className={style.main}>
             <ParticleImage
-                scale={0.8}
+                scale={scale}
                 maxParticles={2500}
                 backgroundColor="#0000"
                 entropy={4}

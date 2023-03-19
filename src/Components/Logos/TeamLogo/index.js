@@ -9,10 +9,11 @@ const TeamLogo = () => {
 
     const isMobile = useMediaQuery('(min-width:768px)');
 
+    const scale = !isMobile ? "0.3" : "0.45";
     return (
         <div className={style.main}>
             <ParticleImage
-                scale={0.45}
+                scale={scale}
                 maxParticles={5000}
                 backgroundColor="#0000"
                 entropy={4}

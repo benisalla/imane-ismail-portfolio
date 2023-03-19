@@ -13,6 +13,11 @@ export const ProjectsContent = () => {
     const [controller, dispatch] = useISIMController();
     const { projects } = controller;
 
+    const isMobile = useMediaQuery('(min-width:768px)');
+
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
+
     const themedesc1 = createTheme(
         {
             typography: {
@@ -139,10 +144,6 @@ export const ProjectsContent = () => {
     //     }
     // ]
 
-
-    const isMobile = useMediaQuery('(min-width:768px)');
-    const textColor = !isMobile ? "#fff" : "#000";
-
     return (
         <GlowBubble>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -158,22 +159,29 @@ export const ProjectsContent = () => {
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <ThemeProvider theme={themedesc1}>
-                    <Typography component="h1" style={{ color: textColor, padding: '1.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
+                    <Typography component="h1" style={{
+                        color: textColor,
+                        padding: '1.3rem',
+                        border: "1px solid #000",
+                        borderRadius: '1rem',
+                        margin: '1rem',
+                        borderColor: borderColor,
+                    }}>
                         Explore Our Accomplished projects developed using a variety of tools and programming languages.
                     </Typography>
                 </ThemeProvider>
             </Box>
 
-
-            <Grid container spacing={1}>
+            <Grid container spacing={1} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 {projects.map(data => {
                     return (
-                        <Grid item xs={11} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <Grid item xs={11} sm={6} md={4} lg={4} xl={4} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <ProjectCard key={data.github_link} data={data} />
                         </Grid>
                     )
                 })}
             </Grid>
+
         </GlowBubble>
     )
 };
