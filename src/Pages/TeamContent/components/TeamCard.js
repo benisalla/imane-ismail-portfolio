@@ -61,7 +61,7 @@ export default function TeamCard({ data }) {
                 alignItems: isMobile ? "flex-start": "center",
                 flex: 1,
                 p: 1,
-                flexDirection: data.isLTR && isMobile ? {
+                flexDirection: data.isLTR && !isMobile ? {
                     sm: 'row-reverse',
                 } : {
                     xs: 'column',

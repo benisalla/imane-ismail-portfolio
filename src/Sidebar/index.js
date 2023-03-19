@@ -15,7 +15,6 @@ import { setIsBGASet, setIsStartSound, setOpenSidebar, useISIMController } from 
 
 const Container = styled.div`
   position: fixed;
-
   .active {
     border-right: 4px solid #647bff;
 
@@ -28,19 +27,17 @@ const Container = styled.div`
 
 const Button = styled.button`
   background-color: var(--black);
+  box-shadow: #647bff5c 1px 1px 2px, #647bff5c 1px -1px 2px,#647bff5c -1px 1px 2px, #647bff5c -1px -1px 2px;
   border: none;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   margin: 0.5rem 0 0 0.5rem;
   cursor: pointer;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
-
   &::before,
   &::after {
     content: "";
@@ -93,9 +90,8 @@ const SlickBar = styled.ul`
   flex-direction: column;
   align-items: center;
   background-color: var(--black);
-
+  box-shadow: #647bff4 1px 1px 2px, #647bff4 1px -1px 2px,#647bff4 -1px 1px 2px, #647bff4 -1px -1px 2px;
   padding: 2rem 0;
-
   position: absolute;
   top: 4rem;
   left: 0;
@@ -163,7 +159,7 @@ const Sidebar = () => {
         onMouseEnter={() => handleClick(true)}>
         <Link
           to="/"
-          onClick={() => { setClick(false); setIsStartSound(dispatch, true); setIsBGASet(dispatch, true); }}
+          onClick={() => { setClick(false); setIsStartSound(dispatch, true); setIsBGASet(dispatch, true);setOpenSidebar(dispatch, !openSideBar) }}
         >
           <Logo>
             <img src={logo} alt="logo" />
@@ -171,7 +167,7 @@ const Sidebar = () => {
         </Link>
         <SlickBar clicked={click}>
           <Item
-            onClick={() => { setClick(false); setIsStartSound(dispatch, true); setIsBGASet(dispatch, true); }}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, true); setIsBGASet(dispatch, true);setOpenSidebar(dispatch, !openSideBar) }}
             activeclassname="active"
             to="/"
           >
@@ -179,7 +175,7 @@ const Sidebar = () => {
             <Text clicked={click}>Home</Text>
           </Item>
           <Item
-            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false); }}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false);setOpenSidebar(dispatch, !openSideBar) }}
             activeclassname="active"
             to="/team"
           >
@@ -187,7 +183,7 @@ const Sidebar = () => {
             <Text clicked={click}>Team</Text>
           </Item>
           <Item
-            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false); }}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false);setOpenSidebar(dispatch, !openSideBar) }}
             activeclassname="active"
             to="/about-us"
           >
@@ -195,7 +191,7 @@ const Sidebar = () => {
             <Text clicked={click}>About</Text>
           </Item>
           <Item
-            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false); }}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false);setOpenSidebar(dispatch, !openSideBar) }}
             activeclassname="active"
             to="/projects"
           >
@@ -203,7 +199,7 @@ const Sidebar = () => {
             <Text clicked={click}>Projects</Text>
           </Item>
           <Item
-            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false); }}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, false);setOpenSidebar(dispatch, !openSideBar) }}
             activeclassname="active"
             to="/find-us"
           >
@@ -211,7 +207,7 @@ const Sidebar = () => {
             <Text clicked={click}>Find</Text>
           </Item>
           <Item
-            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, true); }}
+            onClick={() => { setClick(false); setIsStartSound(dispatch, false); setIsBGASet(dispatch, true);setOpenSidebar(dispatch, !openSideBar) }}
             activeclassname="active"
             to="/contact-us"
           >
