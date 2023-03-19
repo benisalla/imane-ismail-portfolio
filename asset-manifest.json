@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/imane-ismail-portfolio/static/css/main.adf23671.css",
-    "main.js": "/imane-ismail-portfolio/static/js/main.fcfc89ed.js",
+    "main.js": "/imane-ismail-portfolio/static/js/main.eb86cf3a.js",
     "static/media/sound-effect.mp3": "/imane-ismail-portfolio/static/media/sound-effect.4e55264e6edb049a880c.mp3",
     "static/media/dancing-little-robot.gif": "/imane-ismail-portfolio/static/media/dancing-little-robot.2bbe3f587ac2945a9d90.gif",
     "static/media/first-sound-effect.mp3": "/imane-ismail-portfolio/static/media/first-sound-effect.68e8fd55976bb2fe2029.mp3",
@@ -24,10 +24,10 @@
     "static/media/oracle.png": "/imane-ismail-portfolio/static/media/oracle.87b73b7b16f3fa26cd8a.png",
     "index.html": "/imane-ismail-portfolio/index.html",
     "main.adf23671.css.map": "/imane-ismail-portfolio/static/css/main.adf23671.css.map",
-    "main.fcfc89ed.js.map": "/imane-ismail-portfolio/static/js/main.fcfc89ed.js.map"
+    "main.eb86cf3a.js.map": "/imane-ismail-portfolio/static/js/main.eb86cf3a.js.map"
   },
   "entrypoints": [
     "static/css/main.adf23671.css",
-    "static/js/main.fcfc89ed.js"
+    "static/js/main.eb86cf3a.js"
   ]
 }
