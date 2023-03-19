@@ -1,7 +1,13 @@
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Card, Typography, useMediaQuery } from '@mui/material';
 import React from 'react'
 
 const SkillCard = ({ src, title }) => {
+
+    const isMobile = useMediaQuery('(min-width:768px)');
+
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
+
 
     return (
         <Card style={{

@@ -6,7 +6,8 @@ export default function AboutCard({ data }) {
 
     const isMobile = useMediaQuery('(min-width:768px)');
 
-    const textColor = !isMobile ? "#fff" : "#000";
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
 
 
     return (
@@ -15,18 +16,19 @@ export default function AboutCard({ data }) {
             sx={
                 {
                     maxWidth: '420px',
-                    minWidth: '230px',
+                    minWidth: '200px',
                     flex: 1,
                     border: '2px solid #000',
                     borderRadius: '1rem',
-                    padding: '1.5rem',
+                    padding: '1.5rem 0.8rem',
                     display: 'flex',
                     flexDirection: 'column',
                     transition: 'all 0.33s ease-in-out,border 0s ease-in-out',
+                    borderColor: borderColor,
                     '&:hover': {
                         cursor: 'default',
                         transform: 'translateY(-5px)',
-                        borderColor: '#eee',
+                        borderColor: '#647bff',
                         boxShadow: '1px 4px 15px rgb(255 255 255 / 32 %)',
                     }
                 }
@@ -59,7 +61,7 @@ export default function AboutCard({ data }) {
                     top: '15px',
                     width: '2rem',
                     height: '2px',
-                    backgroundColor: '#423e3e',
+                    backgroundColor: borderColor,
                 }
             }}>
                 {data.firstWord} <br /> {data.secondWord}

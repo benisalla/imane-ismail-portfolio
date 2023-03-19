@@ -88,7 +88,8 @@ export const TeamContent = () => {
   }
 
   const isMobile = useMediaQuery('(min-width:768px)');
-  const textColor = !isMobile ? "#fff" : "#000";
+  const textColor = !isMobile ? "#647bff" : "#000";
+  const borderColor = !isMobile ? "#857f84" : "#000";
 
   return (
     <GlowBubble>
@@ -104,7 +105,12 @@ export const TeamContent = () => {
 
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <ThemeProvider theme={themedesc1}>
-          <Typography component="h2" style={{ color: textColor, padding: '2.3rem', border: "1px solid #000", borderRadius: '1rem', margin: '1rem' }}>
+          <Typography component="h2" style={{
+            color: textColor, padding: '2.3rem',
+            border: "1px solid #000", borderRadius: '1rem',
+            borderColor: borderColor,
+            margin: '1rem'
+          }}>
 
             We believe in staying current with industry trends and staying up-to-date with
             the latest technologies and tools. We are committed to continuous learning and growth,
@@ -116,7 +122,7 @@ export const TeamContent = () => {
 
       <Grid container spacing={1}>
 
-        <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex", fontFamily: "Mynerve", justifyContent: "center" , fontSize: "2.1rem"}}>
+        <Grid item xs={12} sm={12} md={12} xl={6} lg={12} style={{ display: "flex", fontFamily: "Mynerve", justifyContent: "center", fontSize: "2.1rem" }}>
 
           <TeamCard data={ismail} />
 

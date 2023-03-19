@@ -7,7 +7,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
-import { Tooltip, tooltipClasses, Typography } from '@mui/material';
+import { Tooltip, tooltipClasses, Typography, useMediaQuery } from '@mui/material';
 
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -19,6 +19,8 @@ import Groups3Icon from '@mui/icons-material/Groups3';
 import ShareIcon from '@mui/icons-material/Share';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import GroupWorkIcon from '@mui/icons-material/GroupWork';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 //---------------------------------------------------------------------------//
 
@@ -69,18 +71,24 @@ function ColorlibStepIcon1(props) {
         },
     };
 
+    const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
 
     return (
-        <BootstrapTooltip title={
-            <React.Fragment>
-                <Typography color="inherit" style={{ textAlign: "center" }} >
-                    {moreInfo[String(props.icon)].title}
-                </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem" ,lineHeight:'1.2rem'}}>
-                    {moreInfo[String(props.icon)].content}
-                </Typography>
-            </React.Fragment>
-        }>
+        <BootstrapTooltip
+            onClick={() => setTooltipIsOpen(true)}
+            open={tooltipIsOpen}
+            onOpen={() => setTooltipIsOpen(true)}
+            onClose={() => setTooltipIsOpen(false)}
+            title={
+                <React.Fragment>
+                    <Typography color="inherit" style={{ textAlign: "center" }} >
+                        {moreInfo[String(props.icon)].title}
+                    </Typography>
+                    <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem", lineHeight: '1.2rem' }}>
+                        {moreInfo[String(props.icon)].content}
+                    </Typography>
+                </React.Fragment>
+            }>
             <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
                 {icons[String(props.icon)]}
             </ColorlibStepIconRoot>
@@ -120,18 +128,24 @@ function ColorlibStepIcon2(props) {
 
     };
 
+    const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
 
     return (
-        <BootstrapTooltip title={
-            <React.Fragment>
-                <Typography color="inherit" style={{ textAlign: "center" }} >
-                    {moreInfo[String(props.icon)].title}
-                </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem" ,lineHeight:'1.2rem'}}>
-                    {moreInfo[String(props.icon)].content}
-                </Typography>
-            </React.Fragment>
-        }>
+        <BootstrapTooltip
+            onClick={() => setTooltipIsOpen(true)}
+            open={tooltipIsOpen}
+            onOpen={() => setTooltipIsOpen(true)}
+            onClose={() => setTooltipIsOpen(false)}
+            title={
+                <React.Fragment>
+                    <Typography color="inherit" style={{ textAlign: "center" }} >
+                        {moreInfo[String(props.icon)].title}
+                    </Typography>
+                    <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem", lineHeight: '1.2rem' }}>
+                        {moreInfo[String(props.icon)].content}
+                    </Typography>
+                </React.Fragment>
+            }>
             <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
                 {icons[String(props.icon)]}
             </ColorlibStepIconRoot>
@@ -164,25 +178,41 @@ function ColorlibStepIcon3(props) {
         },
     };
 
+    const isMobile = useMediaQuery('(min-width:768px)');
+
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
+
+    const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
 
     return (
-        <BootstrapTooltip title={
-            <React.Fragment>
-                <Typography color="inherit" style={{ textAlign: "center" }} >
-                    {moreInfo[String(props.icon)].title}
-                </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem",lineHeight:'1.2rem' }}>
-                    {moreInfo[String(props.icon)].content}
-                </Typography>
-            </React.Fragment>
-        }>
+        <BootstrapTooltip
+            onClick={() => setTooltipIsOpen(true)}
+            open={tooltipIsOpen}
+            onOpen={() => setTooltipIsOpen(true)}
+            onClose={() => setTooltipIsOpen(false)}
+            title={
+                <React.Fragment>
+                    <Typography color="inherit" style={{ textAlign: "center" }} >
+                        {moreInfo[String(props.icon)].title}
+                    </Typography>
+                    <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem", lineHeight: '1.2rem' }}>
+                        {moreInfo[String(props.icon)].content}
+                    </Typography>
+                </React.Fragment>
+            }>
             <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
                 {icons[String(props.icon)]}
             </ColorlibStepIconRoot>
         </BootstrapTooltip>
     );
 }
-//------------------------------------------------------------------------------//
+
+
+
+
+
+
 function ColorlibStepIcon4(props) {
     const { active, completed, className } = props;
 
@@ -209,25 +239,31 @@ function ColorlibStepIcon4(props) {
         },
     };
 
+    const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
 
     return (
-        <BootstrapTooltip title={
-            <React.Fragment>
-                <Typography color="inherit" style={{ textAlign: "center" }} >
-                    {moreInfo[String(props.icon)].title}
-                </Typography>
-                <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem",lineHeight:'1.2rem' }}>
-                    {moreInfo[String(props.icon)].content}
-                </Typography>
-            </React.Fragment>
-        }>
+        <BootstrapTooltip
+            onClick={() => setTooltipIsOpen(true)}
+            open={tooltipIsOpen}
+            onOpen={() => setTooltipIsOpen(true)}
+            onClose={() => setTooltipIsOpen(false)}
+            title={
+                <React.Fragment>
+                    <Typography color="inherit" style={{ textAlign: "center" }} >
+                        {moreInfo[String(props.icon)].title}
+                    </Typography>
+                    <Typography variant='div' style={{ fontSize: '12px', fontWeight: '400', margin: "0.3rem", lineHeight: '1.2rem' }}>
+                        {moreInfo[String(props.icon)].content}
+                    </Typography>
+                </React.Fragment>
+            }>
             <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
                 {icons[String(props.icon)]}
             </ColorlibStepIconRoot>
         </BootstrapTooltip>
     );
 }
-//======================================( titles )========================================//
+
 
 const steps1 = ['Communication'];
 const steps2 = ['Adaptability', 'Hardwork', 'Creativity'];
@@ -235,8 +271,30 @@ const steps3 = ['Teamwork', 'Problem-solving', 'Leadership'];
 const steps4 = ['Time management', 'Collaboration', 'Networking'];
 
 
-//=========================================( main )=====================================//
 export default function SoftSkills() {
+    const [steps1, setSteps1] = useState(['CM'])
+    const [steps2, setSteps2] = useState(['AD', 'HA', 'CR'])
+    const [steps3, setSteps3] = useState(['TW', 'PS', 'LS'])
+    const [steps4, setSteps4] = useState(['TM', 'CB', 'N'])
+
+    const isMobile = useMediaQuery('(min-width:768px)');
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
+
+    useEffect(() => {
+        if (isMobile) {
+            setSteps1(() => ['Communication'])
+            setSteps2(() => ['Adaptability', 'Hardwork', 'Creativity'])
+            setSteps3(() => ['Teamwork', 'Problem-solving', 'Leadership'])
+            setSteps4(() => ['Time management', 'Collaboration', 'Networking'])
+        } else {
+            setSteps1(() => ['CM'])
+            setSteps2(() => ['AD', 'HA', 'CR'])
+            setSteps3(() => ['TW', 'PS', 'LS'])
+            setSteps4(() => ['TM', 'CB', 'N'])
+        }
+    }, [isMobile])
+
     return (
         <>
             <Stepper style={{ marginTop: "2rem", marginBottom: "2rem" }} alternativeLabel activeStep={3} connector={<ColorlibConnector />}>
@@ -244,7 +302,7 @@ export default function SoftSkills() {
                     <Step key={label}>
                         <StepLabel StepIconComponent={ColorlibStepIcon1}>
                             <Typography style={{
-                                color: "#000e",
+                                color: textColor,
                                 fontSize: "1rem",
                                 fontWeight: "500",
                                 textTransform: 'uppercase',
@@ -261,7 +319,7 @@ export default function SoftSkills() {
                     <Step key={label}>
                         <StepLabel StepIconComponent={ColorlibStepIcon2}>
                             <Typography style={{
-                                color: "#000e",
+                                color: textColor,
                                 fontSize: "1rem",
                                 fontWeight: "500",
                                 textTransform: 'uppercase',
@@ -279,7 +337,7 @@ export default function SoftSkills() {
                         <StepLabel
                             StepIconComponent={ColorlibStepIcon3}>
                             <Typography style={{
-                                color: "#000e",
+                                color: textColor,
                                 fontSize: "1rem",
                                 fontWeight: "500",
                                 textTransform: 'uppercase',
@@ -297,7 +355,7 @@ export default function SoftSkills() {
                         <StepLabel
                             StepIconComponent={ColorlibStepIcon4}>
                             <Typography style={{
-                                color: "#CCAEA4",
+                                color: textColor,
                                 fontSize: "1rem",
                                 fontWeight: "500",
                                 textTransform: 'uppercase',

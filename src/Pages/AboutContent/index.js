@@ -108,7 +108,8 @@ export const AboutContent = () => {
 
   const isMobile = useMediaQuery('(min-width:768px)');
 
-  const textColor = !isMobile ? "#fff" : "#000";
+  const textColor = !isMobile ? "#647bff" : "#000";
+  const borderColor = !isMobile ? "#857f84" : "#000";
 
   return (
     <GlowBubble>
@@ -134,8 +135,10 @@ export const AboutContent = () => {
             style={{
               color: textColor,
               padding: '2.3rem',
-              border: "1px solid #000", borderRadius:
-                '1rem', margin: '1rem',
+              border: "1px solid #000",
+              borderRadius: '1rem',
+              borderColor: borderColor,
+              margin: '1rem',
               textAlign: 'center'
             }}
           >
@@ -147,8 +150,7 @@ export const AboutContent = () => {
 
       </Box>
 
-
-      <Grid container spacing={5} style={{ marginTop: '2rem', justifyContent: "center" }}>
+      <Grid container spacing={5} style={{ marginTop: '2rem', display: "flex", justifyContent: "center" }}>
         <Grid item xs={12} sm={12} md={12} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
           <Card
             sx={{
@@ -217,18 +219,27 @@ export const AboutContent = () => {
 
           </Card>
         </Grid>
-        <Grid container spacing={1} style={{ margin: '6rem 0rem', justifyContent: "flexend" }}>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <AboutCard data={Carddata} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <AboutCard data={experience} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <AboutCard data={customer} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <AboutCard data={internship} />
+        <Grid item xs={12} sm={12} md={12} xl={6} lg={6} style={{ display: "flex", justifyContent: "center" }}>
+          <Grid container spacing={1}
+            style={{
+              padding: "1rem",
+              margin: '4rem 0.6rem',
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center"
+            }}>
+            <Grid item xs={12} sm={12} md={6} xl={6} lg={6} >
+              <AboutCard data={Carddata} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} xl={6} lg={6} >
+              <AboutCard data={experience} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} xl={6} lg={6} >
+              <AboutCard data={customer} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} xl={6} lg={6} >
+              <AboutCard data={internship} />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

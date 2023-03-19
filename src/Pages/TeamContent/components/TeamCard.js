@@ -48,19 +48,20 @@ export default function TeamCard({ data }) {
     };
 
     const isMobile = useMediaQuery('(min-width:768px)');
-    const textColor = !isMobile ? "#fff" : "#000";
+    const textColor = !isMobile ? "#647bff" : "#000";
+    const borderColor = !isMobile ? "#857f84" : "#000";
 
     return (
         <Card
             variant="outlined"
             sx={{
+                borderColor: borderColor,
                 display: 'flex',
                 justifyContent: "center",
-                alignItems: "flex-start",
+                alignItems: isMobile ? "flex-start": "center",
                 flex: 1,
                 p: 1,
-                flexDirection: data.isLTR ? {
-                    // xs: 'column-reverse',
+                flexDirection: data.isLTR && isMobile ? {
                     sm: 'row-reverse',
                 } : {
                     xs: 'column',
@@ -77,8 +78,8 @@ export default function TeamCard({ data }) {
                     src={data.isIsmail ? IsmailProfile : ImaneProfile}
                     sx={{
                         borderRadius: 0.6,
-                        width: { xs: '40%', sm: 240 },
-                        height: { xs: 'auto', sm: 300 },
+                        width: { xs: 200, sm: 240 },
+                        height: { xs: 250, sm: 300 },
                         mr: { sm: 1.5 },
                         mb: { xs: 1.5, sm: 1 },
                     }}
@@ -134,14 +135,14 @@ export default function TeamCard({ data }) {
                 <Box
                     sx={
                         {
-                            alignSelf: data.isLTR ? 'start' : 'end',
+                            alignSelf: data.isLTR && isMobile ? 'start' : 'end',
                         }
                     }>
                     <Tooltip title={`Resume of ${data.name}`}>
                         <LoadingButton
                             sx={{
                                 color: textColor,
-                                borderColor: textColor,
+                                borderColor: borderColor,
                                 margin: '0.5rem',
                                 padding: "0.5rem 1rem",
                                 marginBottom: '0.4rem',
