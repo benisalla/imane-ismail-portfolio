@@ -90,7 +90,7 @@ const SlickBar = styled.ul`
   flex-direction: column;
   align-items: center;
   background-color: var(--black);
-  box-shadow: #647bff4 1px 1px 2px, #647bff4 1px -1px 2px,#647bff4 -1px 1px 2px, #647bff4 -1px -1px 2px;
+  box-shadow: #647bff40 1px 1px 2px, #647bff40 1px -1px 2px,#647bff40 -1px 1px 2px, #647bff40 -1px -1px 2px;
   padding: 2rem 0;
   position: absolute;
   top: 4rem;
