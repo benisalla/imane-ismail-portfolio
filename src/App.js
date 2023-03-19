@@ -27,8 +27,6 @@ const Pages = styled.div`
 
 function App() {
 
-  // "homepage": "https://benisalla.github.io/imane-ismail-portfolio/",
-
   const [controller, dispatch] = useISIMController();
 
   const location = useLocation();

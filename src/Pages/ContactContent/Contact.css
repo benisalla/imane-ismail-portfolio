@@ -18,6 +18,7 @@
 }
 
 .shape {
+    margin-top: -100px;
     position: relative;
     border-radius: 50%;
     border-width: 2px;
@@ -33,4 +34,9 @@
     height: 100px;
     position: 'absolute';
     top: 0;
+}
+
+.logo{
+    overflow: hidden;
+    height: 200px;
 }

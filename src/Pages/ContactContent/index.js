@@ -13,7 +13,7 @@ const ContactContent = () => {
 
       <div className="home">
         <div className="part">
-          <IMANE className="imane" />
+          <IMANE className="logo" />
 
           <div className="desc shape">
             <h3>
@@ -45,7 +45,7 @@ const ContactContent = () => {
         </div>
 
         <div className="part">
-          <ISMAIL className="ismail" />
+          <ISMAIL className="logo" />
 
           <div className="desc shape">
             <h3
